@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24130cb7e39e5464b8932c73bfaba5a6, type: 3}
-  m_Name: Weapon
+  m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
+  m_Name: WeponZoro2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  itemType: 1
-  description: 
-  Damage: 0
+  _sprite: {fileID: -7892834290507453350, guid: ac0eee253a4a4484a88537b790420032, type: 3}
+  _amount: 750
+  _itemType: 0
+  _itemPrefab: {fileID: 0}

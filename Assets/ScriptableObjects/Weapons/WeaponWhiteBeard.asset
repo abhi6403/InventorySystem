@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be469908426eb8141b57dbcea76815a6, type: 3}
-  m_Name: FoodObject
+  m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
+  m_Name: WeaponWhiteBeard
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  itemType: 0
-  description: 
-  restoreHealthValue: 0
+  _sprite: {fileID: -8641181735416402639, guid: a06e76156fddf1447b484ee1a34b587f, type: 3}
+  _amount: 500
+  _itemType: 0

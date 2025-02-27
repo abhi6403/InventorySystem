@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 66893625}
   - component: {fileID: 66893627}
   - component: {fileID: 66893626}
+  - component: {fileID: 66893628}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -305,6 +306,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66893624}
   m_CullTransparentMesh: 1
+--- !u!114 &66893628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66893624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c09150e44b819448e1fcf9ac2641a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  itemPrefab: {fileID: 0}
 --- !u!1001 &79894791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2151,7 +2166,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2084734759}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.53333336
+  m_Size: 0.51880676
   m_NumberOfSteps: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6912,7 +6927,7 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 42
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
