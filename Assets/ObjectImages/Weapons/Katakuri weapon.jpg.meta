@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Katakuri weapon_0: -4600093046091201594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

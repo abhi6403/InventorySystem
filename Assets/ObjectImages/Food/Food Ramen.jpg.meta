@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Food Ramen_0: 4472221120640335037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

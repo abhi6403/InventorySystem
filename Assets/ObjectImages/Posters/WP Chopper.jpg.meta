@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WP Chopper_0: -201430416870565678
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

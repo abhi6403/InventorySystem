@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit kage kage_0: -4685302149024676830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

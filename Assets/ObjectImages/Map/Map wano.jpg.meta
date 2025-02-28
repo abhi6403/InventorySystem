@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Map wano_0: 7745779203188830810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

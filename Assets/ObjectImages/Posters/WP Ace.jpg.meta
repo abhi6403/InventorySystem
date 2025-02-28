@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WP Ace_0: -3340003803336452040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

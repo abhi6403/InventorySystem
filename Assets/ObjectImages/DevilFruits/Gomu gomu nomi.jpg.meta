@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gomu gomu nomi_0: -8301423576919556608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

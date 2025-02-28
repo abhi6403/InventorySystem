@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit UoUo_0: 8363421377133528468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dofi snail_0: -1420398778202695430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
