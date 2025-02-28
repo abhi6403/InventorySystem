@@ -15,4 +15,4 @@ MonoBehaviour:
   _sprite: {fileID: -7892834290507453350, guid: ac0eee253a4a4484a88537b790420032, type: 3}
   _amount: 750
   _itemType: 0
-  _itemPrefab: {fileID: 0}
+  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
