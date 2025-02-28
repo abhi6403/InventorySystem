@@ -7,6 +7,4 @@ using UnityEngine;
 public class InventoryScriptableObject : ScriptableObject
 {
     public List<ItemsScriptableObject> items;
-    
-        
 }
