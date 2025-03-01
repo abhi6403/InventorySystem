@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: ShipAnchor
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
-  _amount: 0
-  _itemType: 0
-  prefab: {fileID: 0}
+  _sprite: {fileID: -3459125898133439573, guid: ee6ca14594c47a84c9e6ccb4b9dc71a8, type: 3}
+  _amount: 2000
+  _itemType: 7
