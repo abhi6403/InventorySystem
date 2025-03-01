@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: ShipWheel
   m_EditorClassIdentifier: 
   _sprite: {fileID: -6264041107275224879, guid: 3f0212a7bbe1eef44b11057fac9f7669, type: 3}
+  _name: Wheel
   _amount: 2000
   _itemType: 7
+  _description: sdfafsd

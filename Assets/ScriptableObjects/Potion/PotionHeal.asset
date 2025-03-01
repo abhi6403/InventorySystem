@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PotionHeal
   m_EditorClassIdentifier: 
   _sprite: {fileID: -333315473717007337, guid: f113ba1ffd49bdc47ae51cbf2532ec9c, type: 3}
+  _name: Heal Potion
   _amount: 450
   _itemType: 5
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: dfafasf

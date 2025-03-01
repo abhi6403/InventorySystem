@@ -8,15 +8,18 @@ public class UIService : MonoBehaviour
 {
     public InventoryScriptableObject inventoryScriptableObject;
     public Transform inventoryContainer;
-    public GameObject itemPrefab;
-    
+    public ItemService itemService;
+
     public void initialize()
     {
         for (int i = 0; i < inventoryScriptableObject.items.Count; i++)
         {
-            itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-            itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-            GameObject item = Instantiate(itemPrefab, inventoryContainer);
+            string priceText = inventoryScriptableObject.items[i]._amount;
+            string itemName = inventoryScriptableObject.items[i]._name;
+            string itemDescription = inventoryScriptableObject.items[i]._description;
+            Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+            itemService.Initialize(inventoryScriptableObject.items[i]._sprite,itemName,itemDescription,priceText);
+            ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
         }
     }
 
@@ -32,9 +35,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.WEAPON)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }
@@ -47,9 +53,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.HEALTH)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }
@@ -62,9 +71,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.DEVILFRUIT)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }
@@ -77,9 +89,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.POSTER)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }
@@ -92,9 +107,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.PROPS)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }
@@ -107,9 +125,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.POTION)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }
@@ -122,9 +143,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.SHIPITEMS)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }
@@ -137,9 +161,12 @@ public class UIService : MonoBehaviour
         {
             if (inventoryScriptableObject.items[i]._itemType == ItemTypes.MAP)
             {
-                itemPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inventoryScriptableObject.items[i]._amount.ToString();
-                itemPrefab.transform.GetChild(1).GetComponent<Image>().sprite = inventoryScriptableObject.items[i]._sprite;
-                GameObject item = Instantiate(itemPrefab, inventoryContainer);
+                Sprite sprite = inventoryScriptableObject.items[i]._sprite;
+                string priceText = inventoryScriptableObject.items[i]._amount;
+                string itemName = inventoryScriptableObject.items[i]._name;
+                string itemDescription = inventoryScriptableObject.items[i]._description;
+                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                ItemService itemSer = GameObject.Instantiate(itemService, inventoryContainer);
             }
         }
     }

@@ -6,6 +6,11 @@ using UnityEngine.UIElements;
 public class ItemsScriptableObject : ScriptableObject
 {
     public Sprite _sprite;
-    public float _amount;
+    public string _name;
+    public string _amount;
     public ItemTypes _itemType;
+    
+    [TextArea(10,15)]
+    public string _description;
+    
 }

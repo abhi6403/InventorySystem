@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: ShipAnchor
   m_EditorClassIdentifier: 
   _sprite: {fileID: -3459125898133439573, guid: ee6ca14594c47a84c9e6ccb4b9dc71a8, type: 3}
+  _name: Anchor
   _amount: 2000
   _itemType: 7
+  _description: dsffsa

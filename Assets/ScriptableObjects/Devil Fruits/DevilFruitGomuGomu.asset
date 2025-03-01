@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DevilFruitGomuGomu
   m_EditorClassIdentifier: 
   _sprite: {fileID: -8301423576919556608, guid: 9e302d26b6c685444b4f7306c29b9399, type: 3}
+  _name: GomuGomu
   _amount: 10000
   _itemType: 3
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: hsgfsfsaf

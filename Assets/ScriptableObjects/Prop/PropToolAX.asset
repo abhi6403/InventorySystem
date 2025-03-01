@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PropToolAX
   m_EditorClassIdentifier: 
   _sprite: {fileID: 3472344505591756353, guid: e1891a0fbf38feb41a9ee0eec844481a, type: 3}
+  _name: Axe
   _amount: 350
   _itemType: 2
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: sadffasdf
