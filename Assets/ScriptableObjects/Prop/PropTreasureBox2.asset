@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PropTreasureBox2
   m_EditorClassIdentifier: 
   _sprite: {fileID: -5559580120154473571, guid: e84ff0cb6e470854f8718be0cd03c0c8, type: 3}
+  _name: Teasure Box 2
   _amount: 850
   _itemType: 2
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: dsgafg

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DevilFruitMeraMera
   m_EditorClassIdentifier: 
   _sprite: {fileID: -3036316539299954508, guid: d14caad7649b1ac4894dc720a2c93f2c, type: 3}
+  _name: Mera Mera
   _amount: 5000
   _itemType: 3
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: sdfsdgg

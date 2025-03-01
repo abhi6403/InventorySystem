@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WeponMihawk
   m_EditorClassIdentifier: 
   _sprite: {fileID: -1197120479922799868, guid: 6dab6d209e5cf7146ba4c19308f7435e, type: 3}
+  _name: Mihawk Weapon
   _amount: 500
   _itemType: 0
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: sfafd

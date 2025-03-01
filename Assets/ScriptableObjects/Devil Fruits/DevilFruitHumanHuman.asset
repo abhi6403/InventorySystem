@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DevilFruitHumanHuman
   m_EditorClassIdentifier: 
   _sprite: {fileID: -5992463531495283479, guid: df7fe914d2f36fa41be79b8b505a67f6, type: 3}
+  _name: Human Human
   _amount: 1200
   _itemType: 3
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: akjshgf

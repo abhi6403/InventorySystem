@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WeponKaido
   m_EditorClassIdentifier: 
   _sprite: {fileID: -6586066246273924156, guid: 44254624c265db948b46d80dc79e4821, type: 3}
+  _name: Kaido Weapon
   _amount: 500
   _itemType: 0
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: dsfasf

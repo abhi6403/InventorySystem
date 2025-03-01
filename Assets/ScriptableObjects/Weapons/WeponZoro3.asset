@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WeponZoro3
   m_EditorClassIdentifier: 
   _sprite: {fileID: -5533232154913808783, guid: 3c6b0ea819ce01149951a53c7e0944eb, type: 3}
+  _name: Shushi
   _amount: 2000
   _itemType: 0
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: awDFfdasfd

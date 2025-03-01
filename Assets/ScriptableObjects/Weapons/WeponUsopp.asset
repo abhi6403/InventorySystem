@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WeponUsopp
   m_EditorClassIdentifier: 
   _sprite: {fileID: -1128243437497090813, guid: ee2089f1ad3e2874b8873120e616dd56, type: 3}
+  _name: Usopp
   _amount: 400
   _itemType: 0
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: wsdaf

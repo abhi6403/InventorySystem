@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PropUsoppMask
   m_EditorClassIdentifier: 
   _sprite: {fileID: 6955189995030969303, guid: e7fc49ed2b1e53649bf206c32c172e23, type: 3}
+  _name: Usopp Mask
   _amount: 850
   _itemType: 2
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: dsafasdf

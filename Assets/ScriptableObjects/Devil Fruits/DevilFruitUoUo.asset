@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DevilFruitUoUo
   m_EditorClassIdentifier: 
   _sprite: {fileID: 8363421377133528468, guid: ff4585b278b54dd40abeebaf5c95923b, type: 3}
+  _name: UoUo
   _amount: 2000
   _itemType: 3
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: seafgafgsdf

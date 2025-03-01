@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PotionSpeed
   m_EditorClassIdentifier: 
   _sprite: {fileID: -9151900474362580315, guid: ae62b33e719e4fa4b8f47e1f06a2b119, type: 3}
+  _name: Speed Potion
   _amount: 150
   _itemType: 5
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: fgsafafasf

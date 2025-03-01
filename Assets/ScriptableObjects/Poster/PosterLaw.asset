@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PosterLaw
   m_EditorClassIdentifier: 
   _sprite: {fileID: 6744004875393238668, guid: 611514197546b574aa2baf60634e1e5f, type: 3}
+  _name: Law Poster
   _amount: 50
   _itemType: 6
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: aefsdaff

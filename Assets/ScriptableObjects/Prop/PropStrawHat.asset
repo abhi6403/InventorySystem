@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PropStrawHat
   m_EditorClassIdentifier: 
   _sprite: {fileID: 1282623744036393794, guid: 6f60b79fa516f7e439b0c7f0194ac799, type: 3}
+  _name: Luffy Hat
   _amount: 200
   _itemType: 2
-  prefab: {fileID: 3563925198551709645, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
+  _description: dsggfasdfg
