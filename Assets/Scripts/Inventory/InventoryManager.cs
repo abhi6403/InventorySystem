@@ -11,6 +11,11 @@ public class InventoryManager : MonoBehaviour
     public Transform itemContainer;
     public ItemView itemView;
 
+    private void Start()
+    {
+        AllInventoryItems();
+    }
+
     public void AllInventoryItems()
     {
         for (int i = 0; i < inventoryScriptableObject.items.Count; i++)
