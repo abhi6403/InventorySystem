@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Smoker
   _amount: 300
   _itemType: 0
+  _quantity: 7
   _description: dfafaf

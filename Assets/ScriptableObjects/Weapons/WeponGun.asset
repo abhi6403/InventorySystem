@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Gun
   _amount: 200
   _itemType: 0
+  _quantity: 10
   _description: adsaddasd

@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Treasure Box 1
   _amount: 850
   _itemType: 2
+  _quantity: 20
   _description: dasfsdfg

@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Ace Hat
   _amount: 200
   _itemType: 2
+  _quantity: 5
   _description: sdfgasgas

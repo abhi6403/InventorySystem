@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Kaido Weapon
   _amount: 500
   _itemType: 0
+  _quantity: 2
   _description: dsfasf

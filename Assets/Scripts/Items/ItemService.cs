@@ -10,10 +10,9 @@ public class ItemService : MonoBehaviour
     public TextMeshProUGUI itemName;
     public TextMeshProUGUI itemDescription;
     public TextMeshProUGUI itemPrice;
+    public int quantity;
     
     public ItemDetails itemDetails;
-
-    public GameObject detailsTab;
     
     public Canvas mainCanvas;
 
@@ -22,19 +21,19 @@ public class ItemService : MonoBehaviour
         mainCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
     }
 
-    public void Initialize(Sprite _itemImage,string _itemName,string _itemDescription,string _itemPrice)
+    public void Initialize(Sprite _itemImage,string _itemName,string _itemDescription,string _itemPrice,int _quantity)
     {
         itemImage.sprite = _itemImage;
         itemName.text = _itemName;
         itemDescription.text = _itemDescription;
         itemPrice.text = _itemPrice;
+        quantity = _quantity;
     }
 
     public void setDetails()
     {
-        itemDetails.Initialize(itemImage.sprite, itemName.text, itemDescription.text, itemPrice.text,5.ToString());
+        itemDetails.Initialize(itemImage.sprite, itemName.text, itemDescription.text, itemPrice.text,quantity);
         ItemDetails Details = Instantiate(itemDetails, mainCanvas.transform);
-        Debug.Log("itemDetails initialized");
     }
     
     public Sprite getItemImage()

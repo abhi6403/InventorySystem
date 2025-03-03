@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Enma
   _amount: 900
   _itemType: 0
+  _quantity: 1
   _description: asfdasf

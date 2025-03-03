@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Kitetsu
   _amount: 750
   _itemType: 0
+  _quantity: 1
   _description: sdffafad

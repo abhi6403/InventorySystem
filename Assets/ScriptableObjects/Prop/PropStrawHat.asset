@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Luffy Hat
   _amount: 200
   _itemType: 2
+  _quantity: 20
   _description: dsggfasdfg

@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Mera Mera
   _amount: 5000
   _itemType: 3
+  _quantity: 1
   _description: sdfsdgg

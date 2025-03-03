@@ -6,14 +6,8 @@ using UnityEngine.UI;
 
 public class UIService : MonoBehaviour
 {
-    public InventoryScriptableObject inventoryScriptableObject;
-    public Transform inventoryContainer;
-    public ItemService itemService;
-    
     public InventoryManager inventoryManager;
     
-    
-
     public void getAllItems()
     {
         inventoryManager.AllInventoryItems();
@@ -21,66 +15,50 @@ public class UIService : MonoBehaviour
 
     public void getWeaponItems()
     {
-        clearAllItems();
-        
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.WEAPON);
         
     }
-
     public void getFoodItems()
     {
-        clearAllItems();
-
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.HEALTH);
     }
 
     public void getDevilFruits()
     {
-        clearAllItems();
-        
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.DEVILFRUIT);
     }
 
     public void getPosters()
     {
-        clearAllItems();
-        
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.POSTER);
     }
     
     public void getProps()
     {
-        clearAllItems();
-        
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.PROPS);
     }
     
     public void getPotions()
     {
-        clearAllItems();
-        
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.POTION);
     }
     
     public void getShipItems()
     {
-        clearAllItems();
-        
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.SHIPITEMS);
     }
     
     public void getMap()
     {
-        clearAllItems();
-        
+        inventoryManager.clearAllItems();
         inventoryManager.SortInventoryItem(ItemTypes.MAP);
     }
-
-    public void clearAllItems()
-    {
-        foreach (Transform child in inventoryContainer )
-        {
-            Destroy(child.gameObject);
-        }
-    }
+    
 }

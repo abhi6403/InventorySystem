@@ -15,12 +15,12 @@ public class ItemDetails : MonoBehaviour
         image = this.transform.Find("ItemImage").GetComponent<Image>();
     }
     
-    public void Initialize(Sprite _image,string _title, string _description, string _price, string _quantity)
+    public void Initialize(Sprite _image,string _title, string _description, string _price, int _quantity)
     {
         image.sprite = _image;
         titleText.text =  _title;
         descriptionText.text = _description;
         priceText.text = "Price - " + _price;
-        quantityText.text = _quantity;
+        quantityText.text = _quantity.ToString();
     }
 }

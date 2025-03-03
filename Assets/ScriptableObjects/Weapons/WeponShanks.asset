@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Shanks
   _amount: 800
   _itemType: 0
+  _quantity: 3
   _description: sdfaf

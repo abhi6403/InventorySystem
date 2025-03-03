@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Heal Potion
   _amount: 450
   _itemType: 5
+  _quantity: 7
   _description: dfafasf

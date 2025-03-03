@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Usopp
   _amount: 400
   _itemType: 0
+  _quantity: 6
   _description: wsdaf

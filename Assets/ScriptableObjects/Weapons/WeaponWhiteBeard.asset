@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: WhiteBeard Weapon
   _amount: 500
   _itemType: 0
+  _quantity: 1
   _description: sdfsdfgf

@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Rage Potion
   _amount: 300
   _itemType: 5
+  _quantity: 7
   _description: sadfaf

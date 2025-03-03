@@ -976,9 +976,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dea46b1405e03447a47c2ef6b3e30f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryScriptableObject: {fileID: 11400000, guid: 0bd094b885b212d46b7bfcfc30a9ae1e, type: 2}
-  inventoryContainer: {fileID: 1991235024}
-  itemService: {fileID: -3352805163614258095, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
   inventoryManager: {fileID: 1180899921}
 --- !u!1 &491058509
 GameObject:

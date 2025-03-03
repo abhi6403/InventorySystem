@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: BusterCall Snail
   _amount: 1000
   _itemType: 2
+  _quantity: 1
   _description: sadefasdfas

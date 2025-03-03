@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Human Human
   _amount: 1200
   _itemType: 3
+  _quantity: 1
   _description: akjshgf

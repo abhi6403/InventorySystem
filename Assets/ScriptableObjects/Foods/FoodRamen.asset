@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Ramen
   _amount: 350
   _itemType: 1
+  _quantity: 10
   _description: sgazgfas

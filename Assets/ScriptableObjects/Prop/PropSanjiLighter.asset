@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Sanji Lighter
   _amount: 550
   _itemType: 2
+  _quantity: 5
   _description: gazgfaf

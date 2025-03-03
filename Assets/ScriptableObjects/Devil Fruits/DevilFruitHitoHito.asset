@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: HitoHito
   _amount: 1000
   _itemType: 3
+  _quantity: 1
   _description: hgfjhsgfed

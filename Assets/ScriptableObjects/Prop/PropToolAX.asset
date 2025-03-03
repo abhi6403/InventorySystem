@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Axe
   _amount: 350
   _itemType: 2
+  _quantity: 3
   _description: sadffasdf

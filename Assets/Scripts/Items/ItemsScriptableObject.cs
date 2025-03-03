@@ -9,6 +9,7 @@ public class ItemsScriptableObject : ScriptableObject
     public string _name;
     public string _amount;
     public ItemTypes _itemType;
+    public int _quantity;
     
     [TextArea(10,15)]
     public string _description;

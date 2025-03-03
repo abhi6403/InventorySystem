@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Speed Potion
   _amount: 150
   _itemType: 5
+  _quantity: 7
   _description: fgsafafasf

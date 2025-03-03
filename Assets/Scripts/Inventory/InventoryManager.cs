@@ -18,8 +18,9 @@ public class InventoryManager : MonoBehaviour
             string priceText = inventoryScriptableObject.items[i]._amount;
             string itemName = inventoryScriptableObject.items[i]._name;
             string itemDescription = inventoryScriptableObject.items[i]._description;
+            int itemQuantity = inventoryScriptableObject.items[i]._quantity;
             Sprite sprite = inventoryScriptableObject.items[i]._sprite;
-            itemService.Initialize(sprite,itemName,itemDescription,priceText);
+            itemService.Initialize(sprite,itemName,itemDescription,priceText,itemQuantity);
             ItemService itemSer = GameObject.Instantiate(itemService, itemContainer);
         }
     }
@@ -33,8 +34,9 @@ public class InventoryManager : MonoBehaviour
                 string priceText = inventoryScriptableObject.items[i]._amount;
                 string itemName = inventoryScriptableObject.items[i]._name;
                 string itemDescription = inventoryScriptableObject.items[i]._description;
+                int itemQuantity = inventoryScriptableObject.items[i]._quantity;
                 Sprite sprite = inventoryScriptableObject.items[i]._sprite;
-                itemService.Initialize(sprite,itemName,itemDescription,priceText);
+                itemService.Initialize(sprite,itemName,itemDescription,priceText,itemQuantity);
                 ItemService itemSer = GameObject.Instantiate(itemService, itemContainer);
             }
         }

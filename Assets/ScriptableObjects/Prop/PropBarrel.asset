@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Barrel
   _amount: 250
   _itemType: 2
+  _quantity: 8
   _description: sdfaffsd

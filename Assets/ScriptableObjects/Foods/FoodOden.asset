@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Oden
   _amount: 300
   _itemType: 1
+  _quantity: 10
   _description: dsfgfsdf

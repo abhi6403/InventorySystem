@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Doffi Snail
   _amount: 300
   _itemType: 2
+  _quantity: 1
   _description: sdagagfsd

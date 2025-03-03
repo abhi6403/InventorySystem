@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: GomuGomu
   _amount: 10000
   _itemType: 3
+  _quantity: 1
   _description: hsgfsfsaf

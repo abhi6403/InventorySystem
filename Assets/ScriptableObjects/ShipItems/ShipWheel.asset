@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Wheel
   _amount: 2000
   _itemType: 7
+  _quantity: 3
   _description: sdfafsd

@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: Saw
   _amount: 350
   _itemType: 2
+  _quantity: 4
   _description: sdgfaf
