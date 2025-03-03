@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: FoodMeat1
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 8984754096541894249, guid: a1c5440935298ec4fa26f1f35469ec75, type: 3}
+  _sprite: {fileID: -1504212627017640649, guid: 1c3d23968ef9c5149a5402fc5b5ded54, type: 3}
   _name: ChickenLeg
   _amount: 250
-  _itemType: 1
   _quantity: 10
+  _weight: 0
+  _itemType: 1
   _description: sfsdgffga

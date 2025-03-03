@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: ShipAnchor
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -3459125898133439573, guid: ee6ca14594c47a84c9e6ccb4b9dc71a8, type: 3}
+  _sprite: {fileID: -4333020941697010616, guid: 5a3000d964a64df47965f2acf1ae41a0, type: 3}
   _name: Anchor
   _amount: 2000
-  _itemType: 7
   _quantity: 2
+  _weight: 0
+  _itemType: 7
   _description: dsffsa

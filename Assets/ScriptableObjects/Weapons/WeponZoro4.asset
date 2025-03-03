@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponZoro4
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 6431205891255896213, guid: b794734e0ff912e458bea60a8130a9af, type: 3}
+  _sprite: {fileID: 8952377895117822751, guid: 1d362c42ac375d64ca58ab9e798ce8ed, type: 3}
   _name: Ichimonji
   _amount: 950
-  _itemType: 0
   _quantity: 1
+  _weight: 0
+  _itemType: 0
   _description: sadfaf

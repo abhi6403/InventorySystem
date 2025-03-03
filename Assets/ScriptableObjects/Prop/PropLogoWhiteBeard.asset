@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropLogoWhiteBeard
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -7382422441958740190, guid: 31ec755d4af5ec64d9582cf99841b7ea, type: 3}
+  _sprite: {fileID: -3574522013925793470, guid: d2848ac15ac9e074893c825494efaa67, type: 3}
   _name: WhiteBeard Logo
   _amount: 50
-  _itemType: 2
   _quantity: 15
+  _weight: 0
+  _itemType: 2
   _description: sdfasfesdf

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropBarrel
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 1380203805528671675, guid: b8a1802a33188e741b7cdd4ea283229f, type: 3}
+  _sprite: {fileID: 462722058015939694, guid: c7fccf88cee826646bcb4dea39424beb, type: 3}
   _name: Barrel
   _amount: 250
-  _itemType: 2
   _quantity: 8
+  _weight: 0
+  _itemType: 2
   _description: sdfaffsd

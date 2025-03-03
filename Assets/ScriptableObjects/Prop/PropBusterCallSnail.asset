@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropBusterCallSnail
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 9220906979811158876, guid: 2cc39b27f42133746a9ba67f61a98833, type: 3}
+  _sprite: {fileID: -334919377237748260, guid: 533f354fd799b6340b92fa3f1ec5112f, type: 3}
   _name: BusterCall Snail
   _amount: 1000
-  _itemType: 2
   _quantity: 1
+  _weight: 0
+  _itemType: 2
   _description: sadefasdfas

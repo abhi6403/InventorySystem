@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: FoodMeat2
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 419405082314200743, guid: c43f8da64a44082409481ddd21602f66, type: 3}
+  _sprite: {fileID: -7702037988901575266, guid: 46cd538b0aaebb84b81500f5f318f5f8, type: 3}
   _name: Fish
   _amount: 250
-  _itemType: 1
   _quantity: 10
+  _weight: 0
+  _itemType: 1
   _description: sdgzgfs

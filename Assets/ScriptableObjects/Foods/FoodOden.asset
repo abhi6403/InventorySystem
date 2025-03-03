@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: FoodOden
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 5983365326975701120, guid: 3f97fd1ffd2d52a468f56255862aaf45, type: 3}
+  _sprite: {fileID: 7166968360401760626, guid: 5063303d6d7a38240bdf5851b067012b, type: 3}
   _name: Oden
   _amount: 300
-  _itemType: 1
   _quantity: 10
+  _weight: 0
+  _itemType: 1
   _description: dsfgfsdf

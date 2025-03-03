@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropLogPose
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -5768243494716836408, guid: 3cafa61ab435f9048826eea91efd41b0, type: 3}
+  _sprite: {fileID: 4198676382980086050, guid: 3c80771fe2bccab4891c4e5621a8c139, type: 3}
   _name: LogPose
   _amount: 300
-  _itemType: 2
   _quantity: 2
+  _weight: 0
+  _itemType: 2
   _description: dsfvzfga

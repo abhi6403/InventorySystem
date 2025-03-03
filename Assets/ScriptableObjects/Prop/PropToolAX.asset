@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropToolAX
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 3472344505591756353, guid: e1891a0fbf38feb41a9ee0eec844481a, type: 3}
+  _sprite: {fileID: -8855647465323266538, guid: 73c0daba3d3901844bb7b7aba2fff057, type: 3}
   _name: Axe
   _amount: 350
-  _itemType: 2
   _quantity: 3
+  _weight: 0
+  _itemType: 2
   _description: sadffasdf

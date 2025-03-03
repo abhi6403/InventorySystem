@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropStrawHat
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 1282623744036393794, guid: 6f60b79fa516f7e439b0c7f0194ac799, type: 3}
+  _sprite: {fileID: -2260725612079929579, guid: 6d03d7d464c3f464d9874ce65751ba8a, type: 3}
   _name: Luffy Hat
   _amount: 200
-  _itemType: 2
   _quantity: 20
+  _weight: 0
+  _itemType: 2
   _description: dsggfasdfg

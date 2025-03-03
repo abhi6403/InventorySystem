@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponZoro2
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -7892834290507453350, guid: ac0eee253a4a4484a88537b790420032, type: 3}
+  _sprite: {fileID: 2107238775781407586, guid: 3ceb51e27f4abc94495c4e1a3c499d05, type: 3}
   _name: Kitetsu
   _amount: 750
-  _itemType: 0
   _quantity: 1
+  _weight: 0
+  _itemType: 0
   _description: sdffafad

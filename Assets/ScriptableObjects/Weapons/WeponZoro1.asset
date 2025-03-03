@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponZoro1
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -3783044780627476815, guid: a003093415c148045ac1eeed11990c12, type: 3}
+  _sprite: {fileID: 81703065668952688, guid: 0dd9e846f29efae49a43b94d982956c7, type: 3}
   _name: Enma
   _amount: 900
-  _itemType: 0
   _quantity: 1
+  _weight: 0
+  _itemType: 0
   _description: asfdasf

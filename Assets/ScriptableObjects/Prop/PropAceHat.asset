@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropAceHat
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 4646019793659918545, guid: 7a3fc67aa4889974e82dd6273625fd04, type: 3}
+  _sprite: {fileID: 8828911041043960326, guid: 3ae1fb93e85d66d40bb23f23bb8438e6, type: 3}
   _name: Ace Hat
   _amount: 200
-  _itemType: 2
   _quantity: 5
+  _weight: 0
+  _itemType: 2
   _description: sdfgasgas

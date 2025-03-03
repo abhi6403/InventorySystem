@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponKaido
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -6586066246273924156, guid: 44254624c265db948b46d80dc79e4821, type: 3}
+  _sprite: {fileID: -8472943562256492609, guid: f9b48ff26056e8943b0ff51441490baa, type: 3}
   _name: Kaido Weapon
   _amount: 500
-  _itemType: 0
   _quantity: 2
+  _weight: 0
+  _itemType: 0
   _description: dsfasf

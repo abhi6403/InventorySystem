@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropTreasureBox2
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -5559580120154473571, guid: e84ff0cb6e470854f8718be0cd03c0c8, type: 3}
+  _sprite: {fileID: -1354795570917898186, guid: 9704e110f993b4b498957f15553da86c, type: 3}
   _name: Teasure Box 2
   _amount: 850
-  _itemType: 2
   _quantity: 22
+  _weight: 0
+  _itemType: 2
   _description: dsgafg

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropImpactDail
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 5691917299859853396, guid: b86ec23fdd25692479ea249d2993b416, type: 3}
+  _sprite: {fileID: -612623771077038370, guid: c947afceedcc7944d834889492074de2, type: 3}
   _name: Impact Dail
   _amount: 100
-  _itemType: 2
   _quantity: 10
+  _weight: 0
+  _itemType: 2
   _description: sdagfgfsd

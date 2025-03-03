@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeaponWhiteBeard
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -8641181735416402639, guid: a06e76156fddf1447b484ee1a34b587f, type: 3}
+  _sprite: {fileID: -2711254756909090312, guid: a558afa7ab211834db1e9bf84b09a849, type: 3}
   _name: WhiteBeard Weapon
   _amount: 500
-  _itemType: 0
   _quantity: 1
+  _weight: 0
+  _itemType: 0
   _description: sdfsdfgf

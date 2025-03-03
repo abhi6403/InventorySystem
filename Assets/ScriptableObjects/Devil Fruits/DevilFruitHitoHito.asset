@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: DevilFruitHitoHito
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 8655331940748221532, guid: 770943fd312567147a86f35808e66889, type: 3}
+  _sprite: {fileID: -348464302944469932, guid: db825c12ca6c3b64997f896c06a08d6f, type: 3}
   _name: HitoHito
   _amount: 1000
-  _itemType: 3
   _quantity: 1
+  _weight: 0
+  _itemType: 3
   _description: hgfjhsgfed

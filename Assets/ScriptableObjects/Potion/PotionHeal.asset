@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PotionHeal
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -333315473717007337, guid: f113ba1ffd49bdc47ae51cbf2532ec9c, type: 3}
+  _sprite: {fileID: 1624825373846944214, guid: 30b5302c0acb36d41a46fcd965ecdc46, type: 3}
   _name: Heal Potion
   _amount: 450
-  _itemType: 5
   _quantity: 7
+  _weight: 0
+  _itemType: 5
   _description: dfafasf

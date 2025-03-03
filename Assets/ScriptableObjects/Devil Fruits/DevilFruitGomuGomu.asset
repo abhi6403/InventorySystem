@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: DevilFruitGomuGomu
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -8301423576919556608, guid: 9e302d26b6c685444b4f7306c29b9399, type: 3}
+  _sprite: {fileID: -3355523817095360204, guid: c17282486f073004cb02b5bb89d1b1f0, type: 3}
   _name: GomuGomu
   _amount: 10000
-  _itemType: 3
   _quantity: 1
+  _weight: 0
+  _itemType: 3
   _description: hsgfsfsaf

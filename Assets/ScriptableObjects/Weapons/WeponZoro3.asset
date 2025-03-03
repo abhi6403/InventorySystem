@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponZoro3
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -5533232154913808783, guid: 3c6b0ea819ce01149951a53c7e0944eb, type: 3}
+  _sprite: {fileID: -6410614985621677721, guid: 36d873809e040334e87b1ddca93fe3f1, type: 3}
   _name: Shushi
   _amount: 2000
-  _itemType: 0
   _quantity: 1
+  _weight: 0
+  _itemType: 0
   _description: awDFfdasfd

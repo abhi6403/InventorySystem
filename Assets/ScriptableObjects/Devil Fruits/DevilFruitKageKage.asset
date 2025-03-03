@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: DevilFruitKageKage
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -4685302149024676830, guid: 51c8b6c0e9deca14d8963b3b9ad3d13e, type: 3}
+  _sprite: {fileID: -8850754546674670786, guid: f46e526857ea6f44bbc822fb869713c8, type: 3}
   _name: KageKage
   _amount: 1500
-  _itemType: 3
   _quantity: 1
+  _weight: 0
+  _itemType: 3
   _description: dsgag

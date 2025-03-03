@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: DevilFruitUoUo
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 8363421377133528468, guid: ff4585b278b54dd40abeebaf5c95923b, type: 3}
+  _sprite: {fileID: 1644047949770263332, guid: 3bd8aca88e1b1444bb990cc25c2359f6, type: 3}
   _name: UoUo
   _amount: 2000
-  _itemType: 3
   _quantity: 1
+  _weight: 0
+  _itemType: 3
   _description: seafgafgsdf

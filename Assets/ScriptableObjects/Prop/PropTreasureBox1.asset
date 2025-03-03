@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropTreasureBox1
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 6915344672231194912, guid: 08ae9048eba4d464ea8faba53efc91e2, type: 3}
+  _sprite: {fileID: -2720735300268934407, guid: a17ec434e2191974b9fcef94b4bec2cf, type: 3}
   _name: Treasure Box 1
   _amount: 850
-  _itemType: 2
   _quantity: 20
+  _weight: 0
+  _itemType: 2
   _description: dasfsdfg

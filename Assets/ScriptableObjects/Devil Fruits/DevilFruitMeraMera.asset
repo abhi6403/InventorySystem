@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: DevilFruitMeraMera
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -3036316539299954508, guid: d14caad7649b1ac4894dc720a2c93f2c, type: 3}
+  _sprite: {fileID: 12002762367867486, guid: 84c33f4884752ff448dc9d4dc185f919, type: 3}
   _name: Mera Mera
   _amount: 5000
-  _itemType: 3
   _quantity: 1
+  _weight: 0
+  _itemType: 3
   _description: sdfsdgg

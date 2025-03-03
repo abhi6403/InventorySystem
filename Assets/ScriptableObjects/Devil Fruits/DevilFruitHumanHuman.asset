@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: DevilFruitHumanHuman
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -5992463531495283479, guid: df7fe914d2f36fa41be79b8b505a67f6, type: 3}
+  _sprite: {fileID: 1804527953579550050, guid: dc80d62fe05ba31499dca7c6994f64c8, type: 3}
   _name: Human Human
   _amount: 1200
-  _itemType: 3
   _quantity: 1
+  _weight: 0
+  _itemType: 3
   _description: akjshgf

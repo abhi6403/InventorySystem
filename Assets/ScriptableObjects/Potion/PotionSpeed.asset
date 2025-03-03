@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PotionSpeed
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -9151900474362580315, guid: ae62b33e719e4fa4b8f47e1f06a2b119, type: 3}
+  _sprite: {fileID: 4574450992341272565, guid: 7066b5d4cc64b354896bb2700aed660c, type: 3}
   _name: Speed Potion
   _amount: 150
-  _itemType: 5
   _quantity: 7
+  _weight: 0
+  _itemType: 5
   _description: fgsafafasf

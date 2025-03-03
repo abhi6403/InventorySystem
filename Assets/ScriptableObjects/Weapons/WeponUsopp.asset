@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponUsopp
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -1128243437497090813, guid: ee2089f1ad3e2874b8873120e616dd56, type: 3}
+  _sprite: {fileID: -8387917508061575823, guid: ebe86387184cfd84c94e21530a9bd564, type: 3}
   _name: Usopp
   _amount: 400
-  _itemType: 0
   _quantity: 6
+  _weight: 0
+  _itemType: 0
   _description: wsdaf

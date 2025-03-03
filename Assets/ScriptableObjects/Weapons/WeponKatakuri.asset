@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponKatakuri
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -4600093046091201594, guid: fb7d7412baf11144a8d694f1863c7e37, type: 3}
+  _sprite: {fileID: -3927249411634099148, guid: 8c8e97538eb8c6b41856c528d3460847, type: 3}
   _name: Katakuri Weapon
   _amount: 500
-  _itemType: 0
   _quantity: 3
+  _weight: 0
+  _itemType: 0
   _description: dsafasfd

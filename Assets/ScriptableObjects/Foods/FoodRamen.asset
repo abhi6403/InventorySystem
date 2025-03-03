@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: FoodRamen
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 4472221120640335037, guid: dfe270be5e5bb6a459cc7bdc2dea3feb, type: 3}
+  _sprite: {fileID: -1110251738854972749, guid: 87fc17b7d25e8da4ba65fc5df7c63ffc, type: 3}
   _name: Ramen
   _amount: 350
-  _itemType: 1
   _quantity: 10
+  _weight: 0
+  _itemType: 1
   _description: sgazgfas

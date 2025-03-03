@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropUsoppMask
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 6955189995030969303, guid: e7fc49ed2b1e53649bf206c32c172e23, type: 3}
+  _sprite: {fileID: -2284259244362506082, guid: 77fa3d427e318b1459589f9fe38da31f, type: 3}
   _name: Usopp Mask
   _amount: 850
-  _itemType: 2
   _quantity: 6
+  _weight: 0
+  _itemType: 2
   _description: dsafasdf

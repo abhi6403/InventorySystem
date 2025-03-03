@@ -6,59 +6,62 @@ using UnityEngine.UI;
 
 public class UIService : MonoBehaviour
 {
-    public InventoryManager inventoryManager;
+    public InventoryScriptableObject inventoryScriptableObject;
+    public Transform inventoryContainer;
+    public InventoryView inventoryView;
     
     public void getAllItems()
     {
-        inventoryManager.AllInventoryItems();
+        InventoryModel inventoryModel = new InventoryModel(inventoryScriptableObject, inventoryContainer);
+        InventoryController inventoryController = new InventoryController(inventoryModel,inventoryView);
+        //inventoryManager.AllInventoryItems();
     }
 
     public void getWeaponItems()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.WEAPON);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.WEAPON);
         
     }
     public void getFoodItems()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.HEALTH);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.HEALTH);
     }
 
     public void getDevilFruits()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.DEVILFRUIT);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.DEVILFRUIT);
     }
 
     public void getPosters()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.POSTER);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.POSTER);
     }
     
     public void getProps()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.PROPS);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.PROPS);
     }
     
     public void getPotions()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.POTION);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.POTION);
     }
     
     public void getShipItems()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.SHIPITEMS);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.SHIPITEMS);
     }
     
     public void getMap()
     {
-        inventoryManager.clearAllItems();
-        inventoryManager.SortInventoryItem(ItemTypes.MAP);
+        //inventoryManager.clearAllItems();
+        //inventoryManager.SortInventoryItem(ItemTypes.MAP);
     }
-    
 }

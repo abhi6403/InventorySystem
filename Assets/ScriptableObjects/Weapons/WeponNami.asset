@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponNami
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -3554885628630637091, guid: 43807c9442a815e48af2e9469d188798, type: 3}
+  _sprite: {fileID: -2558576742997423257, guid: 083287d5dfee6a24fa5f7c62cab1a38b, type: 3}
   _name: Nami
   _amount: 500
-  _itemType: 0
   _quantity: 5
+  _weight: 0
+  _itemType: 0
   _description: sdf

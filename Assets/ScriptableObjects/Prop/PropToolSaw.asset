@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: PropToolSaw
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -8412866395887346502, guid: 7625f14afe182bf419f7f6b935e38f49, type: 3}
+  _sprite: {fileID: 7939844588491206907, guid: 71c714ed3d9d1324a8efe93277991fbd, type: 3}
   _name: Saw
   _amount: 350
-  _itemType: 2
   _quantity: 4
+  _weight: 0
+  _itemType: 2
   _description: sdgfaf

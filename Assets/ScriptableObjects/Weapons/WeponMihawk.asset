@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponMihawk
   m_EditorClassIdentifier: 
-  _sprite: {fileID: -1197120479922799868, guid: 6dab6d209e5cf7146ba4c19308f7435e, type: 3}
+  _sprite: {fileID: -3215317080329722638, guid: 57b4c553a23709b45a711efef0225a12, type: 3}
   _name: Mihawk Weapon
   _amount: 500
-  _itemType: 0
   _quantity: 1
+  _weight: 0
+  _itemType: 0
   _description: sfafd
