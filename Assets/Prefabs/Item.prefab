@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7967829901593241403}
   itemPrice: {fileID: 5973907763915442472}
-  itemDetails: {fileID: 180776003261099390, guid: 0b54a8e729c408641bef8bc6259ec43a, type: 3}
+  itemDetailsObject: {fileID: 4957248520421232545, guid: 0b54a8e729c408641bef8bc6259ec43a, type: 3}
   mainCanvas: {fileID: 0}
 --- !u!1 &8377164861531286458
 GameObject:

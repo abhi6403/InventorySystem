@@ -14,6 +14,12 @@ public class ItemController
         itemView.SetItemController(this);
     }
 
+    public void ShowItemDetails()
+    {
+        itemView.GetItemDetailsObject().InitializeItemDetailsUI(GetItemImage(),GetItemName(),GetItemDescription(),GetItemPrice(),GetItemQuantity(),GetItemWeight());
+        ItemDetailsUI itemDetailsUI = GameObject.Instantiate(itemView.GetItemDetailsObject(),itemView.GetItemDetailsObjectTransform());
+    }
+    
     public Transform GetParentTransform()
     {
         return itemModel.GetParentTransform();
