@@ -7,9 +7,10 @@ public class ItemsScriptableObject : ScriptableObject
 {
     public Sprite _sprite;
     public string _name;
-    public string _amount;
-    public ItemTypes _itemType;
+    public int _amount;
     public int _quantity;
+    public int _weight;
+    public ItemTypes _itemType;
     
     [TextArea(10,15)]
     public string _description;

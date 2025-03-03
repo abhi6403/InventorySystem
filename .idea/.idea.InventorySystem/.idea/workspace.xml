@@ -8,71 +8,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventorySystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventorySystem/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Item.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitGomuGomu.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitGomuGomu.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitHitoHito.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitHitoHito.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitHumanHuman.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitHumanHuman.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitKageKage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitKageKage.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitMeraMera.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitMeraMera.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitUoUo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Devil Fruits/DevilFruitUoUo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodMeat1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodMeat1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodMeat2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodMeat2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodOden.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodOden.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodRamen.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Foods/FoodRamen.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Map/MapOnePiece.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Map/MapOnePiece.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Map/MapWano.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Map/MapWano.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterAce.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterAce.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterChopper.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterChopper.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterFranky.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterFranky.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterLaw.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterLaw.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterLuffy1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterLuffy1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterLuffy2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterLuffy2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterSanji.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterSanji.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterShanks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterShanks.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterWhiteBeard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterWhiteBeard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterZoro.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Poster/PosterZoro.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Potion/PotionHeal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Potion/PotionHeal.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Potion/PotionRage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Potion/PotionRage.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Potion/PotionSpeed.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Potion/PotionSpeed.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropAceHat.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropAceHat.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropBarrel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropBarrel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropBusterCallSnail.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropBusterCallSnail.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropDofiSnail.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropDofiSnail.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropImpactDail.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropImpactDail.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropLogPose.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropLogPose.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropLogoWhiteBeard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropLogoWhiteBeard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropSanjiLighter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropSanjiLighter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropStrawHat.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropStrawHat.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropToolAX.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropToolAX.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropToolSaw.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropToolSaw.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropTreasureBox1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropTreasureBox1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropTreasureBox2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropTreasureBox2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropTreasureBox3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropTreasureBox3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropUsoppMask.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Prop/PropUsoppMask.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/ShipItems/ShipAnchor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/ShipItems/ShipAnchor.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/ShipItems/ShipWheel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/ShipItems/ShipWheel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeaponWhiteBeard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeaponWhiteBeard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponGun.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponGun.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponKaido.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponKaido.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponKatakuri.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponKatakuri.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponLaw.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponLaw.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponMihawk.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponMihawk.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponNami.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponNami.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponRayliegh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponRayliegh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponRoger.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponRoger.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponShanks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponShanks.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponSmoker.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponSmoker.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponUsopp.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponUsopp.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Weapons/WeponZoro4.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsScriptableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Main/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Main/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemDetails.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

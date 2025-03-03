@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e106101017854c4b8c7735251a615f6, type: 3}
   m_Name: WeponLaw
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 3472039259471209239, guid: 85b058ac700384845ae208b91b97f454, type: 3}
+  _sprite: {fileID: -5207962097587387412, guid: 9670d79712544d740a2cb2154a8d3693, type: 3}
   _name: Law Weapon
-  _amount: 500
-  _itemType: 0
+  _amount: 0
   _quantity: 4
+  _weight: 0
+  _itemType: 0
   _description: fdsafa

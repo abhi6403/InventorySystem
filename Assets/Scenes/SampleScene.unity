@@ -2699,8 +2699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryScriptableObject: {fileID: 11400000, guid: 0bd094b885b212d46b7bfcfc30a9ae1e, type: 2}
-  itemService: {fileID: -3352805163614258095, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
   itemContainer: {fileID: 1991235024}
+  itemView: {fileID: -8765659287858740219, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
 --- !u!4 &1180899922
 Transform:
   m_ObjectHideFlags: 0

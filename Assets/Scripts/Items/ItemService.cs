@@ -29,12 +29,7 @@ public class ItemService : MonoBehaviour
         itemPrice.text = _itemPrice;
         quantity = _quantity;
     }
-
-    public void setDetails()
-    {
-        itemDetails.Initialize(itemImage.sprite, itemName.text, itemDescription.text, itemPrice.text,quantity);
-        ItemDetails Details = Instantiate(itemDetails, mainCanvas.transform);
-    }
+    
     
     public Sprite getItemImage()
     {
