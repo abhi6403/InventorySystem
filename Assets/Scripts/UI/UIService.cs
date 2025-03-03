@@ -6,62 +6,66 @@ using UnityEngine.UI;
 
 public class UIService : MonoBehaviour
 {
-    public InventoryScriptableObject inventoryScriptableObject;
-    public Transform inventoryContainer;
-    public InventoryView inventoryView;
-    
-    public void getAllItems()
+   public ShopView shopView;
+
+   
+
+   private void setShop()
+   {
+       ShopModel shopModel = new ShopModel();
+       ShopController shopController = new ShopController(shopModel, shopView);
+       
+   }
+   public void getAllItems()
     {
-        InventoryModel inventoryModel = new InventoryModel(inventoryScriptableObject, inventoryContainer);
-        InventoryController inventoryController = new InventoryController(inventoryModel,inventoryView);
-        //inventoryManager.AllInventoryItems();
+        setShop();
+        shopView.ShowAllItems();
     }
 
     public void getWeaponItems()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.WEAPON);
-        
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.WEAPON);
     }
     public void getFoodItems()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.HEALTH);
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.HEALTH);
     }
 
     public void getDevilFruits()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.DEVILFRUIT);
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.DEVILFRUIT);
     }
 
     public void getPosters()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.POSTER);
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.POSTER);
     }
     
     public void getProps()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.PROPS);
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.PROPS);
     }
     
     public void getPotions()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.POTION);
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.POTION);
     }
     
     public void getShipItems()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.SHIPITEMS);
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.SHIPITEMS);
     }
     
     public void getMap()
     {
-        //inventoryManager.clearAllItems();
-        //inventoryManager.SortInventoryItem(ItemTypes.MAP);
+        setShop();
+        shopView.ShowInventoryItem(ItemTypes.MAP);
     }
 }

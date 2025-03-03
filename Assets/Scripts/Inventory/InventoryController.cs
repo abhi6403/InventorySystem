@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.Object;
 
 public class InventoryController
 {
@@ -10,11 +11,14 @@ public class InventoryController
         inventoryModel = _inventoryModel;
         inventoryView = _inventoryView;
         
-        ShowInventory();
+        inventoryModel.SetInventoryController(this);
+        inventoryView.SetInventoryController(this);
     }
 
     public void ShowInventory()
     {
+        inventoryView.clearAllItems();
+        
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
             int itemPrice = GetInventoryScriptableObject().items[i]._amount;
@@ -30,8 +34,10 @@ public class InventoryController
         }
     }
 
-    public void SortInventoryItem(ItemTypes itemType)
+    public void ShowInventoryItem(ItemTypes itemType)
     {
+        inventoryView.clearAllItems();
+        
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
             if(GetInventoryScriptableObject().items[i]._itemType == itemType)
@@ -47,6 +53,14 @@ public class InventoryController
                 ItemModel itemModel = new ItemModel(sprite,itemName,itemDescription,itemPrice,itemQuantity,itemWeight,itemTransform);
                 ItemController itemController = new ItemController(itemModel,GetItemView());
             }
+        }
+    }
+    
+    public void clearAllItems()
+    {
+        foreach (Transform child in GetInventoryTransform())
+        {
+            Destroy(child.gameObject);
         }
     }
     
