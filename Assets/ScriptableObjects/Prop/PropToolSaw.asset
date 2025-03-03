@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Saw
   _amount: 350
   _quantity: 4
-  _weight: 0
+  _weight: 25
   _itemType: 2
-  _description: sdgfaf
+  _description: Saw can be used to cut things.

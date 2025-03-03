@@ -16,6 +16,7 @@ MonoBehaviour:
   _name: Oden
   _amount: 300
   _quantity: 10
-  _weight: 0
+  _weight: 10
   _itemType: 1
-  _description: dsfgfsdf
+  _description: ' It consists of a soy-flavored dashi broth base and various flavorful
+    ingredients, all stewed together, increases health by 60.'

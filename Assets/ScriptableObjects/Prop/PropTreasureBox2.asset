@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Teasure Box 2
   _amount: 850
   _quantity: 22
-  _weight: 0
+  _weight: 100
   _itemType: 2
-  _description: dsgafg
+  _description: Box with max Tressure of 20000 Berries.

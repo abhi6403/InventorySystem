@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PropUsoppMask
   m_EditorClassIdentifier: 
   _sprite: {fileID: -2284259244362506082, guid: 77fa3d427e318b1459589f9fe38da31f, type: 3}
-  _name: Usopp Mask
+  _name: Sogeking Mask
   _amount: 850
   _quantity: 6
-  _weight: 0
+  _weight: 5
   _itemType: 2
-  _description: dsafasdf
+  _description: God Usopp's Mask.

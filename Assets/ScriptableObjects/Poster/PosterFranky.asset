@@ -15,6 +15,8 @@ MonoBehaviour:
   _sprite: {fileID: -1413189633039582108, guid: 99c8093c29f324542931cb32e595bc05, type: 3}
   _name: Franky Poster
   _amount: 50
-  _itemType: 6
   _quantity: 15
-  _description: dgfsadfa
+  _weight: 5
+  _itemType: 6
+  _description: '"Iron Man" Franky is the shipwright of the Straw Hat Pirates and
+    one of the Senior Officers of the Straw Hat Grand Fleet.'

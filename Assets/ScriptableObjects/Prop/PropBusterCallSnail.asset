@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: -334919377237748260, guid: 533f354fd799b6340b92fa3f1ec5112f, type: 3}
   _name: BusterCall Snail
-  _amount: 1000
+  _amount: 10000
   _quantity: 1
-  _weight: 0
+  _weight: 15
   _itemType: 2
-  _description: sadefasdfas
+  _description: The Buster Call is the ultimate form of military attack used by the
+    Marines.

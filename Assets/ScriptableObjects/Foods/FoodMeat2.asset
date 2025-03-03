@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Fish
   _amount: 250
   _quantity: 10
-  _weight: 0
+  _weight: 8
   _itemType: 1
-  _description: sdgzgfs
+  _description: Animal Meat increases health by 50.

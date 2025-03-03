@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Treasure Box 1
   _amount: 850
   _quantity: 20
-  _weight: 0
+  _weight: 100
   _itemType: 2
-  _description: dasfsdfg
+  _description: Box with max Tressure of 10000 Berries.

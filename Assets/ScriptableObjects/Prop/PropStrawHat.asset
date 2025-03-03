@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Luffy Hat
   _amount: 200
   _quantity: 20
-  _weight: 0
+  _weight: 2
   _itemType: 2
-  _description: dsggfasdfg
+  _description: Monkey.D.Luffy's Straw Hat.

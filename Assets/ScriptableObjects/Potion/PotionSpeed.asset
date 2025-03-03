@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Speed Potion
   _amount: 150
   _quantity: 7
-  _weight: 0
+  _weight: 6
   _itemType: 5
-  _description: fgsafafasf
+  _description: Increases the movement speed by 20.

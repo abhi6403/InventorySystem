@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Impact Dail
   _amount: 100
   _quantity: 10
-  _weight: 0
+  _weight: 10
   _itemType: 2
-  _description: sdagfgfsd
+  _description: Absorbs the impact recived and can be used later.

@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: LogPose
   _amount: 300
   _quantity: 2
-  _weight: 0
+  _weight: 5
   _itemType: 2
-  _description: dsfvzfga
+  _description: Log Pose shows the Direction to nearby island.

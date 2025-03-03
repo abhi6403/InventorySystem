@@ -15,6 +15,8 @@ MonoBehaviour:
   _sprite: {fileID: 4376623393371819292, guid: 2cd247148db4fb04abe07e5132e961de, type: 3}
   _name: Shanks Poster
   _amount: 50
-  _itemType: 6
   _quantity: 15
-  _description: dsfsf
+  _weight: 5
+  _itemType: 6
+  _description: '"Red-Haired" Shanks, commonly known as just "Red Hair", is the chief
+    of the Red Hair Pirates and one of the Four Emperors that rule over the New World.'

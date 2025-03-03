@@ -16,6 +16,8 @@ MonoBehaviour:
   _name: Anchor
   _amount: 2000
   _quantity: 2
-  _weight: 0
+  _weight: 80
   _itemType: 7
-  _description: dsffsa
+  _description: A critical piece of equipment used in maritime activities to secure
+    a vessel to the bed of a body of water, preventing it from drifting due to wind
+    or current.

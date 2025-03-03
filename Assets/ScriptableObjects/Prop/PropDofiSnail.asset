@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Doffi Snail
   _amount: 300
   _quantity: 1
-  _weight: 0
+  _weight: 10
   _itemType: 2
-  _description: sdagagfsd
+  _description: Doflamingo's Voice Transponder Snail.

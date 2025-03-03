@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: WhiteBeard Logo
   _amount: 50
   _quantity: 15
-  _weight: 0
+  _weight: 1
   _itemType: 2
-  _description: sdfasfesdf
+  _description: WhiteBeard's Logo helpfull for surviving.

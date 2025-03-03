@@ -16,6 +16,7 @@ MonoBehaviour:
   _name: Wheel
   _amount: 2000
   _quantity: 3
-  _weight: 0
+  _weight: 40
   _itemType: 7
-  _description: sdfafsd
+  _description: Used for changing the angle of the rudder to change the direction
+    of the boat or ship.

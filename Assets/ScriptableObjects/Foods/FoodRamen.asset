@@ -16,6 +16,7 @@ MonoBehaviour:
   _name: Ramen
   _amount: 350
   _quantity: 10
-  _weight: 0
+  _weight: 10
   _itemType: 1
-  _description: sgazgfas
+  _description: Ramen is a dish that uses Chinese-style wheat noodles, increases
+    health by 60.

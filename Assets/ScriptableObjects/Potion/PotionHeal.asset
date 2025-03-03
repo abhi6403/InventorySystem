@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Heal Potion
   _amount: 450
   _quantity: 7
-  _weight: 0
+  _weight: 6
   _itemType: 5
-  _description: dfafasf
+  _description: Heals continously for 60seconds.

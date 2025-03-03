@@ -15,6 +15,8 @@ MonoBehaviour:
   _sprite: {fileID: -6632851582040276179, guid: ebe50ebc44bf37743978f1f5c04463a1, type: 3}
   _name: One Piece Map
   _amount: 200
-  _itemType: 4
   _quantity: 3
-  _description: sedgfsdgsfa
+  _weight: 3
+  _itemType: 4
+  _description: 'The One Piece map is divided into four watery quadrants - East Blue,
+    West Blue, North Blue and South Blue. '

@@ -15,6 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: 6545699623869298490, guid: ff8dcdc6fb15bcb49a2e3348724d7ded, type: 3}
   _name: Luffy Poster Old
   _amount: 50
-  _itemType: 6
   _quantity: 15
-  _description: aefsdf
+  _weight: 5
+  _itemType: 6
+  _description: Monkey D. Luffy, commonly known as "Straw Hat Luffy"  is the founder,
+    captain, and strongest combatant of the increasingly infamous and powerful Straw
+    Hat Pirates.

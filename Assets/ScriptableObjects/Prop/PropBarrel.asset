@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Barrel
   _amount: 250
   _quantity: 8
-  _weight: 0
+  _weight: 40
   _itemType: 2
-  _description: sdfaffsd
+  _description: Liquor Barrel

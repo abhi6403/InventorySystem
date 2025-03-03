@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Axe
   _amount: 350
   _quantity: 3
-  _weight: 0
+  _weight: 25
   _itemType: 2
-  _description: sadffasdf
+  _description: Axe can be used to cut things.

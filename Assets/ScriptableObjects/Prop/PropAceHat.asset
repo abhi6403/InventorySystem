@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Ace Hat
   _amount: 200
   _quantity: 5
-  _weight: 0
+  _weight: 3
   _itemType: 2
-  _description: sdfgasgas
+  _description: Hat of Portgas.D.Ace.
