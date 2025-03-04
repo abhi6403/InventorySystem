@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 81703065668952688, guid: 0dd9e846f29efae49a43b94d982956c7, type: 3}
   _name: Enma
-  _amount: 900
+  _amount: 2000
   _quantity: 1
-  _weight: 0
+  _weight: 30
   _itemType: 0
-  _description: asfdasf
+  _description: Enma is one of the 21 Great Grade swords. It was forged by Shimotsuki
+    Kouzaburou and once wielded by Kouzuki Oden. Deals Damage of 500.

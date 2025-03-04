@@ -16,6 +16,6 @@ MonoBehaviour:
   _name: Gun
   _amount: 200
   _quantity: 10
-  _weight: 0
+  _weight: 10
   _itemType: 0
-  _description: adsaddasd
+  _description: Deals damage of 100.

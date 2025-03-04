@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: WeponRayliegh
   m_EditorClassIdentifier: 
   _sprite: {fileID: 8821782204291705176, guid: 3d8d42444ce336a4490cf9eca6cdb52a, type: 3}
-  _name: Rayliegh
-  _amount: 450
+  _name: Rayliegh Weapon
+  _amount: 600
   _quantity: 2
-  _weight: 0
+  _weight: 15
   _itemType: 0
-  _description: dfaf
+  _description: A straight-bladed sword with a katana-styled hilt-guard.Deals damage
+    of 250.

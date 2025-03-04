@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: WeponKatakuri
   m_EditorClassIdentifier: 
   _sprite: {fileID: -3927249411634099148, guid: 8c8e97538eb8c6b41856c528d3460847, type: 3}
-  _name: Katakuri Weapon
-  _amount: 500
+  _name: Mogura
+  _amount: 800
   _quantity: 3
-  _weight: 0
+  _weight: 25
   _itemType: 0
-  _description: dsafasfd
+  _description: Mogura is a pink trident, with its three prongs tightly together.
+    The middle prong is a full spear-shape, while the two on the sides are half-blades.Deals
+    Damage of 300.

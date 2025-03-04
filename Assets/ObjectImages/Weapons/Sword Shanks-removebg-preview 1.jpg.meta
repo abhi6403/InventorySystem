@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 57b4c553a23709b45a711efef0225a12
+guid: 1aca779c91a28db45a22c57bbe0e1879
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3215317080329722638
-    second: Weapon Mihawk-removebg-preview_0
+      213: 8333236053200148087
+    second: Sword Shanks-removebg-preview 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapon Mihawk-removebg-preview_0
+      name: Sword Shanks-removebg-preview 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 365
-        height: 683
+        width: 375
+        height: 666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f463b2a626e063d0800000000000000
-      internalID: -3215317080329722638
+      spriteID: 776197cf90a95a370800000000000000
+      internalID: 8333236053200148087
       vertices: []
       indices: 
       edges: []

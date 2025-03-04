@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: WeponUsopp
   m_EditorClassIdentifier: 
   _sprite: {fileID: -8387917508061575823, guid: ebe86387184cfd84c94e21530a9bd564, type: 3}
-  _name: Usopp
+  _name: The Kabuto
   _amount: 400
   _quantity: 6
-  _weight: 0
+  _weight: 10
   _itemType: 0
-  _description: wsdaf
+  _description: The Kabuto is a dial-powered giant slingshot.Has different types
+    of shots with different damage power.

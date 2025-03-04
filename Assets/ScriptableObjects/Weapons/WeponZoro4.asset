@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: WeponZoro4
   m_EditorClassIdentifier: 
   _sprite: {fileID: 8952377895117822751, guid: 1d362c42ac375d64ca58ab9e798ce8ed, type: 3}
-  _name: Ichimonji
+  _name: Wado Ichimonji
   _amount: 950
   _quantity: 1
-  _weight: 0
+  _weight: 20
   _itemType: 0
-  _description: sadfaf
+  _description: The Wado Ichimonji is a sword of great personal importance to Roronoa
+    Zoro. It was forged by Shimotsuki Kouzaburou and was once a prized heirloom of
+    his family. It is also one of the 21 Great Grade swords. Deals damage of 400.

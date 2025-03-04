@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: WeponShanks
   m_EditorClassIdentifier: 
   _sprite: {fileID: 1747320998624561602, guid: 812bc201010417746970c248ed57cd62, type: 3}
-  _name: Shanks
+  _name: Gryphon
   _amount: 800
   _quantity: 3
   _weight: 0
   _itemType: 0
-  _description: sdfaf
+  _description: Gryphon is a saber wielded by Shanks as his main weapon. Deals Damge
+    of 800.
