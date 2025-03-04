@@ -23,6 +23,7 @@ public class ItemView : MonoBehaviour
     public Button plusButton;
     public Button minusButton;
     public Button closeButton;
+    public Button buyButton;
     
     public Canvas mainCanvas;
 
@@ -36,7 +37,6 @@ public class ItemView : MonoBehaviour
 
     public void SetItemController(ItemController _itemController)
     {
-        
         itemController = _itemController;
     }
 
@@ -56,6 +56,7 @@ public class ItemView : MonoBehaviour
         itemWeight.text = "Weight - " + _weight;
     }
     
+
     public Transform GetItemDetailsObjectTransform()
     {
         return mainCanvas.transform;
@@ -69,6 +70,20 @@ public class ItemView : MonoBehaviour
     public void CloseItemDetails()
     {
         itemController.CloseItemDetails();
+    }
+
+    public void ProcessPlusButton()
+    {
+        itemController.ProcessPlusButtonClicked();
+    }
+
+    public void ProcessMinusButton()
+    {
+        itemController.ProcessMinusButtonClicked();
+    }
+    public void PrcessBuyButton()
+    {
+        
     }
     
     public GameObject GetItemDetails()

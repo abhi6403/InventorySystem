@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,18 +10,20 @@ public class ItemModel
    private string itemName;
    private string itemDescription;
    private int itemPrice;
-   private int itemQuantity;
+   private int itemAvailableQuantity;
    private int itemWeight;
+   private int currentQuantity;
    private Transform parentTransform;
-   public GameObject itemDetailsUI;
+   private GameObject itemDetailsUI;
+   private TextMeshProUGUI currentQuantityText;
    
-   public ItemModel(Sprite _itemImage,string _itemName,string _itemDescription,int _itemPrice,int _quantity,int _weight,Transform _parentTransform)
+   public ItemModel(Sprite _itemImage,string _itemName,string _itemDescription,int _itemPrice,int _availableQuantity,int _weight,Transform _parentTransform)
    {
       itemImage = _itemImage;
       itemName = _itemName;
       itemDescription = _itemDescription;
       itemPrice = _itemPrice;
-      itemQuantity = _quantity;
+      itemAvailableQuantity = _availableQuantity;
       itemWeight = _weight;
       parentTransform = _parentTransform;
    }
@@ -34,6 +37,35 @@ public class ItemModel
       itemController = _controller;
    }
 
+   public void IncreaseQuantity(int quantity)
+   {
+      if (currentQuantity < itemAvailableQuantity)
+      {
+         currentQuantity += quantity;
+      }
+   }
+
+   public void DecreaseQuantity(int quantity)
+   {
+      if (currentQuantity > 0)
+      {
+         currentQuantity -= quantity;
+      }
+      
+   }
+   public void SetCurrentQuantityText(TextMeshProUGUI _currentQuantityText)
+   {
+      currentQuantityText = _currentQuantityText;
+   }
+
+   public int GetCurrentQuantity()
+   {
+      return currentQuantity;
+   }
+   public TextMeshProUGUI GetCurrentQuantityText()
+   {
+      return currentQuantityText;
+   }
    public GameObject GetItemDetailsUIGameObject()
    {
       return itemDetailsUI;
@@ -64,7 +96,7 @@ public class ItemModel
 
    public int GetItemQuantity()
    {
-      return itemQuantity;
+      return itemAvailableQuantity;
    }
 
    public int GetItemWeight()

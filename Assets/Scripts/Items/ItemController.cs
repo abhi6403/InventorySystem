@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,13 +19,34 @@ public class ItemController
     public void ShowItemDetails()
     {
         itemView.InitializeItemDetailsUI(GetItemImage(),GetItemName(),GetItemDescription(),GetItemPrice(),GetItemQuantity(),GetItemWeight());
-        //itemView.GetItemDetails().transform.position = itemView.GetItemDetailsObjectTransform().position;
-        //itemView.GetItemDetails().SetActive(true);
         GameObject detailsObject = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
         detailsObject.SetActive(true);
         itemModel.SetItemDetailsUIGameObject(detailsObject);
+        TextMeshProUGUI textMeshPro = detailsObject.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
+        SetItemQuantityText(textMeshPro);
     }
 
+    public void SetItemQuantityText(TextMeshProUGUI _quantityText)
+    {
+        itemModel.SetCurrentQuantityText(_quantityText);
+    }
+
+    public void ProcessPlusButtonClicked()
+    {
+        itemModel.IncreaseQuantity(1);
+        itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
+    }
+
+    public void ProcessMinusButtonClicked()
+    {
+        itemModel.DecreaseQuantity(1);
+        itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
+    }
+
+    public void ProcessBuyButtonClicked()
+    {
+        
+    }
     public void CloseItemDetails()
     {
         GameObject.Destroy(itemModel.GetItemDetailsUIGameObject());
