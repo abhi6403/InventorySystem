@@ -36,7 +36,7 @@ public class ShopController
 
     public InventoryScriptableObject GetShopScriptableObject()
     {
-        return shopView.GetShopScriptableObject();
+        return shopView.GetShopInventoryObject();
     }
 
     public InventoryView GetInventoryView()

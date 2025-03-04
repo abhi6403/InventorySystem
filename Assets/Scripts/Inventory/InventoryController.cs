@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Object;
 
@@ -55,7 +56,29 @@ public class InventoryController
             }
         }
     }
-    
+
+    public void ShowPlayerInventoryItems()
+    {
+        inventoryView.clearAllItems();
+
+        Debug.Log("PlayerInventoryItemsInInventoryController");
+        
+        for (int i = 0; i < GetPlayerInventoryItems().Count; i++)
+        {
+            int itemPrice = GetPlayerInventoryItems()[i]._amount;
+            string itemName = GetPlayerInventoryItems()[i]._name;
+            string itemDescription = GetPlayerInventoryItems()[i]._description;
+            int itemQuantity = GetPlayerInventoryItems()[i]._quantity;
+            int itemWeight = GetPlayerInventoryItems()[i]._weight;
+            Sprite sprite = GetPlayerInventoryItems()[i]._sprite;
+            Transform itemTransform = GetInventoryTransform().transform;
+            
+            ItemModel itemModel = new ItemModel(sprite,itemName,itemDescription,itemPrice,itemQuantity,itemWeight,itemTransform);
+            ItemController itemController = new ItemController(itemModel,GetItemView());
+        }
+        
+        
+    }
     public void clearAllItems()
     {
         foreach (Transform child in GetInventoryTransform())
@@ -77,4 +100,10 @@ public class InventoryController
     {
         return inventoryModel.GetInventoryTransform();
     }
+
+    public List<ItemsScriptableObject> GetPlayerInventoryItems()
+    {
+        return inventoryModel.GetPlayerInventoryItems();
+    }
+    
 }

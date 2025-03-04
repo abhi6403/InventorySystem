@@ -11,15 +11,7 @@ public class InventoryView : MonoBehaviour
     {
         inventoryController = _inventoryController;
     }
-
-    public void ShowAllItems()
-    {
-        inventoryController.ShowInventory();
-    }
-    public void ShowInventoryItem(ItemTypes _itemType)
-    {
-        inventoryController.ShowInventoryItem(_itemType);
-    }
+    
     public void clearAllItems()
     {
         foreach (Transform child in inventoryController.GetInventoryTransform() )

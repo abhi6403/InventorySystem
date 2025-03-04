@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ShopView : MonoBehaviour
 {
     private ShopController shopController;
     
     [SerializeField]
-    private InventoryScriptableObject shopScriptableObject;
+    private InventoryScriptableObject shopInventoryObject;
     [SerializeField]
     private Transform shopTransform;
     [SerializeField]
@@ -25,9 +26,9 @@ public class ShopView : MonoBehaviour
     {
         shopController.ShowInventoryItem(_itemType);
     }
-    public InventoryScriptableObject GetShopScriptableObject()
+    public InventoryScriptableObject GetShopInventoryObject()
     {
-        return shopScriptableObject;
+        return shopInventoryObject;
     }
 
     public Transform GetShopTransform()
