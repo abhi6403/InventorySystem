@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemController
@@ -16,10 +17,18 @@ public class ItemController
 
     public void ShowItemDetails()
     {
-        itemView.GetItemDetailsObject().InitializeItemDetailsUI(GetItemImage(),GetItemName(),GetItemDescription(),GetItemPrice(),GetItemQuantity(),GetItemWeight());
-        ItemDetailsUI itemDetailsUI = GameObject.Instantiate(itemView.GetItemDetailsObject(),itemView.GetItemDetailsObjectTransform());
+        itemView.InitializeItemDetailsUI(GetItemImage(),GetItemName(),GetItemDescription(),GetItemPrice(),GetItemQuantity(),GetItemWeight());
+        //itemView.GetItemDetails().transform.position = itemView.GetItemDetailsObjectTransform().position;
+        //itemView.GetItemDetails().SetActive(true);
+        GameObject detailsObject = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
+        detailsObject.SetActive(true);
+        itemModel.SetItemDetailsUIGameObject(detailsObject);
     }
-    
+
+    public void CloseItemDetails()
+    {
+        GameObject.Destroy(itemModel.GetItemDetailsUIGameObject());
+    }
     public Transform GetParentTransform()
     {
         return itemModel.GetParentTransform();

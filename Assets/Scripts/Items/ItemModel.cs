@@ -12,6 +12,7 @@ public class ItemModel
    private int itemQuantity;
    private int itemWeight;
    private Transform parentTransform;
+   public GameObject itemDetailsUI;
    
    public ItemModel(Sprite _itemImage,string _itemName,string _itemDescription,int _itemPrice,int _quantity,int _weight,Transform _parentTransform)
    {
@@ -24,11 +25,19 @@ public class ItemModel
       parentTransform = _parentTransform;
    }
 
+   public void SetItemDetailsUIGameObject(GameObject _gameObject)
+   {
+      itemDetailsUI = _gameObject;
+   }
    public void SetItemController(ItemController _controller)
    {
       itemController = _controller;
    }
 
+   public GameObject GetItemDetailsUIGameObject()
+   {
+      return itemDetailsUI;
+   }
    public Transform GetParentTransform()
    {
       return parentTransform;
