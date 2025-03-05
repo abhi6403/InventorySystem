@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class ShopService : MonoBehaviour
+public class ShopService 
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private ShopController shopController;
+    public void Initialize(ShopView shopView)
     {
-        
+        shopController = new ShopController(shopView);
+        ShowAllItems();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void ShowAllItems()
     {
-        
+        shopController.ShowAllItems();
     }
+    
 }

@@ -6,15 +6,7 @@ using UnityEngine.UI;
 
 public class UIService : MonoBehaviour
 {
-   public ShopView shopView;
    public PlayerView playerView;
-   
-
-   private void setShop()
-   {
-       ShopModel shopModel = new ShopModel();
-       ShopController shopController = new ShopController(shopModel, shopView);
-   }
 
    private void setPlayer()
    {
@@ -26,57 +18,49 @@ public class UIService : MonoBehaviour
    {
        setPlayer();
        playerView.ShowItemsInPlayerInventory();
+   
    }
    public void getAllItemsInShop()
     {
-        setShop();
-        shopView.ShowAllItems();
+        EventService.Instance.OnButtonAllClickedEvent.InvokeEvent();
     }
 
     public void getWeaponItems()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.WEAPON);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.WEAPON);
     }
     public void getFoodItems()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.HEALTH);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.HEALTH);
     }
 
     public void getDevilFruits()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.DEVILFRUIT);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.DEVILFRUIT);
     }
 
     public void getPosters()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.POSTER);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.POSTER);
     }
     
     public void getProps()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.PROPS);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.PROPS);
     }
     
     public void getPotions()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.POTION);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.POTION);
     }
     
     public void getShipItems()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.SHIPITEMS);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.SHIPITEMS);
     }
     
     public void getMap()
     {
-        setShop();
-        shopView.ShowInventoryItem(ItemTypes.MAP);
+        EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.MAP);
     }
 }
