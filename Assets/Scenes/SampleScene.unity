@@ -1856,6 +1856,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventoryTransform: {fileID: 1325055720}
   inventoryView: {fileID: 1180899923}
+  playerItems:
+  - {fileID: 11400000, guid: 3d6a5b08159c08f42b526f5a81dba656, type: 2}
+  - {fileID: 11400000, guid: c092ee27bf089f54cb81048a081c3d01, type: 2}
+  - {fileID: 11400000, guid: 9a666491f6b472648a485e37e06e67ab, type: 2}
 --- !u!4 &735289487
 Transform:
   m_ObjectHideFlags: 0
@@ -3442,10 +3446,10 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 150, y: 150}
+  m_CellSize: {x: 85, y: 100}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
-  m_ConstraintCount: 6
+  m_ConstraintCount: 3
 --- !u!1 &1353584321
 GameObject:
   m_ObjectHideFlags: 0

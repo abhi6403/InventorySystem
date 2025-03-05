@@ -9,6 +9,10 @@ public class InventoryModel
     private List<ItemsScriptableObject> playerInventoryItems;
     private Transform inventoryTransform;
 
+    public InventoryModel()
+    {
+        
+    }
     public InventoryModel(InventoryScriptableObject _inventoryscriptableObject, Transform _inventoryTransform)
     {
         inventoryscriptableObject = _inventoryscriptableObject;
@@ -20,6 +24,17 @@ public class InventoryModel
         playerInventoryItems = _playerInventoryItems;
         inventoryTransform = _inventoryTransform;
         Debug.Log("Player inventory list loaded");
+    }
+
+    public void SetPlayerInventoryItem(List<ItemsScriptableObject> _playerInventoryItems, Transform _inventoryTransform)
+    {
+        playerInventoryItems = _playerInventoryItems;
+        inventoryTransform = _inventoryTransform;
+    }
+    public void SetInventoryScriptableObject(InventoryScriptableObject _inventoryscriptableObject, Transform _inventoryTransform)
+    {
+        inventoryscriptableObject = _inventoryscriptableObject;
+        inventoryTransform = _inventoryTransform;
     }
     public void SetInventoryController(InventoryController _inventoryController)
     {

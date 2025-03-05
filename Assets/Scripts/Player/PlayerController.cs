@@ -1,16 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController 
 {
-    private PlayerModel playerModel;
+    //private PlayerModel playerModel;
     private PlayerView playerView;
+    
+    
+    private InventoryService inventoryService;
 
-    public PlayerController(PlayerModel _playerModel, PlayerView _playerView)
+    public PlayerController(PlayerView _playerView, InventoryService _inventoryService)
     {
-        playerModel = _playerModel;
+        inventoryService = _inventoryService;
         playerView = _playerView;
-        
-        playerModel.SetPlayerController(this);
         playerView.SetPlayerController(this);
         
     }
@@ -26,5 +28,20 @@ public class PlayerController
     {
             //SetInventory().ShowPlayerInventoryItems();
             Debug.Log("Showing items in player inventory");
+    }
+
+    public List<ItemsScriptableObject> GetItemsInPlayerInventory()
+    {
+       return playerView.GetItemsInPlayerInventory();
+    }
+
+    public InventoryView GetInventoryView()
+    {
+        return playerView.GetInventoryView();
+    }
+    public Transform GetPlayerInventoryTransform()
+    {
+        Debug.Log("Getting player inventory transform");
+        return playerView.GetPlayerInventoryTransform();
     }
 }

@@ -6,16 +6,18 @@ public class InventoryController
 {
     private InventoryView inventoryView;
     private InventoryModel inventoryModel;
-    
+
     private ShopService shopService;
+    private PlayerService playerService;
 
     public InventoryController(ShopService _shopService)
     {
         shopService = _shopService;
 
-        inventoryModel = new InventoryModel(shopService.GetShopController().GetShopScriptableObject(), shopService.GetShopController().GetShopTransform());
+        inventoryModel = new InventoryModel();
         inventoryView = shopService.GetShopController().GetInventoryView();
         
+        SetShopInventoryScriptableObject();
         inventoryModel.SetInventoryController(this);
         inventoryView.SetInventoryController(this);
         ShowInventory();
@@ -23,7 +25,26 @@ public class InventoryController
         EventService.Instance.OnFilterButtonClickedEvent.AddListener(ShowInventoryItem);
     }
 
-    public void ShowInventory()
+    public InventoryController(PlayerService _playerService)
+    {
+        playerService = _playerService;
+        
+        inventoryModel = new InventoryModel();
+        inventoryView = playerService.GetPlayerController().GetInventoryView();
+        SetPlayerInventoryItem();
+        
+        inventoryModel.SetInventoryController(this);
+        inventoryView.SetInventoryController(this);
+        ShowPlayerInventoryItems();
+    }
+
+    ~InventoryController()
+    {
+        EventService.Instance.OnButtonAllClickedEvent.RemoveListener(ShowInventory);
+        EventService.Instance.OnFilterButtonClickedEvent.RemoveListener(ShowInventoryItem);
+    }
+
+public void ShowInventory()
     {
         clearAllItems();
         
@@ -56,7 +77,7 @@ public class InventoryController
         
         for (int i = 0; i < GetPlayerInventoryItems().Count; i++)
         {
-            ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform());
+            ItemModel itemModel = new ItemModel(GetPlayerInventoryItems()[i], GetInventoryTransform());
             ItemController itemController = new ItemController(itemModel,GetItemView());
         }
         
@@ -68,6 +89,15 @@ public class InventoryController
         {
             Destroy(child.gameObject);
         }
+    }
+    
+    public void SetPlayerInventoryItem()
+    {
+        inventoryModel.SetPlayerInventoryItem(playerService.GetPlayerController().GetItemsInPlayerInventory(),playerService.GetPlayerController().GetPlayerInventoryTransform());
+    }
+    public void SetShopInventoryScriptableObject()
+    {
+        inventoryModel.SetInventoryScriptableObject(shopService.GetShopController().GetShopScriptableObject(),shopService.GetShopController().GetShopTransform());
     }
     
     public ItemView GetItemView()

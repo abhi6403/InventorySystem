@@ -33,8 +33,8 @@ public class GameService : MonoBehaviour
     {
         
         shopService.Initialize(shopView,inventoryService);
-        inventoryService.Initialize(shopService);
-        playerService.Initialize();
+        playerService.Initialize(playerView,inventoryService);
+        inventoryService.Initialize(shopService,playerService);
         itemService.Initialize();
     }
 }

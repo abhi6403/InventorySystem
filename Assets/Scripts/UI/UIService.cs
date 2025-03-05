@@ -7,18 +7,11 @@ using UnityEngine.UI;
 public class UIService : MonoBehaviour
 {
    public PlayerView playerView;
-
-   private void setPlayer()
-   {
-       PlayerModel playerModel = new PlayerModel();
-       PlayerController playerController = new PlayerController(playerModel, playerView);
-   }
+   
 
    public void ShowAllItemsInPlayerInventory()
    {
-       setPlayer();
        playerView.ShowItemsInPlayerInventory();
-   
    }
    public void getAllItemsInShop()
     {
