@@ -50,7 +50,7 @@ public void ShowInventory()
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
-            ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform());
+            ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
             ItemController itemController = new ItemController(itemModel,GetItemView());
         }
     }
@@ -63,7 +63,7 @@ public void ShowInventory()
         {
             if(GetInventoryScriptableObject().items[i]._itemType == itemType)
             {
-                ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform());
+                ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
                 ItemController itemController = new ItemController(itemModel,GetItemView());
             }
         }
@@ -72,14 +72,11 @@ public void ShowInventory()
     public void ShowPlayerInventoryItems()
     {
         clearAllItems();
-
-        Debug.Log("PlayerInventoryItemsInInventoryController");
         
         for (int i = 0; i < playerService.GetPlayerController().GetItemsInPlayerInventory().Count; i++)
         {
-            ItemModel itemModel = new ItemModel(GetPlayerInventoryItems()[i], GetInventoryTransform());
+            ItemModel itemModel = new ItemModel(GetPlayerInventoryItems()[i], GetInventoryTransform(),ItemParentType.PLAYER);
             ItemController itemController = new ItemController(itemModel,GetItemView());
-            Debug.Log("PlayerInventoryItemsInPlayerInventoryController");
         }
         
         

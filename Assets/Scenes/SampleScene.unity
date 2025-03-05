@@ -1855,7 +1855,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventoryTransform: {fileID: 1325055720}
   inventoryView: {fileID: 1180899923}
-  playerItems: []
+  playerItems:
+  - {fileID: 11400000, guid: 1ad083cfc620cb547ae47de13dee330b, type: 2}
+  - {fileID: 11400000, guid: 692fdfe85c779ef4097621e3796a3d5b, type: 2}
 --- !u!4 &735289487
 Transform:
   m_ObjectHideFlags: 0

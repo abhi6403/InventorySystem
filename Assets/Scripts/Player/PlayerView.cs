@@ -19,7 +19,6 @@ public class PlayerView : MonoBehaviour
 
    public List<ItemsScriptableObject> GetItemsInPlayerInventory()
    {
-      Debug.Log("Getting items in player inventory");
       return playerItems;
    }
 

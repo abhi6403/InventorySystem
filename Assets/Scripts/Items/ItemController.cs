@@ -46,6 +46,7 @@ public class ItemController
     public void ProcessBuyButtonClicked()
     {
         EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
+        itemModel.SetCurrentQuantity(0);
     }
     public void CloseItemDetails()
     {

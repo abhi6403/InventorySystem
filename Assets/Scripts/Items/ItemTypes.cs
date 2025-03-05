@@ -11,3 +11,9 @@ public enum ItemTypes
     POSTER,
     SHIPITEMS,
 }
+
+public enum ItemParentType
+{
+    SHOP,
+    PLAYER,
+}

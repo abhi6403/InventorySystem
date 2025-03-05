@@ -19,8 +19,28 @@ public class PlayerController
 
     public void AddToPlayerInventory(ItemsScriptableObject _itemsScriptableObject)
     {
-        GetItemsInPlayerInventory().Add(_itemsScriptableObject);
+        if (OnBuyItems(_itemsScriptableObject) == false)
+        {
+            GetItemsInPlayerInventory().Add(_itemsScriptableObject);
+            inventoryService.GetInventoryController().ShowPlayerInventoryItems();
+        }
+    }
+
+    public bool OnBuyItems(ItemsScriptableObject _itemsScriptableObject)
+    {
+        bool added = false;
+
+        for (int i = 0; i < GetItemsInPlayerInventory().Count; i++)
+        {
+            if (GetItemsInPlayerInventory()[i] == _itemsScriptableObject)
+            {
+                Debug.Log("Item is already added to player inventory");
+                added = true;
+                break;
+            }
+        }
         inventoryService.GetInventoryController().ShowPlayerInventoryItems();
+        return added;
     }
     
     public List<ItemsScriptableObject> GetItemsInPlayerInventory()
@@ -34,7 +54,6 @@ public class PlayerController
     }
     public Transform GetPlayerInventoryTransform()
     {
-        Debug.Log("Getting player inventory transform");
         return playerView.GetPlayerInventoryTransform();
     }
 }
