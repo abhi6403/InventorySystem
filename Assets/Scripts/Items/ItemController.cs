@@ -18,7 +18,7 @@ public class ItemController
 
     public void ShowItemDetails()
     {
-        itemView.InitializeItemDetailsUI(GetItemImage(),GetItemName(),GetItemDescription(),GetItemPrice(),GetItemQuantity(),GetItemWeight());
+        itemView.InitializeItemDetails(itemModel.GetItem());
         GameObject detailsObject = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
         detailsObject.SetActive(true);
         itemModel.SetItemDetailsUIGameObject(detailsObject);
@@ -45,7 +45,7 @@ public class ItemController
 
     public void ProcessBuyButtonClicked()
     {
-        
+        EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
     }
     public void CloseItemDetails()
     {

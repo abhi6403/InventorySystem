@@ -16,15 +16,17 @@ public class ItemModel
    private Transform parentTransform;
    private GameObject itemDetailsUI;
    private TextMeshProUGUI currentQuantityText;
+   private ItemsScriptableObject item;
    
    public ItemModel(ItemsScriptableObject _itemsScriptableObject, Transform _parentTransform)
    {
-      itemImage = _itemsScriptableObject._sprite;
-      itemName = _itemsScriptableObject.name;
-      itemDescription = _itemsScriptableObject._description;
-      itemPrice = _itemsScriptableObject._amount;
-      itemAvailableQuantity = _itemsScriptableObject._quantity;
-      itemWeight = _itemsScriptableObject._weight;
+      item = _itemsScriptableObject;
+      itemImage = item._sprite;
+      itemName = item.name;
+      itemDescription = item._description;
+      itemPrice = item._amount;
+      itemAvailableQuantity = item._quantity;
+      itemWeight = item._weight;
       parentTransform = _parentTransform;
    }
 
@@ -58,6 +60,10 @@ public class ItemModel
       currentQuantityText = _currentQuantityText;
    }
 
+   public ItemsScriptableObject GetItem()
+   {
+      return item;
+   }
    public int GetCurrentQuantity()
    {
       return currentQuantity;

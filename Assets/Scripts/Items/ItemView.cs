@@ -40,20 +40,14 @@ public class ItemView : MonoBehaviour
         itemController = _itemController;
     }
 
-    public void InitializeItemDetailsUI(
-        Sprite _sprite,
-        String _name,
-        String _description,
-        int _berries,
-        int _availableQuantity,
-        int _weight)
+    public void InitializeItemDetails(ItemsScriptableObject _items)
     {
-        itemDetailsImage.sprite = _sprite;
-        itemName.text = _name;
-        itemDescription.text = _description;
-        itemBerries.text = "Berries - " + _berries;
-        itemAvailableQuantity.text = "Available - " + _availableQuantity;
-        itemWeight.text = "Weight - " + _weight;
+        itemDetailsImage.sprite = _items._sprite;
+        itemName.text = _items._name;
+        itemDescription.text = _items._description;
+        itemBerries.text = "Berries - " + _items._amount;
+        itemAvailableQuantity.text = "Available - " + _items._quantity;
+        itemWeight.text = "Weight - " + _items._weight;
     }
     
 
@@ -83,7 +77,7 @@ public class ItemView : MonoBehaviour
     }
     public void PrcessBuyButton()
     {
-        
+        itemController.ProcessBuyButtonClicked();
     }
     
     public GameObject GetItemDetails()

@@ -22,10 +22,6 @@ public class PlayerView : MonoBehaviour
       Debug.Log("Getting items in player inventory");
       return playerItems;
    }
-   public void ShowItemsInPlayerInventory()
-   {
-      playerController.ShowItemsInPlayerInventory();
-   }
 
    public Transform GetPlayerInventoryTransform()
    {

@@ -13,19 +13,7 @@ public class InventoryModel
     {
         
     }
-    public InventoryModel(InventoryScriptableObject _inventoryscriptableObject, Transform _inventoryTransform)
-    {
-        inventoryscriptableObject = _inventoryscriptableObject;
-        inventoryTransform = _inventoryTransform;
-    }
-
-    public InventoryModel(List<ItemsScriptableObject> _playerInventoryItems, Transform _inventoryTransform)
-    {
-        playerInventoryItems = _playerInventoryItems;
-        inventoryTransform = _inventoryTransform;
-        Debug.Log("Player inventory list loaded");
-    }
-
+ 
     public void SetPlayerInventoryItem(List<ItemsScriptableObject> _playerInventoryItems, Transform _inventoryTransform)
     {
         playerInventoryItems = _playerInventoryItems;

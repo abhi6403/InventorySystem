@@ -19,10 +19,13 @@ public class EventService
     
     public EventController OnButtonAllClickedEvent { get; private set; }
     public EventController<ItemTypes> OnFilterButtonClickedEvent { get; private set; }
+    
+    public EventController<ItemsScriptableObject> OnBuyButtonClickedEvent { get; private set; }
 
     public EventService()
     {
         OnButtonAllClickedEvent = new EventController();
         OnFilterButtonClickedEvent = new EventController<ItemTypes>();
+        OnBuyButtonClickedEvent = new EventController<ItemsScriptableObject>();
     }
 }

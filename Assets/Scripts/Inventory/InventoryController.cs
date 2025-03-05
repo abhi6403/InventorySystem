@@ -75,10 +75,11 @@ public void ShowInventory()
 
         Debug.Log("PlayerInventoryItemsInInventoryController");
         
-        for (int i = 0; i < GetPlayerInventoryItems().Count; i++)
+        for (int i = 0; i < playerService.GetPlayerController().GetItemsInPlayerInventory().Count; i++)
         {
             ItemModel itemModel = new ItemModel(GetPlayerInventoryItems()[i], GetInventoryTransform());
             ItemController itemController = new ItemController(itemModel,GetItemView());
+            Debug.Log("PlayerInventoryItemsInPlayerInventoryController");
         }
         
         

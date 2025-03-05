@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerController 
 {
-    //private PlayerModel playerModel;
     private PlayerView playerView;
     
     
@@ -14,22 +13,16 @@ public class PlayerController
         inventoryService = _inventoryService;
         playerView = _playerView;
         playerView.SetPlayerController(this);
+        EventService.Instance.OnBuyButtonClickedEvent.AddListener(AddToPlayerInventory);
         
     }
-    
-    /*public InventoryController  SetInventory()
-    {
-        InventoryModel inventoryModel = new InventoryModel(playerModel.GetPlayerInventoryItems(),playerView.GetPlayerInventoryTransform());
-        InventoryController inventoryController = new InventoryController(inventoryModel,playerView.GetInventoryView());
-        return inventoryController;
-    }*/
 
-    public void ShowItemsInPlayerInventory()
+    public void AddToPlayerInventory(ItemsScriptableObject _itemsScriptableObject)
     {
-            //SetInventory().ShowPlayerInventoryItems();
-            Debug.Log("Showing items in player inventory");
+        GetItemsInPlayerInventory().Add(_itemsScriptableObject);
+        inventoryService.GetInventoryController().ShowPlayerInventoryItems();
     }
-
+    
     public List<ItemsScriptableObject> GetItemsInPlayerInventory()
     {
        return playerView.GetItemsInPlayerInventory();

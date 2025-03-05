@@ -6,13 +6,6 @@ using UnityEngine.UI;
 
 public class UIService : MonoBehaviour
 {
-   public PlayerView playerView;
-   
-
-   public void ShowAllItemsInPlayerInventory()
-   {
-       playerView.ShowItemsInPlayerInventory();
-   }
    public void getAllItemsInShop()
     {
         EventService.Instance.OnButtonAllClickedEvent.InvokeEvent();
