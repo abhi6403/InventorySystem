@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Katakuri weapon-removebg-preview_0: -3927249411634099148
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

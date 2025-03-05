@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      weapon Smoker-removebg-preview_0: 7061142727197211147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

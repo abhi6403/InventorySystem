@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit human human-removebg-preview_0: 1804527953579550050
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

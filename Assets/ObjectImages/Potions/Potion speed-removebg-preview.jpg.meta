@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Potion speed-removebg-preview_0: 4574450992341272565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gun-removebg-preview_0: -8067283565938183395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

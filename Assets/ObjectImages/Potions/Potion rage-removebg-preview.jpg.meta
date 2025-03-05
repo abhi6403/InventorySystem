@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Potion rage-removebg-preview_0: -4998509175012683352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Potion heal-removebg-preview_0: 1624825373846944214
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

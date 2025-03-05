@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tools saw-removebg-preview_0: 7939844588491206907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
