@@ -1114,7 +1114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dea46b1405e03447a47c2ef6b3e30f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopView: {fileID: 1353584322}
   playerView: {fileID: 735289486}
 --- !u!1 &491058509
 GameObject:
@@ -3523,7 +3522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3c89551eedbc24eb797c6eaa7419ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiService: {fileID: 0}
   shopView: {fileID: 1353584322}
+  playerView: {fileID: 735289486}
 --- !u!4 &1377001118
 Transform:
   m_ObjectHideFlags: 0

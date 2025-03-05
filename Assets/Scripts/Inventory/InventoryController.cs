@@ -22,15 +22,7 @@ public class InventoryController
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
-            int itemPrice = GetInventoryScriptableObject().items[i]._amount;
-            string itemName = GetInventoryScriptableObject().items[i]._name;
-            string itemDescription = GetInventoryScriptableObject().items[i]._description;
-            int itemQuantity = GetInventoryScriptableObject().items[i]._quantity;
-            int itemWeight = GetInventoryScriptableObject().items[i]._weight;
-            Sprite sprite = GetInventoryScriptableObject().items[i]._sprite;
-            Transform itemTransform = GetInventoryTransform().transform;
-            
-            ItemModel itemModel = new ItemModel(sprite,itemName,itemDescription,itemPrice,itemQuantity,itemWeight,itemTransform);
+            ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform());
             ItemController itemController = new ItemController(itemModel,GetItemView());
         }
     }
@@ -43,15 +35,7 @@ public class InventoryController
         {
             if(GetInventoryScriptableObject().items[i]._itemType == itemType)
             {
-                int itemPrice = GetInventoryScriptableObject().items[i]._amount;
-                string itemName = GetInventoryScriptableObject().items[i]._name;
-                string itemDescription = GetInventoryScriptableObject().items[i]._description;
-                int itemQuantity = GetInventoryScriptableObject().items[i]._quantity;
-                Sprite sprite = GetInventoryScriptableObject().items[i]._sprite;
-                int itemWeight = GetInventoryScriptableObject().items[i]._weight;
-                Transform itemTransform = GetInventoryTransform().transform;
-
-                ItemModel itemModel = new ItemModel(sprite,itemName,itemDescription,itemPrice,itemQuantity,itemWeight,itemTransform);
+                ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform());
                 ItemController itemController = new ItemController(itemModel,GetItemView());
             }
         }
@@ -65,15 +49,7 @@ public class InventoryController
         
         for (int i = 0; i < GetPlayerInventoryItems().Count; i++)
         {
-            int itemPrice = GetPlayerInventoryItems()[i]._amount;
-            string itemName = GetPlayerInventoryItems()[i]._name;
-            string itemDescription = GetPlayerInventoryItems()[i]._description;
-            int itemQuantity = GetPlayerInventoryItems()[i]._quantity;
-            int itemWeight = GetPlayerInventoryItems()[i]._weight;
-            Sprite sprite = GetPlayerInventoryItems()[i]._sprite;
-            Transform itemTransform = GetInventoryTransform().transform;
-            
-            ItemModel itemModel = new ItemModel(sprite,itemName,itemDescription,itemPrice,itemQuantity,itemWeight,itemTransform);
+            ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform());
             ItemController itemController = new ItemController(itemModel,GetItemView());
         }
         

@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class GameService : MonoBehaviour
 {
-    private ItemService itemService;
-    private ShopService shopService;
-    private InventoryService inventoryService;
-    private UIService uiService;
-    private PlayerService playerService;
-    private EventService eventService;
+    public ItemService itemService;
+    public ShopService shopService;
+    public InventoryService inventoryService;
+    public UIService uiService;
+    public PlayerService playerService;
+    public EventService eventService;
 
     [SerializeField]
     private ShopView shopView;
+    [SerializeField]
+    private PlayerView playerView;
     void Start()
     {
         CreateServices();
@@ -29,9 +31,10 @@ public class GameService : MonoBehaviour
 
     private void InjectDependencies()
     {
-        itemService.Initialize();
+        
         shopService.Initialize(shopView);
         inventoryService.Initialize();
         playerService.Initialize();
+        itemService.Initialize();
     }
 }

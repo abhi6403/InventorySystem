@@ -17,14 +17,14 @@ public class ItemModel
    private GameObject itemDetailsUI;
    private TextMeshProUGUI currentQuantityText;
    
-   public ItemModel(Sprite _itemImage,string _itemName,string _itemDescription,int _itemPrice,int _availableQuantity,int _weight,Transform _parentTransform)
+   public ItemModel(ItemsScriptableObject _itemsScriptableObject, Transform _parentTransform)
    {
-      itemImage = _itemImage;
-      itemName = _itemName;
-      itemDescription = _itemDescription;
-      itemPrice = _itemPrice;
-      itemAvailableQuantity = _availableQuantity;
-      itemWeight = _weight;
+      itemImage = _itemsScriptableObject._sprite;
+      itemName = _itemsScriptableObject.name;
+      itemDescription = _itemsScriptableObject._description;
+      itemPrice = _itemsScriptableObject._amount;
+      itemAvailableQuantity = _itemsScriptableObject._quantity;
+      itemWeight = _itemsScriptableObject._weight;
       parentTransform = _parentTransform;
    }
 
