@@ -15,16 +15,16 @@ public class PlayerController
         
     }
     
-    public InventoryController  SetInventory()
+    /*public InventoryController  SetInventory()
     {
         InventoryModel inventoryModel = new InventoryModel(playerModel.GetPlayerInventoryItems(),playerView.GetPlayerInventoryTransform());
         InventoryController inventoryController = new InventoryController(inventoryModel,playerView.GetInventoryView());
         return inventoryController;
-    }
+    }*/
 
     public void ShowItemsInPlayerInventory()
     {
-            SetInventory().ShowPlayerInventoryItems();
+            //SetInventory().ShowPlayerInventoryItems();
             Debug.Log("Showing items in player inventory");
     }
 }

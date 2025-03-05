@@ -3,35 +3,15 @@ using UnityEngine;
 public class ShopController 
 {
     private ShopView shopView;
+    private InventoryService inventoryService;
 
-    public ShopController(ShopView _shopView)
+    public ShopController(ShopView _shopView, InventoryService _inventoryService)
     {
         shopView = _shopView;
+        inventoryService = _inventoryService;
         shopView.SetShopController(this);
-        EventService.Instance.OnButtonAllClickedEvent.AddListener(ShowAllItems);
-        EventService.Instance.OnFilterButtonClickedEvent.AddListener(ShowInventoryItem);
     }
-
-     ~ShopController()
-    {
-        EventService.Instance.OnButtonAllClickedEvent.RemoveListener(ShowAllItems);
-        //EventService.Instance.OnFilterButtonClickedEvent.RemoveListener(ShowInventoryItem);
-    }
-    public InventoryController  SetInventory()
-    {
-        InventoryModel inventoryModel = new InventoryModel(GetShopScriptableObject(),GetShopTransform());
-        InventoryController inventoryController = new InventoryController(inventoryModel,GetInventoryView());
-        return inventoryController;
-    }
-    public void ShowAllItems()
-    {
-        SetInventory().ShowInventory();
-    }
-
-    public void ShowInventoryItem(ItemTypes _itemType)
-    {
-        SetInventory().ShowInventoryItem(_itemType);
-    }
+    
     public Transform GetShopTransform()
     {
         return shopView.GetShopTransform();

@@ -12,13 +12,6 @@ public class InventoryView : MonoBehaviour
         inventoryController = _inventoryController;
     }
     
-    public void clearAllItems()
-    {
-        foreach (Transform child in inventoryController.GetInventoryTransform() )
-        {
-            Destroy(child.gameObject);
-        }
-    }
 
     public ItemView GetItemView()
     {

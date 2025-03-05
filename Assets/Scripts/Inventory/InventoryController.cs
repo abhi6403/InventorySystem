@@ -6,19 +6,26 @@ public class InventoryController
 {
     private InventoryView inventoryView;
     private InventoryModel inventoryModel;
+    
+    private ShopService shopService;
 
-    public InventoryController( InventoryModel _inventoryModel,InventoryView _inventoryView)
+    public InventoryController(ShopService _shopService)
     {
-        inventoryModel = _inventoryModel;
-        inventoryView = _inventoryView;
+        shopService = _shopService;
+
+        inventoryModel = new InventoryModel(shopService.GetShopController().GetShopScriptableObject(), shopService.GetShopController().GetShopTransform());
+        inventoryView = shopService.GetShopController().GetInventoryView();
         
         inventoryModel.SetInventoryController(this);
         inventoryView.SetInventoryController(this);
+        ShowInventory();
+        EventService.Instance.OnButtonAllClickedEvent.AddListener(ShowInventory);
+        EventService.Instance.OnFilterButtonClickedEvent.AddListener(ShowInventoryItem);
     }
 
     public void ShowInventory()
     {
-        inventoryView.clearAllItems();
+        clearAllItems();
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
@@ -29,7 +36,7 @@ public class InventoryController
 
     public void ShowInventoryItem(ItemTypes itemType)
     {
-        inventoryView.clearAllItems();
+        clearAllItems();
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
@@ -43,7 +50,7 @@ public class InventoryController
 
     public void ShowPlayerInventoryItems()
     {
-        inventoryView.clearAllItems();
+        clearAllItems();
 
         Debug.Log("PlayerInventoryItemsInInventoryController");
         

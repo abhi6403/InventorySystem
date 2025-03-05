@@ -16,16 +16,7 @@ public class ShopView : MonoBehaviour
     {
         shopController = _shopController;
     }
-
-    public void ShowAllItems()
-    {
-        shopController.ShowAllItems();
-    }
-
-    public void ShowInventoryItem(ItemTypes _itemType)
-    {
-        shopController.ShowInventoryItem(_itemType);
-    }
+    
     public InventoryScriptableObject GetShopInventoryObject()
     {
         return shopInventoryObject;

@@ -3,15 +3,12 @@ using UnityEngine;
 public class ShopService 
 {
     private ShopController shopController;
-    public void Initialize(ShopView shopView)
+    public void Initialize(ShopView shopView,InventoryService inventoryService)
     {
-        shopController = new ShopController(shopView);
-        ShowAllItems();
+        shopController = new ShopController(shopView, inventoryService);
     }
-    
-    public void ShowAllItems()
+    public ShopController GetShopController()
     {
-        shopController.ShowAllItems();
+        return shopController;
     }
-    
 }
