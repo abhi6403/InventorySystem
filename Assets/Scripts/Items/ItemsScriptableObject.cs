@@ -10,6 +10,7 @@ public class ItemsScriptableObject : ScriptableObject
     public int _amount;
     public int _quantity;
     public int _weight;
+    public int _inPlayerQuantity;
     public ItemTypes _itemType;
     
     [TextArea(10,15)]

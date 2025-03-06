@@ -14,6 +14,8 @@ public class GameService : MonoBehaviour
     private ShopView shopView;
     [SerializeField]
     private PlayerView playerView;
+    [SerializeField]
+    private ItemView itemView;
     void Start()
     {
         CreateServices();
@@ -23,7 +25,6 @@ public class GameService : MonoBehaviour
     private void CreateServices()
     {
         eventService = new EventService();
-        itemService = new ItemService();
         shopService = new ShopService();
         inventoryService = new InventoryService();
         playerService = new PlayerService();
@@ -31,10 +32,8 @@ public class GameService : MonoBehaviour
 
     private void InjectDependencies()
     {
-        
         shopService.Initialize(shopView,inventoryService);
-        playerService.Initialize(playerView,inventoryService);
-        inventoryService.Initialize(shopService,playerService);
-        itemService.Initialize();
+        playerService.Initialize(playerView,inventoryService,itemView);
+        inventoryService.Initialize(shopService,playerService,itemView,itemService);
     }
 }

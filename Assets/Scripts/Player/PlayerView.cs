@@ -11,6 +11,8 @@ public class PlayerView : MonoBehaviour
    private InventoryView inventoryView;
    [SerializeField]
    private List<ItemsScriptableObject> playerItems;
+   
+   public InventoryScriptableObject inventory;
 
    public void SetPlayerController(PlayerController _playerController)
    {
@@ -27,6 +29,10 @@ public class PlayerView : MonoBehaviour
       return playerInventoryTransform;
    }
 
+   public InventoryScriptableObject GetPlayerInventory()
+   {
+      return inventory;
+   }
    public InventoryView GetInventoryView()
    {
       return inventoryView;

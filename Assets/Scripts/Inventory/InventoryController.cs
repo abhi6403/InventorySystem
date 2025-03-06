@@ -9,11 +9,14 @@ public class InventoryController
 
     private ShopService shopService;
     private PlayerService playerService;
+    private ItemService itemService;
+    private ItemView itemView;
 
-    public InventoryController(ShopService _shopService)
+    public InventoryController(ShopService _shopService,ItemView _itemView,ItemService _itemService)
     {
         shopService = _shopService;
-
+        itemService = _itemService;
+        itemView = _itemView;
         inventoryModel = new InventoryModel();
         inventoryView = shopService.GetShopController().GetInventoryView();
         
@@ -25,13 +28,14 @@ public class InventoryController
         EventService.Instance.OnFilterButtonClickedEvent.AddListener(ShowInventoryItem);
     }
 
-    public InventoryController(PlayerService _playerService)
+    public InventoryController(PlayerService _playerService,ItemView _itemView,ItemService _itemService)
     {
         playerService = _playerService;
         
         inventoryModel = new InventoryModel();
-        inventoryView = playerService.GetPlayerController().GetInventoryView();
         SetPlayerInventoryItem();
+        inventoryView = playerService.GetPlayerController().GetInventoryView();
+ 
         
         inventoryModel.SetInventoryController(this);
         inventoryView.SetInventoryController(this);
@@ -50,8 +54,7 @@ public void ShowInventory()
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
-            ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
-            ItemController itemController = new ItemController(itemModel,GetItemView());
+            itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform());
         }
     }
 
@@ -63,23 +66,19 @@ public void ShowInventory()
         {
             if(GetInventoryScriptableObject().items[i]._itemType == itemType)
             {
-                ItemModel itemModel = new ItemModel(GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
-                ItemController itemController = new ItemController(itemModel,GetItemView());
+                itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform());
             }
         }
     }
 
     public void ShowPlayerInventoryItems()
     {
-        clearAllItems();
-        
-        for (int i = 0; i < playerService.GetPlayerController().GetItemsInPlayerInventory().Count; i++)
-        {
-            ItemModel itemModel = new ItemModel(GetPlayerInventoryItems()[i], GetInventoryTransform(),ItemParentType.PLAYER);
-            ItemController itemController = new ItemController(itemModel,GetItemView());
-        }
-        
-        
+        //clearAllItems();
+       
+            /*for (int i = 0; i < playerService.GetPlayerController().GetItemsInPlayerInventory().Count; i++)
+            {
+                
+            }*/
     }
     public void clearAllItems()
     {

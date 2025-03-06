@@ -19,6 +19,7 @@ public class ItemView : MonoBehaviour
     public TextMeshProUGUI itemBerries;
     public TextMeshProUGUI itemQuantity;
     public TextMeshProUGUI itemAvailableQuantity;
+    public TextMeshProUGUI itemAvailableInPlayer;
     public TextMeshProUGUI itemWeight;
     public Button plusButton;
     public Button minusButton;
@@ -31,6 +32,7 @@ public class ItemView : MonoBehaviour
     {
         mainCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         itemDetails.SetActive(false);
+        itemAvailableInPlayer.gameObject.SetActive(false);
         thisbutton = GetComponent<Button>();
         thisbutton.onClick.AddListener(itemController.ShowItemDetails);
     }
@@ -78,6 +80,15 @@ public class ItemView : MonoBehaviour
     public void PrcessBuyButton()
     {
         itemController.ProcessBuyButtonClicked();
+    }
+
+    public TextMeshProUGUI GetItemAvailableInPlayer()
+    {
+        return itemAvailableInPlayer;
+    }
+    public TextMeshProUGUI GetAvailableItemQuantityText()
+    {
+        return itemAvailableQuantity;
     }
     
     public GameObject GetItemDetails()

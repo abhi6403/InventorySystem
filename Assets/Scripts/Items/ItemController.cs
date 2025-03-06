@@ -7,10 +7,10 @@ public class ItemController
     private ItemModel itemModel;
     private ItemView itemView;
 
-    public ItemController(ItemModel _itemModel, ItemView _itemView)
+    public ItemController(ItemView _itemView, ItemsScriptableObject _itemsScriptableObject,Transform _getParentTransform)
     {
-        itemModel = _itemModel;
-        itemView = GameObject.Instantiate(_itemView,GetParentTransform());
+        itemModel = new ItemModel(_itemsScriptableObject, _getParentTransform);
+        itemView = GameObject.Instantiate(_itemView,_getParentTransform);
         itemView.Initialize(GetItemImage(),GetItemPrice());
         itemModel.SetItemController(this);
         itemView.SetItemController(this);
@@ -46,7 +46,14 @@ public class ItemController
     public void ProcessBuyButtonClicked()
     {
         EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
+    }
+
+    public void DoafterBuyButtonClicked()
+    {
         itemModel.SetCurrentQuantity(0);
+        itemView.GetAvailableItemQuantityText().gameObject.SetActive(false);
+        itemView.GetItemAvailableInPlayer().gameObject.SetActive(true);
+        itemView.GetItemAvailableInPlayer().text = itemModel.GetCurrentQuantityInPlayer().ToString();
     }
     public void CloseItemDetails()
     {
@@ -76,9 +83,9 @@ public class ItemController
         return itemModel.GetItemPrice();
     }
 
-    public int GetItemQuantity()
+    public int GetItemAvailableQuantity()
     {
-        return itemModel.GetItemQuantity();
+        return itemModel.GetItemAvailableQuantity();
     }
 
     public int GetItemWeight()
