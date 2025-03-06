@@ -10,9 +10,9 @@ public class ItemController
     private GameObject itemDetails;
     private GameObject confirmationPannel;
 
-    public ItemController(ItemView _itemView, ItemsScriptableObject _itemsScriptableObject,Transform _getParentTransform)
+    public ItemController(ItemView _itemView, ItemsScriptableObject _itemsScriptableObject,Transform _getParentTransform,ItemParentType _itemParentType)
     {
-        itemModel = new ItemModel(_itemsScriptableObject, _getParentTransform);
+        itemModel = new ItemModel(_itemsScriptableObject, _getParentTransform, _itemParentType);
         itemView = GameObject.Instantiate(_itemView,_getParentTransform);
         itemView.Initialize(GetItemImage(),GetItemPrice());
         itemModel.SetItemController(this);
@@ -21,16 +21,28 @@ public class ItemController
 
     public void ShowItemDetails()
     {
-        itemView.InitializeItemDetails(itemModel.GetItem());
-        //GameObject detailsObject = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
-        itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
-        itemDetails.SetActive(true);
-        //detailsObject.SetActive(true);
-        itemModel.SetItemDetailsUIGameObject(itemDetails);
-        TextMeshProUGUI textMeshPro = itemDetails.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
-        SetItemQuantityText(textMeshPro);
-        TextMeshProUGUI textMeshPro1 = itemDetails.transform.Find("ItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
-        itemModel.SetAvailableQuantityText(textMeshPro1);
+        if (itemModel.GetItemParentType() == ItemParentType.SHOP)
+        {
+            itemView.InitializeItemDetails(itemModel.GetItem());
+            itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
+            itemDetails.SetActive(true);
+            itemModel.SetItemDetailsUIGameObject(itemDetails);
+            TextMeshProUGUI textMeshPro = itemDetails.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
+            SetItemQuantityText(textMeshPro);
+            TextMeshProUGUI textMeshPro1 = itemDetails.transform.Find("ItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
+            itemModel.SetAvailableQuantityText(textMeshPro1);
+        }else if (itemModel.GetItemParentType() == ItemParentType.PLAYER)
+        {
+            itemView.InitializePlayerItemDetails(itemModel.GetItem());
+            itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
+            itemDetails.SetActive(true);
+            itemModel.SetItemDetailsUIGameObject(itemDetails);
+            TextMeshProUGUI textMeshPro = itemDetails.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
+            SetItemQuantityText(textMeshPro);
+            TextMeshProUGUI textMeshPro1 = itemDetails.transform.Find("PlayerItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
+            itemModel.SetAvailableQuantityInPlayerText(textMeshPro1);
+        }
+        
     }
 
     public void SetItemQuantityText(TextMeshProUGUI _quantityText)
@@ -42,14 +54,14 @@ public class ItemController
     {
         itemModel.IncreaseQuantity(1);
         itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
-        itemModel.GetAvailableQuantityText().text = "Available - " + itemModel.GetItemAvailableQuantity();
+        itemModel.GetAvailableQuantityInShopText().text = "Available - " + GetItemAvailableQuantity();
     }
 
     public void ProcessMinusButtonClicked()
     {
         itemModel.DecreaseQuantity(1);
         itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
-        itemModel.GetAvailableQuantityText().text = "Available - " + itemModel.GetItemAvailableQuantity();
+        itemModel.GetAvailableQuantityInShopText().text = "Available - " + itemModel.GetItemAvailableQuantity();
     }
 
     public void ProcessBuyButtonClicked()
@@ -61,6 +73,7 @@ public class ItemController
     public void processConfirmButtonClicked()
     {
         EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
+        itemModel.SetCurrentQuantity(0);
         confirmationPannel.SetActive(false);
         itemDetails.SetActive(false);
     }
@@ -78,6 +91,15 @@ public class ItemController
     public Transform GetParentTransform()
     {
         return itemModel.GetParentTransform();
+    }
+    
+    public int GetAvailableQuantityInPlayer()
+    {
+        return itemModel.GetAvailableQuantityInPlayer();
+    }
+    public int GetCurrentQuantityInPlayer()
+    {
+        return itemModel.GetCurrentQuantityInPlayer();
     }
     public Sprite GetItemImage()
     {

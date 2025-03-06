@@ -52,11 +52,19 @@ public class ItemView : MonoBehaviour
         itemName.text = _items._name;
         itemDescription.text = _items._description;
         itemBerries.text = "Berries - " + _items._amount;
-        itemAvailableQuantity.text = "Available - " + _items._quantity;
+        itemAvailableQuantity.text = "Available - " + itemController.GetItemAvailableQuantity();
         itemWeight.text = "Weight - " + _items._weight;
     }
-    
 
+    public void InitializePlayerItemDetails(ItemsScriptableObject _items)
+    {
+        itemDetailsImage.sprite = _items._sprite;
+        itemName.text = _items._name;
+        itemDescription.text = _items._description;
+        itemBerries.text = "Berries - " + _items._amount;
+        itemAvailableInPlayer.text = "Available - " + itemController.GetAvailableQuantityInPlayer();
+        itemWeight.text = "Weight - " + _items._weight;
+    }
     public Transform GetItemDetailsObjectTransform()
     {
         return mainCanvas.transform;

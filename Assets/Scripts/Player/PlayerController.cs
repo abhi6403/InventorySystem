@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using static UnityEngine.Object;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class PlayerController
     
     private InventoryService inventoryService;
     private ItemView itemView;
+    private TextMeshProUGUI playerItemAvailableText;
+    private int playerItemAvailable;
 
     public PlayerController(PlayerView _playerView, InventoryService _inventoryService,ItemView _itemView)
     {
@@ -37,7 +40,7 @@ public class PlayerController
         clearAllItems();
         for (int i = 0; i < playerView.GetItemsInPlayerInventory().Count; i++)
         {
-            ItemService item = new ItemService(itemView, playerView.GetItemsInPlayerInventory()[i], GetPlayerInventoryTransform());
+            ItemService item = new ItemService(itemView, playerView.GetItemsInPlayerInventory()[i], GetPlayerInventoryTransform(),ItemParentType.PLAYER);
         }
     }
     

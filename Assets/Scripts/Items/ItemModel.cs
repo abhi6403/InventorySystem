@@ -12,29 +12,31 @@ public class ItemModel
    
    private int itemPrice;
    private int itemAvailableQuantity;
+   private int itemAvailableQuantityInPlayer;
    private int itemWeight;
    private int currentQuantity;
    private int currentQuantityInPlayer;
-   private int currentAvailableQuantityInPlayer;
+   
    
    private Transform parentTransform;
    private GameObject itemDetailsUI;
    private TextMeshProUGUI currentQuantityText;
-   private TextMeshProUGUI availableQuantityText;
+   private TextMeshProUGUI availableQuantityInShopText;
+   private TextMeshProUGUI availableQuantityInPlayerText;
    private ItemsScriptableObject item;
    private ItemParentType itemParentType;
    
-   public ItemModel(ItemsScriptableObject _itemsScriptableObject, Transform _parentTransform)
+   public ItemModel(ItemsScriptableObject _itemsScriptableObject, Transform _parentTransform, ItemParentType _itemParentType)
    {
       item = _itemsScriptableObject;
-      //itemParentType = _itemParentType;
+      itemParentType = _itemParentType;
       itemImage = item._sprite;
       itemName = item.name;
       itemDescription = item._description;
       itemPrice = item._amount;
       itemAvailableQuantity = item._quantity;
       itemWeight = item._weight;
-      currentAvailableQuantityInPlayer = item._inPlayerQuantity;
+      itemAvailableQuantityInPlayer = item._inPlayerQuantity;
       parentTransform = _parentTransform;
    }
    
@@ -66,6 +68,10 @@ public class ItemModel
       
    }
 
+   public int GetAvailableQuantityInPlayer()
+   {
+      return itemAvailableQuantityInPlayer;
+   }
    public int GetCurrentQuantityInPlayer()
    {
       return currentQuantityInPlayer;
@@ -80,7 +86,17 @@ public class ItemModel
    }
    public void SetAvailableQuantityText(TextMeshProUGUI _availableQuantityText)
    {
-      availableQuantityText = _availableQuantityText;
+      availableQuantityInShopText = _availableQuantityText;
+   }
+
+   public void SetAvailableQuantityInPlayerText(TextMeshProUGUI _availableQuantityInPlayerText)
+   {
+      availableQuantityInPlayerText = _availableQuantityInPlayerText;
+   }
+
+   public TextMeshProUGUI GetAvailableQuantityInPlayerText()
+   {
+      return availableQuantityInPlayerText;
    }
    public ItemsScriptableObject GetItem()
    {
@@ -94,10 +110,14 @@ public class ItemModel
    {
       return currentQuantityText;
    }
-   
-   public TextMeshProUGUI GetAvailableQuantityText()
+
+   public ItemParentType GetItemParentType()
    {
-      return availableQuantityText;
+      return itemParentType;
+   }
+   public TextMeshProUGUI GetAvailableQuantityInShopText()
+   {
+      return availableQuantityInShopText;
    }
    public GameObject GetItemDetailsUIGameObject()
    {

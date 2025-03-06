@@ -54,7 +54,7 @@ public void ShowInventory()
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
-            itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform());
+            itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
         }
     }
 
@@ -66,7 +66,7 @@ public void ShowInventory()
         {
             if(GetInventoryScriptableObject().items[i]._itemType == itemType)
             {
-                itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform());
+                itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
             }
         }
     }
