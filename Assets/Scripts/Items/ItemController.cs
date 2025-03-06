@@ -7,6 +7,9 @@ public class ItemController
     private ItemModel itemModel;
     private ItemView itemView;
 
+    private GameObject itemDetails;
+    private GameObject confirmationPannel;
+
     public ItemController(ItemView _itemView, ItemsScriptableObject _itemsScriptableObject,Transform _getParentTransform)
     {
         itemModel = new ItemModel(_itemsScriptableObject, _getParentTransform);
@@ -19,12 +22,14 @@ public class ItemController
     public void ShowItemDetails()
     {
         itemView.InitializeItemDetails(itemModel.GetItem());
-        GameObject detailsObject = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
-        detailsObject.SetActive(true);
-        itemModel.SetItemDetailsUIGameObject(detailsObject);
-        TextMeshProUGUI textMeshPro = detailsObject.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
+        //GameObject detailsObject = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
+        itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
+        itemDetails.SetActive(true);
+        //detailsObject.SetActive(true);
+        itemModel.SetItemDetailsUIGameObject(itemDetails);
+        TextMeshProUGUI textMeshPro = itemDetails.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
         SetItemQuantityText(textMeshPro);
-        TextMeshProUGUI textMeshPro1 = detailsObject.transform.Find("ItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI textMeshPro1 = itemDetails.transform.Find("ItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
         itemModel.SetAvailableQuantityText(textMeshPro1);
     }
 
@@ -49,7 +54,21 @@ public class ItemController
 
     public void ProcessBuyButtonClicked()
     {
+        confirmationPannel = GameObject.Instantiate(itemView.confirmationPannel,itemView.GetItemDetailsObjectTransform());
+        confirmationPannel.SetActive(true);
+    }
+
+    public void processConfirmButtonClicked()
+    {
         EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
+        confirmationPannel.SetActive(false);
+        itemDetails.SetActive(false);
+    }
+
+    public void processCancelButtonClicked()
+    {
+        itemView.confirmationPannel.gameObject.SetActive(false);
+        confirmationPannel.SetActive(false);
     }
     
     public void CloseItemDetails()

@@ -12,6 +12,7 @@ public class ItemView : MonoBehaviour
     public TextMeshProUGUI itemPrice;
     
     public GameObject itemDetails;
+    public GameObject confirmationPannel;
     
     public Image itemDetailsImage;
     public TextMeshProUGUI itemName;
@@ -33,6 +34,7 @@ public class ItemView : MonoBehaviour
     {
         mainCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         itemDetails.SetActive(false);
+        confirmationPannel.SetActive(false);
         itemAvailableInPlayer.gameObject.SetActive(false);
         SellButton.gameObject.SetActive(false);
         thisbutton = GetComponent<Button>();
@@ -70,6 +72,15 @@ public class ItemView : MonoBehaviour
         itemController.CloseItemDetails();
     }
 
+    public void ProcessConfirmButtonClicked()
+    {
+        itemController.processConfirmButtonClicked();
+    }
+
+    public void ProcessCancelButtonClicked()
+    {
+        itemController.processCancelButtonClicked();
+    }
     public void ProcessPlusButton()
     {
         itemController.ProcessPlusButtonClicked();
