@@ -25,6 +25,7 @@ public class ItemView : MonoBehaviour
     public Button minusButton;
     public Button closeButton;
     public Button buyButton;
+    public Button SellButton;
     
     public Canvas mainCanvas;
 
@@ -33,6 +34,7 @@ public class ItemView : MonoBehaviour
         mainCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         itemDetails.SetActive(false);
         itemAvailableInPlayer.gameObject.SetActive(false);
+        SellButton.gameObject.SetActive(false);
         thisbutton = GetComponent<Button>();
         thisbutton.onClick.AddListener(itemController.ShowItemDetails);
     }

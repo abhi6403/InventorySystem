@@ -9,14 +9,18 @@ public class ItemModel
    private Sprite itemImage;
    private string itemName;
    private string itemDescription;
+   
    private int itemPrice;
    private int itemAvailableQuantity;
    private int itemWeight;
    private int currentQuantity;
    private int currentQuantityInPlayer;
+   private int currentAvailableQuantityInPlayer;
+   
    private Transform parentTransform;
    private GameObject itemDetailsUI;
    private TextMeshProUGUI currentQuantityText;
+   private TextMeshProUGUI availableQuantityText;
    private ItemsScriptableObject item;
    private ItemParentType itemParentType;
    
@@ -30,10 +34,10 @@ public class ItemModel
       itemPrice = item._amount;
       itemAvailableQuantity = item._quantity;
       itemWeight = item._weight;
-      currentQuantityInPlayer = item._inPlayerQuantity;
+      currentAvailableQuantityInPlayer = item._inPlayerQuantity;
       parentTransform = _parentTransform;
    }
-
+   
    public void SetItemDetailsUIGameObject(GameObject _gameObject)
    {
       itemDetailsUI = _gameObject;
@@ -45,9 +49,10 @@ public class ItemModel
 
    public void IncreaseQuantity(int quantity)
    {
-      if (currentQuantity < itemAvailableQuantity)
+      if (currentQuantity < item._quantity)
       {
          currentQuantity += quantity;
+         itemAvailableQuantity -= quantity;
       }
    }
 
@@ -56,6 +61,7 @@ public class ItemModel
       if (currentQuantity > 0)
       {
          currentQuantity -= quantity;
+         itemAvailableQuantity += quantity;
       }
       
    }
@@ -72,7 +78,10 @@ public class ItemModel
    {
       currentQuantityText = _currentQuantityText;
    }
-
+   public void SetAvailableQuantityText(TextMeshProUGUI _availableQuantityText)
+   {
+      availableQuantityText = _availableQuantityText;
+   }
    public ItemsScriptableObject GetItem()
    {
       return item;
@@ -84,6 +93,11 @@ public class ItemModel
    public TextMeshProUGUI GetCurrentQuantityText()
    {
       return currentQuantityText;
+   }
+   
+   public TextMeshProUGUI GetAvailableQuantityText()
+   {
+      return availableQuantityText;
    }
    public GameObject GetItemDetailsUIGameObject()
    {

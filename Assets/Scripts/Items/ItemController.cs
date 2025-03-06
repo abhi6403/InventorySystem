@@ -24,6 +24,8 @@ public class ItemController
         itemModel.SetItemDetailsUIGameObject(detailsObject);
         TextMeshProUGUI textMeshPro = detailsObject.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
         SetItemQuantityText(textMeshPro);
+        TextMeshProUGUI textMeshPro1 = detailsObject.transform.Find("ItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
+        itemModel.SetAvailableQuantityText(textMeshPro1);
     }
 
     public void SetItemQuantityText(TextMeshProUGUI _quantityText)
@@ -35,26 +37,21 @@ public class ItemController
     {
         itemModel.IncreaseQuantity(1);
         itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
+        itemModel.GetAvailableQuantityText().text = "Available - " + itemModel.GetItemAvailableQuantity();
     }
 
     public void ProcessMinusButtonClicked()
     {
         itemModel.DecreaseQuantity(1);
         itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
+        itemModel.GetAvailableQuantityText().text = "Available - " + itemModel.GetItemAvailableQuantity();
     }
 
     public void ProcessBuyButtonClicked()
     {
         EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
     }
-
-    public void DoafterBuyButtonClicked()
-    {
-        itemModel.SetCurrentQuantity(0);
-        itemView.GetAvailableItemQuantityText().gameObject.SetActive(false);
-        itemView.GetItemAvailableInPlayer().gameObject.SetActive(true);
-        itemView.GetItemAvailableInPlayer().text = itemModel.GetCurrentQuantityInPlayer().ToString();
-    }
+    
     public void CloseItemDetails()
     {
         GameObject.Destroy(itemModel.GetItemDetailsUIGameObject());
