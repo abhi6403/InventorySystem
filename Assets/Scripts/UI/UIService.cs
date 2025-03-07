@@ -65,6 +65,26 @@ public class UIService : MonoBehaviour
     {
         EventService.Instance.OnConfirmButtonClickedEvent.InvokeEvent();
     }
+
+    public void OnBuyButtonClicked()
+    {
+        confirmationPannel.SetActive(true);
+    }
+
+    public void OnSellButtonClicked()
+    {
+        confirmationPannel.SetActive(false);
+    }
+
+    public void OnCancelButtonClicked()
+    {
+        confirmationPannel.SetActive(false);
+    }
+    public void OnCloseButtonClicked()
+    {
+        itemDetailsPannel.SetActive(false);
+        confirmationPannel.SetActive(false);
+    }
    public void getAllItemsInShop()
     {
         EventService.Instance.OnButtonAllClickedEvent.InvokeEvent();

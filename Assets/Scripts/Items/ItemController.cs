@@ -28,38 +28,20 @@ public class ItemController
         EventService.Instance.OnItemButtonClickedEvent.InvokeEvent(itemModel);
     }
     
-    private void SetItemDetailsUIGameObject(GameObject gameObject)
-    {
-        itemModel.SetItemDetailsUIGameObject(gameObject);
-    }
-
-    public void SetCurrentQuantityTextInShop()
-    {
-        itemModel.SetCurrentQuantityTextInShop();
-    }
-
-    public void SetCurrentQuantityTextInPlayer()
-    {
-        itemModel.SetCurrentQuantityTextInPlayer();
-    }
-
-    public void SetAvailableQuantityTextInShop()
-    {
-        itemModel.SetAvailableQuantityTextInShop();
-    }
-
-    public void SetAvailableQuantityTextInPlayer()
-    {
-       itemModel.SetAvailableQuantityTextInPlayer();
-    }
     public void ProcessPlusButtonClicked()
     {
-        IncreaseCurrentQuantityInShop(1);
+        if (GetCurrentQuantityInShop() < GetItemAvailableQuantityInShop())
+        {
+            IncreaseCurrentQuantityInShop(1);
+        }
     }
 
     public void ProcessMinusButtonClicked()
     {
-        DecreaseCurrentQuantityInShop(1);
+        if (GetCurrentQuantityInShop() > 0)
+        {
+            DecreaseCurrentQuantityInShop(1);
+        }
     }
 
     public void ProcessBuyButtonClicked()
@@ -168,23 +150,6 @@ public class ItemController
     public GameObject GetItemDetailsUIGameObject()
     {
         return itemModel.GetItemDetailsUIGameObject();
-    }
-    public TextMeshProUGUI GetCurrentQuantityTextInShop()
-    {
-        return itemModel.GetCurrentQuantityTextInShop();
-    }
-
-    public TextMeshProUGUI GetCurrentQuantityTextInPlayer()
-    {
-        return itemModel.GetCurrentQuantityTextInPlayer();
-    }
-    public TextMeshProUGUI GetAvailableQuantityInShopText()
-    {
-        return itemModel.GetAvailableQuantityInShopText();
-    }
-    public TextMeshProUGUI GetAvailableQuantityTextInPlayer()
-    {
-        return itemModel.GetAvailableQuantityInPlayerText();
     }
     public ItemsScriptableObject GetItem()
     {

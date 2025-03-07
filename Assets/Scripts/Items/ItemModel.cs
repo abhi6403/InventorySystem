@@ -23,11 +23,6 @@ public class ItemModel
 
    private GameObject itemDetailsUI;
 
-   private TextMeshProUGUI currentQuantityTextInShop;
-   private TextMeshProUGUI currentQuantityTextInPlayer;
-   private TextMeshProUGUI availableQuantityInShopText;
-   private TextMeshProUGUI availableQuantityInPlayerText;
-
    private ItemsScriptableObject item;
 
    private ItemParentType itemParentType;
@@ -42,19 +37,12 @@ public class ItemModel
       itemDescription = item._description;
       itemPrice = item._amount;
       itemAvailableQuantityInShop = item._fixedQuantity;
-      itemAvailableQuantityInPlayer = item._fixedQuantity;
+      itemAvailableQuantityInPlayer = 0;
       itemWeight = item._weight;
       itemType = item._itemType;
       parentTransform = _parentTransform;
    }
-
-   private void SetPlayerItemQuantity()
-   {
-      if (item._inPlayerQuantity != 0)
-      {
-         item._inPlayerQuantity = 0;
-      }
-   }
+   
    //Setters
    public void SetItemController(ItemController _controller)
    {
@@ -117,25 +105,6 @@ public class ItemModel
       currentQuantityInPlayer -= _quantity;
    }
 
-   public void SetCurrentQuantityTextInShop()
-   {
-      currentQuantityTextInShop = itemDetailsUI.transform.Find("CurrentItemQuantity").GetComponent<TextMeshProUGUI>();
-   }
-   public void SetCurrentQuantityTextInPlayer()
-   {
-      currentQuantityTextInPlayer =  itemDetailsUI.transform.Find("CurrentItemQuantity").GetComponent<TextMeshProUGUI>();
-   }
-
-   public void SetAvailableQuantityTextInShop()
-   {
-      availableQuantityInShopText =  itemDetailsUI.transform.Find("AvailableQuantityInShop").GetComponent<TextMeshProUGUI>();
-   }
-
-   public void SetAvailableQuantityTextInPlayer()
-   {
-      availableQuantityInPlayerText = itemDetailsUI.transform.Find("AvailableQuantityInPlayer").GetComponent<TextMeshProUGUI>();
-   }
-
    //Getters
    public Sprite GetItemImage()
    {
@@ -191,26 +160,7 @@ public class ItemModel
    {
       return itemDetailsUI;
    }
-
-   public TextMeshProUGUI GetCurrentQuantityTextInShop()
-   {
-      return currentQuantityTextInShop;
-   }
-
-   public TextMeshProUGUI GetCurrentQuantityTextInPlayer()
-   {
-      return currentQuantityTextInPlayer;
-   }
-
-   public TextMeshProUGUI GetAvailableQuantityInShopText()
-   {
-      return availableQuantityInShopText;
-   }
-
-   public TextMeshProUGUI GetAvailableQuantityInPlayerText()
-   {
-      return availableQuantityInPlayerText;
-   }
+   
 
    public ItemsScriptableObject GetItem()
    {
