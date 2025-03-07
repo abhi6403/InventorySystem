@@ -51,6 +51,21 @@ public class ShopController
             }
         }
     }
+
+    public int GetItemQuantity(ItemModel _itemModel)
+    {
+        int itemQuantity = 0;
+
+        for (int i = 0; i < shopModel.ShopItemList.Count; i++)
+        {
+            if (_itemModel.GetItemName() == shopModel.ShopItemList[i].GetItemName())
+            {
+                itemQuantity = shopModel.ShopItemList[i].GetCurrentQuantityInShop();
+                break;
+            }
+        }
+        return itemQuantity;
+    }
     public Transform GetShopTransform()
     {
         return shopView.GetShopTransform();

@@ -21,24 +21,7 @@ public class ItemController
 
     public void ShowItemDetails()
     {
-        if (GetItemParentType() == ItemParentType.SHOP)
-        {
-            itemView.InitializeItemDetails(itemModel.GetItem());
-            itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
-            itemDetails.SetActive(true);
-            SetItemDetailsUIGameObject(itemDetails);
-            SetCurrentQuantityTextInShop();
-            SetAvailableQuantityTextInShop();
-        }else if (GetItemParentType() == ItemParentType.PLAYER)
-        {
-            itemView.InitializePlayerItemDetails(itemModel.GetItem());
-            itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
-            itemDetails.SetActive(true);
-            SetItemDetailsUIGameObject(itemDetails);
-            SetCurrentQuantityTextInPlayer();
-            SetAvailableQuantityTextInPlayer();
-        }
-        
+        EventService.Instance.OnItemButtonClickedEvent.InvokeEvent(itemModel);
     }
 
     private void SetItemDetailsUIGameObject(GameObject gameObject)
@@ -94,8 +77,7 @@ public class ItemController
 
     public void ProcessBuyButtonClicked()
     {
-        confirmationPannel = GameObject.Instantiate(GetConfirmationPannel(),itemView.GetItemDetailsObjectTransform());
-        confirmationPannel.SetActive(true);
+        
     }
 
     public void processConfirmButtonClicked()
@@ -164,15 +146,7 @@ public class ItemController
     {
         itemModel.DecreaseCurrentQuantityInPlayer(_quantity);
     }
-
-    public TextMeshProUGUI GetItemQuantityText()
-    {
-        return itemView.GetItemQuantityText();
-    }
-    public GameObject GetConfirmationPannel()
-    {
-        return itemView.GetConfirmationPannel();
-    }
+    
     public Sprite GetItemImage()
     {
         return itemModel.GetItemImage();

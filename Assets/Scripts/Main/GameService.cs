@@ -7,6 +7,7 @@ public class GameService : MonoBehaviour
     public ShopService shopService;
     public PlayerService playerService;
     public EventService eventService;
+    public UIService uiService;
 
     [SerializeField]
     private ShopView shopView;
@@ -32,5 +33,6 @@ public class GameService : MonoBehaviour
     {
         shopService.Initialize(shopView,itemView,itemService);
         playerService.Initialize(playerView,itemView,itemService);
+        uiService.Initialize(shopService);
     }
 }

@@ -37,17 +37,14 @@ public class ItemModel
       ItemParentType _itemParentType)
    {
       item = _itemsScriptableObject;
-      itemParentType = _itemParentType;
       itemImage = item._sprite;
-      itemName = item.name;
+      itemName = item._name;
       itemDescription = item._description;
       itemPrice = item._amount;
-      item._quantity = item._fixedQuantity;
+      itemAvailableQuantityInShop = item._fixedQuantity;
+      itemAvailableQuantityInPlayer = item._fixedQuantity;
       itemWeight = item._weight;
-      item._inPlayerQuantity = 0;
       itemType = item._itemType;
-      itemAvailableQuantityInPlayer = item._inPlayerQuantity;
-      itemAvailableQuantityInShop = item._quantity;
       parentTransform = _parentTransform;
    }
 

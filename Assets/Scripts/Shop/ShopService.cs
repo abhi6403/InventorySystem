@@ -7,8 +7,9 @@ public class ShopService
     {
         shopController = new ShopController(shopView,_itemView,_itemService);
     }
-    public ShopController GetShopController()
+
+    public int GetItemQuantity(ItemModel _itemModel)
     {
-        return shopController;
+        return shopController.GetItemQuantity(_itemModel);
     }
 }
