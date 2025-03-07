@@ -31,6 +31,7 @@ public class ItemModel
    private ItemsScriptableObject item;
 
    private ItemParentType itemParentType;
+   private ItemTypes itemType;
 
    public ItemModel(ItemsScriptableObject _itemsScriptableObject, Transform _parentTransform,
       ItemParentType _itemParentType)
@@ -44,6 +45,7 @@ public class ItemModel
       item._quantity = item._fixedQuantity;
       itemWeight = item._weight;
       item._inPlayerQuantity = 0;
+      itemType = item._itemType;
       itemAvailableQuantityInPlayer = item._inPlayerQuantity;
       itemAvailableQuantityInShop = item._quantity;
       parentTransform = _parentTransform;
@@ -221,5 +223,10 @@ public class ItemModel
    public ItemParentType GetItemParentType()
    {
       return itemParentType;
+   }
+
+   public ItemTypes GetItemType()
+   {
+      return itemType;
    }
 }

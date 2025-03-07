@@ -27,11 +27,12 @@ public class GameService : MonoBehaviour
         shopService = new ShopService();
         inventoryService = new InventoryService();
         playerService = new PlayerService();
+        itemService = new ItemService();
     }
 
     private void InjectDependencies()
     {
-        shopService.Initialize(shopView,inventoryService);
+        shopService.Initialize(shopView,inventoryService,itemView,itemService);
         playerService.Initialize(playerView,inventoryService,itemView);
         inventoryService.Initialize(shopService,playerService,itemView,itemService);
     }

@@ -70,6 +70,16 @@ public class ItemView : MonoBehaviour
         itemAvailableInPlayer.text = "Available - " + _items._inPlayerQuantity;
         itemWeight.text = "Weight - " + _items._weight;
     }
+
+    public void ShowItem()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void HideItem()
+    {
+        gameObject.SetActive(false);
+    }
     public Transform GetItemDetailsObjectTransform()
     {
         return mainCanvas.transform;

@@ -41,10 +41,10 @@ public class PlayerController
             }
         }
         clearAllItems();
-        for (int i = 0; i < playerView.GetItemsInPlayerInventory().Count; i++)
+        /*for (int i = 0; i < playerView.GetItemsInPlayerInventory().Count; i++)
         {
             ItemService item = new ItemService(itemView, playerView.GetItemsInPlayerInventory()[i], GetPlayerInventoryTransform(),ItemParentType.PLAYER);
-        }
+        }*/
     }
     
     public void clearAllItems()

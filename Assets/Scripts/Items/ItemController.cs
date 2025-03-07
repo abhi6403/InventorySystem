@@ -10,10 +10,10 @@ public class ItemController
     private GameObject itemDetails;
     private GameObject confirmationPannel;
 
-    public ItemController(ItemView _itemView, ItemsScriptableObject _itemsScriptableObject,Transform _getParentTransform,ItemParentType _itemParentType)
+    public ItemController(ItemsScriptableObject itemData,ItemView _itemView,Transform _getParentTransform,ItemParentType _itemParentType)
     {
-        itemModel = new ItemModel(_itemsScriptableObject, _getParentTransform, _itemParentType);
-        itemView = GameObject.Instantiate(_itemView,_getParentTransform);
+        itemModel = new ItemModel(itemData,_getParentTransform,_itemParentType);
+        itemView = GameObject.Instantiate(_itemView,GetParentTransform());
         itemView.Initialize(GetItemImage(),GetItemPrice());
         itemModel.SetItemController(this);
         itemView.SetItemController(this);
@@ -242,5 +242,19 @@ public class ItemController
     public ItemParentType GetItemParentType()
     {
         return itemModel.GetItemParentType();
+    }
+    public ItemTypes GetItemType()
+    {
+        return itemModel.GetItemType();
+    }
+
+    public void ShowItem()
+    {
+        itemView.ShowItem();
+    }
+
+    public void HideItem()
+    {
+        itemView.HideItem();
     }
 }

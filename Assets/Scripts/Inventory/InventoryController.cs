@@ -39,7 +39,6 @@ public class InventoryController
         
         inventoryModel.SetInventoryController(this);
         inventoryView.SetInventoryController(this);
-        ShowPlayerInventoryItems();
     }
 
     ~InventoryController()
@@ -50,17 +49,17 @@ public class InventoryController
 
 public void ShowInventory()
     {
-        clearAllItems();
+        /*clearAllItems();
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
             itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
-        }
+        }*/
     }
 
     public void ShowInventoryItem(ItemTypes itemType)
     {
-        clearAllItems();
+        /*clearAllItems();
         
         for (int i = 0; i < GetInventoryScriptableObject().items.Count; i++)
         {
@@ -68,18 +67,9 @@ public void ShowInventory()
             {
                 itemService = new ItemService(itemView,GetInventoryScriptableObject().items[i], GetInventoryTransform(),ItemParentType.SHOP);
             }
-        }
+        }*/
     }
-
-    public void ShowPlayerInventoryItems()
-    {
-        //clearAllItems();
-       
-            /*for (int i = 0; i < playerService.GetPlayerController().GetItemsInPlayerInventory().Count; i++)
-            {
-                
-            }*/
-    }
+    
     public void clearAllItems()
     {
         foreach (Transform child in GetInventoryTransform())
