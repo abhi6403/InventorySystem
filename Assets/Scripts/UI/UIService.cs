@@ -24,6 +24,8 @@ public class UIService : MonoBehaviour
     [SerializeField]private Button closeButton;
     [SerializeField]private Button buyButton;
     [SerializeField]private Button SellButton;
+    [SerializeField]private Button confirmBuyButton;
+    [SerializeField]private Button confirmSellButton;
     
     private ShopService shopService;
     private PlayerService playerService;
@@ -52,6 +54,8 @@ public class UIService : MonoBehaviour
             itemWeight.text = "Weight - " + _itemModel.GetItemWeight();
             itemAvailableQuantity.gameObject.SetActive(true);
             itemAvailableInPlayer.gameObject.SetActive(false);
+            buyButton.gameObject.SetActive(true);
+            SellButton.gameObject.SetActive(false);
         }else if (itemData.GetItemParentType() == ItemParentType.PLAYER)
         {
             itemDetailsImage.sprite = _itemModel.GetItemImage();
@@ -63,6 +67,8 @@ public class UIService : MonoBehaviour
             itemWeight.text = "Weight - " + _itemModel.GetItemWeight();
             itemAvailableInPlayer.gameObject.SetActive(true);
             itemAvailableQuantity.gameObject.SetActive(false);
+            buyButton.gameObject.SetActive(false);
+            SellButton.gameObject.SetActive(true);
         }
         itemDetailsPannel.SetActive(true);
     }
@@ -79,7 +85,7 @@ public class UIService : MonoBehaviour
         itemQuantity.text = shopService.GetSelectionQuantity().ToString();
     }
 
-    public void OnConfirmButtonClicked()
+    public void OnConfirmBuyButtonClicked()
     {
         EventService.Instance.OnConfirmBuyButtonClickedEvent.InvokeEvent(_itemModel);
         EventService.Instance.OnBuyEvent.InvokeEvent(_itemModel);
@@ -89,14 +95,27 @@ public class UIService : MonoBehaviour
         playerService.SetSelectionQuantity(0);
     }
 
+    public void OnConfirmSellButtonClicked()
+    {
+        EventService.Instance.OnConfirmSellButtonClickedEvent.InvokeEvent(_itemModel);
+        EventService.Instance.OnSellEvent.InvokeEvent(_itemModel);
+        itemDetailsPannel.SetActive(false);
+        confirmationPannel.SetActive(false);
+        shopService.SetSelectionQuantity(0);
+        playerService.SetSelectionQuantity(0);
+    }
     public void OnBuyButtonClicked()
     {
         confirmationPannel.SetActive(true);
+        confirmBuyButton.gameObject.SetActive(true);
+        confirmSellButton.gameObject.SetActive(false);
     }
 
     public void OnSellButtonClicked()
     {
-        confirmationPannel.SetActive(false);
+        confirmationPannel.SetActive(true);
+        confirmBuyButton.gameObject.SetActive(false);
+        confirmSellButton.gameObject.SetActive(true);
     }
 
     public void OnCancelButtonClicked()

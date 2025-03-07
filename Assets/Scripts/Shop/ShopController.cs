@@ -26,6 +26,7 @@ public class ShopController
         EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
         EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
         EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
+        EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
     }
 
     public void PopulateShop()
@@ -89,6 +90,25 @@ public class ShopController
         }
     }
 
+    public void ProcessConfirmSellButton(ItemModel _itemModel)
+    {
+        for (int i = 0; i < shopModel.ShopItemList.Count; i++)
+        {
+            if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
+                shopModel.ShopItemList[i].GetItem()._quantity <= shopModel.ShopItemList[i].GetItem()._fixedQuantity
+               )
+            {
+                shopModel.ShopItemList[i].GetItem()._quantity += playerService.GetSelectionQuantity();
+            }
+            else 
+            if(shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
+               shopModel.ShopItemList[i].GetItem()._quantity > shopModel.ShopItemList[i].GetItem()._fixedQuantity
+              )
+            {
+                Debug.Log(" quantity full");
+            }
+        }
+    }
     public int GetSelectedQuantity()
     {
         return quantity;

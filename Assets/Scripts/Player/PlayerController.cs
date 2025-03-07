@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using static UnityEngine.Object;
 using UnityEngine;
 
@@ -27,6 +28,8 @@ public class PlayerController
         EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
         EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
         EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
+        EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
+        EventService.Instance.OnSellEvent.AddListener(SellItem);
     }
 
     public void PopulatePlayerInventory()
@@ -57,6 +60,18 @@ public class PlayerController
         }
     }
 
+    public void SellItem(ItemModel item)
+    {
+        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        {
+            if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName() && 
+                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity == 0
+                )
+            {
+                playerModel.PlayerItemList[i].HideItem();
+            }
+        }
+    }
     public void ProcessPlusButton()
     {
             quantity++;
@@ -83,6 +98,26 @@ public class PlayerController
                       playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity >
                       playerModel.PlayerItemList[i].GetItem()._fixedQuantity 
                       )
+            {
+                Debug.Log(" player full");
+            }
+        }
+    }
+
+    public void ProcessConfirmSellButton(ItemModel _itemModel)
+    {
+        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        {
+            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() && 
+                quantity <= playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
+               )
+            {
+                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity -= quantity;
+            }
+            else 
+            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                quantity >  playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
+               )
             {
                 Debug.Log("Not Enough Quantity in player");
             }
