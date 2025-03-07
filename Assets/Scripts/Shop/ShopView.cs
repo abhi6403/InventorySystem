@@ -9,8 +9,6 @@ public class ShopView : MonoBehaviour
     private InventoryScriptableObject shopInventoryObject;
     [SerializeField]
     private Transform shopTransform;
-    [SerializeField]
-    private InventoryView inventoryView;
 
     public void SetShopController(ShopController _shopController)
     {
@@ -26,9 +24,5 @@ public class ShopView : MonoBehaviour
     {
         return shopTransform;
     }
-
-    public InventoryView GetInventoryView()
-    {
-        return inventoryView;
-    }
+    
 }

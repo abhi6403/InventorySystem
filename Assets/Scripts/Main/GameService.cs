@@ -5,7 +5,6 @@ public class GameService : MonoBehaviour
 {
     public ItemService itemService;
     public ShopService shopService;
-    public InventoryService inventoryService;
     public PlayerService playerService;
     public EventService eventService;
 
@@ -25,15 +24,13 @@ public class GameService : MonoBehaviour
     {
         eventService = new EventService();
         shopService = new ShopService();
-        inventoryService = new InventoryService();
         playerService = new PlayerService();
         itemService = new ItemService();
     }
 
     private void InjectDependencies()
     {
-        shopService.Initialize(shopView,inventoryService,itemView,itemService);
-        playerService.Initialize(playerView,inventoryService,itemView);
-        inventoryService.Initialize(shopService,playerService,itemView,itemService);
+        shopService.Initialize(shopView,itemView,itemService);
+        playerService.Initialize(playerView,itemView);
     }
 }

@@ -9,15 +9,13 @@ public class PlayerController
     private int weight;
     private const int maxWeight = 150;
     
-    private InventoryService inventoryService;
     private ItemView itemView;
     private TextMeshProUGUI playerItemAvailableText;
     private int playerItemAvailable;
 
-    public PlayerController(PlayerView _playerView, InventoryService _inventoryService,ItemView _itemView)
+    public PlayerController(PlayerView _playerView,ItemView _itemView)
     {
         itemView = _itemView;
-        inventoryService = _inventoryService;
         playerView = _playerView;
         playerView.SetPlayerController(this);
         EventService.Instance.OnBuyButtonClickedEvent.AddListener(AddToPlayerInventory);
@@ -79,11 +77,7 @@ public class PlayerController
     {
        return playerView.GetItemsInPlayerInventory();
     }
-
-    public InventoryView GetInventoryView()
-    {
-        return playerView.GetInventoryView();
-    }
+    
     public Transform GetPlayerInventoryTransform()
     {
         return playerView.GetPlayerInventoryTransform();

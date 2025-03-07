@@ -9,8 +9,6 @@ public class PlayerView : MonoBehaviour
    [SerializeField]
    private Transform playerInventoryTransform;
    [SerializeField]
-   private InventoryView inventoryView;
-   [SerializeField]
    private List<ItemsScriptableObject> playerItems;
    
    [SerializeField]
@@ -39,9 +37,5 @@ public class PlayerView : MonoBehaviour
    public InventoryScriptableObject GetPlayerInventory()
    {
       return inventory;
-   }
-   public InventoryView GetInventoryView()
-   {
-      return inventoryView;
    }
 }

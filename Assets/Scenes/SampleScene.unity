@@ -1929,7 +1929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventoryTransform: {fileID: 1325055720}
-  inventoryView: {fileID: 1180899923}
   playerItems: []
   weightText: {fileID: 1196242640}
   inventory: {fileID: 11400000, guid: 0bd094b885b212d46b7bfcfc30a9ae1e, type: 2}
@@ -3066,51 +3065,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167448161}
   m_CullTransparentMesh: 1
---- !u!1 &1180899920
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1180899922}
-  - component: {fileID: 1180899923}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1180899922
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180899920}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 885.8669, y: 423.6339, z: -5.967348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1180899923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180899920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853aa6795a7e8b246bc16366dab076d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemView: {fileID: -8765659287858740219, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
 --- !u!1 &1196242638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,7 +3508,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopInventoryObject: {fileID: 11400000, guid: 0bd094b885b212d46b7bfcfc30a9ae1e, type: 2}
   shopTransform: {fileID: 1991235024}
-  inventoryView: {fileID: 1180899923}
 --- !u!4 &1353584323
 Transform:
   m_ObjectHideFlags: 0
@@ -3599,7 +3552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3c89551eedbc24eb797c6eaa7419ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiService: {fileID: 0}
   shopView: {fileID: 1353584322}
   playerView: {fileID: 735289486}
   itemView: {fileID: -8765659287858740219, guid: 0ac46548596b17544b14d16f10b01c7a, type: 3}
@@ -4790,7 +4742,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2102615037}
   - {fileID: 448830018}
-  - {fileID: 1180899922}
   - {fileID: 1353584323}
   - {fileID: 735289487}
   - {fileID: 1377001118}
