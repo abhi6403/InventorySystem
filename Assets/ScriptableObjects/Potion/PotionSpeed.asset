@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: 4574450992341272565, guid: 7066b5d4cc64b354896bb2700aed660c, type: 3}
   _name: Speed Potion
   _amount: 150
-  _quantity: 7
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 6
+  _inPlayerQuantity: 0
   _itemType: 5
   _description: Increases the movement speed by 20.

@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -1504212627017640649, guid: 1c3d23968ef9c5149a5402fc5b5ded54, type: 3}
   _name: Ham
   _amount: 250
+  _fixedQuantity: 10
   _quantity: 10
   _weight: 8
+  _inPlayerQuantity: 0
   _itemType: 1
   _description: Animal Meat increases health by 40.

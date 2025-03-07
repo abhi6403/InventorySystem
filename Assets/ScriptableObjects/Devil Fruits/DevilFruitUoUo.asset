@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 1644047949770263332, guid: 3bd8aca88e1b1444bb990cc25c2359f6, type: 3}
   _name: UoUo
   _amount: 4500
-  _quantity: 1
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 30
+  _inPlayerQuantity: 0
   _itemType: 3
   _description: 'The Uo Uo no Mi, Model: Seiryu is a Mythical Zoan-type Devil Fruit
     that allows its user to transform into a hybrid and full Azure Dragon at will.'

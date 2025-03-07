@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: 1624825373846944214, guid: 30b5302c0acb36d41a46fcd965ecdc46, type: 3}
   _name: Heal Potion
   _amount: 450
-  _quantity: 7
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 6
+  _inPlayerQuantity: 0
   _itemType: 5
   _description: Heals continously for 60seconds.

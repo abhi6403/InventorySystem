@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -2720735300268934407, guid: a17ec434e2191974b9fcef94b4bec2cf, type: 3}
   _name: Treasure Box 1
   _amount: 850
-  _quantity: 20
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 100
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Box with max Tressure of 10000 Berries.

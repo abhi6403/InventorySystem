@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -3574522013925793470, guid: d2848ac15ac9e074893c825494efaa67, type: 3}
   _name: WhiteBeard Logo
   _amount: 50
-  _quantity: 15
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 1
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: WhiteBeard's Logo helpfull for surviving.

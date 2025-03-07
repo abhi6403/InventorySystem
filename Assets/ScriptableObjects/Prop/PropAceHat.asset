@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: 8828911041043960326, guid: 3ae1fb93e85d66d40bb23f23bb8438e6, type: 3}
   _name: Ace Hat
   _amount: 200
-  _quantity: 5
+  _fixedQuantity: 3
+  _quantity: 3
   _weight: 3
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Hat of Portgas.D.Ace.

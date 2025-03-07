@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -7176884902996175276, guid: c846acb144b770a4aaa0b8a797c14561, type: 3}
   _name: Lighter
   _amount: 550
-  _quantity: 5
+  _fixedQuantity: 2
+  _quantity: 0
   _weight: 1
+  _inPlayerQuantity: 1
   _itemType: 2
   _description: Sanji's Lighter, French luxury-goods manufacturer Dupont.

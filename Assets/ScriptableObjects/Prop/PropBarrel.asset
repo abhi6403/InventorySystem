@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: 462722058015939694, guid: c7fccf88cee826646bcb4dea39424beb, type: 3}
   _name: Barrel
   _amount: 250
-  _quantity: 8
+  _fixedQuantity: 10
+  _quantity: 10
   _weight: 40
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Liquor Barrel

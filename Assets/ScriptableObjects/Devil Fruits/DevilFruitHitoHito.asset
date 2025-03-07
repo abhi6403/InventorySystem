@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -348464302944469932, guid: db825c12ca6c3b64997f896c06a08d6f, type: 3}
   _name: HitoHito
   _amount: 2000
-  _quantity: 1
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 30
+  _inPlayerQuantity: 0
   _itemType: 3
   _description: ' a Zoan-type Devil Fruit that allows its user to transform into
     a human hybrid or a human at will.'

@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 7166968360401760626, guid: 5063303d6d7a38240bdf5851b067012b, type: 3}
   _name: Oden
   _amount: 300
+  _fixedQuantity: 10
   _quantity: 10
   _weight: 10
+  _inPlayerQuantity: 0
   _itemType: 1
   _description: ' It consists of a soy-flavored dashi broth base and various flavorful
     ingredients, all stewed together, increases health by 60.'

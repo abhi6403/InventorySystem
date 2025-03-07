@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -8850754546674670786, guid: f46e526857ea6f44bbc822fb869713c8, type: 3}
   _name: KageKage
   _amount: 3000
+  _fixedQuantity: 2
   _quantity: 1
   _weight: 30
+  _inPlayerQuantity: 0
   _itemType: 3
   _description: The Kage Kage no Mi is a Paramecia-type Devil Fruit that gives the
     user the ability to manifest and control shadows of living creatures, including

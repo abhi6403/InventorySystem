@@ -15,8 +15,8 @@ MonoBehaviour:
   _sprite: {fileID: 4761180676226132609, guid: 634a01c5d91bf254b999421b3ed88de8, type: 3}
   _name: Ace
   _amount: 2000
-  _fixedQuantity: 1
-  _quantity: 1
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 30
   _inPlayerQuantity: 0
   _itemType: 0

@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 6744004875393238668, guid: 611514197546b574aa2baf60634e1e5f, type: 3}
   _name: Law Poster
   _amount: 50
-  _quantity: 15
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 5
+  _inPlayerQuantity: 0
   _itemType: 6
   _description: Trafalgar D. Water Law, more commonly known as just Trafalgar Law
     and by his epithet as the "Surgeon of Death", is a pirate from the North Blue

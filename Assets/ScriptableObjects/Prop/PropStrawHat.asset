@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -2260725612079929579, guid: 6d03d7d464c3f464d9874ce65751ba8a, type: 3}
   _name: Luffy Hat
   _amount: 200
-  _quantity: 20
+  _fixedQuantity: 3
+  _quantity: 3
   _weight: 2
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Monkey.D.Luffy's Straw Hat.

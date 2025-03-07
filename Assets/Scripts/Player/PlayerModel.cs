@@ -57,11 +57,13 @@ public class PlayerModel
         return _totalWeight;
     }
 
-    public void SetTotalWeight(int totalWeight)
+    public void DecreaseTotalWeight(int totalWeight)
     {
-        if (totalWeight < _maxWeight)
-        {
-            _totalWeight += totalWeight;
-        }
+        _totalWeight -= totalWeight;
+    }
+
+    public void IncreaseTotalWeight(int totalWeight)
+    {
+        _totalWeight += totalWeight;
     }
 }

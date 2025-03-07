@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -612623771077038370, guid: c947afceedcc7944d834889492074de2, type: 3}
   _name: Impact Dail
   _amount: 100
-  _quantity: 10
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 10
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Absorbs the impact recived and can be used later.

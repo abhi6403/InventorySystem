@@ -15,8 +15,8 @@ MonoBehaviour:
   _sprite: {fileID: -2711254756909090312, guid: a558afa7ab211834db1e9bf84b09a849, type: 3}
   _name: Murakumogiri
   _amount: 1500
-  _fixedQuantity: 1
-  _quantity: 1
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 50
   _inPlayerQuantity: 0
   _itemType: 0

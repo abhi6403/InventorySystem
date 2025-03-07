@@ -11,15 +11,17 @@ public class PlayerController
     private ItemView itemView;
     private ItemService itemService;
     private ShopService shopService;
+    private UIService uiService;
 
     private int quantity;
-    public PlayerController(PlayerView _playerView, ItemView _itemView,ItemService _itemService,ShopService _shopService)
+    public PlayerController(PlayerView _playerView, ItemView _itemView,ItemService _itemService,ShopService _shopService,UIService _uiService)
     {
         playerView = _playerView;
         playerModel = new PlayerModel();
         itemView = _itemView;
         itemService = _itemService;
         shopService = _shopService;
+        uiService = _uiService;
         playerView.SetPlayerController(this);
         playerModel.SetController(this);
         PopulateList();
@@ -73,14 +75,18 @@ public class PlayerController
 
     public void OnSellButtonClicked(ItemModel item)
     {
-        int temp = quantity * item.GetItemPrice();
-        IncreaseTotalBerries(temp);
+        int temp1 = quantity * item.GetItemPrice();
+        int temp2 = quantity * item.GetItemWeight();
+        DecreaseTotalWeight(temp2);
+        IncreaseTotalBerries(temp1);
     }
 
     public void OnBuyButtonClicked(ItemModel item)
     {
-        int temp = shopService.GetSelectionQuantity() * item.GetItemPrice();
-        DecreaseTotalBerries(temp);
+        int temp1 = shopService.GetSelectionQuantity() * item.GetItemPrice();
+        int temp2 = shopService.GetSelectionQuantity() * item.GetItemWeight();
+        DecreaseTotalBerries(temp1);
+        IncreaseTotalWeight(temp2);
     }
     
     public void ProcessPlusButton()
@@ -100,7 +106,7 @@ public class PlayerController
         {
             if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() && 
                 playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity < 
-                playerModel.PlayerItemList[i].GetItem()._fixedQuantity 
+                playerModel.PlayerItemList[i].GetItem()._fixedQuantity
                 )
             {
                 playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity += shopService.GetSelectionQuantity();
@@ -112,7 +118,7 @@ public class PlayerController
                       playerModel.PlayerItemList[i].GetItem()._fixedQuantity 
                       )
             {
-                Debug.Log(" player full");
+                uiService.GiveErrorMessage();
             }
         }
     }
@@ -134,7 +140,7 @@ public class PlayerController
                 quantity >  playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
                )
             {
-                Debug.Log("Not Enough Quantity in player");
+                uiService.GiveErrorMessage();
             }
         }
     }
@@ -148,12 +154,12 @@ public class PlayerController
                 int randomIndex = Random.Range(0, playerModel.PlayerItemList.Count);
                 ItemController selectedItem = playerModel.PlayerItemList[randomIndex];
                 
-                selectedItem.GetItem()._inPlayerQuantity = selectedItem.GetItem()._fixedQuantity - 1;
+                selectedItem.GetItem()._inPlayerQuantity = Random.Range(1,selectedItem.GetItem()._fixedQuantity);
                 selectedItem.GetItem()._quantity = 0;
                 int tempWeight = selectedItem.GetItem()._inPlayerQuantity * selectedItem.GetItem()._weight;
                 if (GetMaxWeight() >= GetTotalWeight() )
                 {
-                    SetTotalWeight(tempWeight);
+                    IncreaseTotalWeight(tempWeight);
                     selectedItem.ShowItem();
                 }
                 else
@@ -200,12 +206,19 @@ public class PlayerController
         return playerModel.GetMaxWeight();
     }
 
-    public void SetTotalWeight(int _totalWeight)
+    public void DecreaseTotalWeight(int _totalWeight)
     {
-        playerModel.SetTotalWeight(_totalWeight);
+        playerModel.DecreaseTotalWeight(_totalWeight);
+    }
+
+    public void IncreaseTotalWeight(int _totalWeight)
+    {
+        playerModel.IncreaseTotalWeight(_totalWeight);
     }
     public InventoryScriptableObject GetInventoryObject()
     {
         return playerView.GetInventoryObject();
     }
+
+    
 }

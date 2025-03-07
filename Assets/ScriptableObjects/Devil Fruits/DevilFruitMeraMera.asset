@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 12002762367867486, guid: 84c33f4884752ff448dc9d4dc185f919, type: 3}
   _name: Mera Mera
   _amount: 4000
-  _quantity: 1
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 30
+  _inPlayerQuantity: 0
   _itemType: 3
   _description: The Mera Mera no Mi is a Logia-type Devil Fruit that allows the user
     to create, control, and transform into fire at will.

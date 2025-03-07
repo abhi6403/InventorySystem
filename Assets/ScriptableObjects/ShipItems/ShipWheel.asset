@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -6797625664287364027, guid: 70a52a52443209c4bbba03674c582d9b, type: 3}
   _name: Wheel
   _amount: 2000
-  _quantity: 3
+  _fixedQuantity: 2
+  _quantity: 0
   _weight: 40
+  _inPlayerQuantity: 1
   _itemType: 7
   _description: Used for changing the angle of the rudder to change the direction
     of the boat or ship.

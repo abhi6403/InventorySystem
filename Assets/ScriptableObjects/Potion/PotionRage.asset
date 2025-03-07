@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -4998509175012683352, guid: dbc14aa617516c14f9211e5636bda2d4, type: 3}
   _name: Rage Potion
   _amount: 300
-  _quantity: 7
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 6
+  _inPlayerQuantity: 0
   _itemType: 5
   _description: Increases damage power by 50.

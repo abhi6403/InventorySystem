@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -1110251738854972749, guid: 87fc17b7d25e8da4ba65fc5df7c63ffc, type: 3}
   _name: Ramen
   _amount: 350
+  _fixedQuantity: 10
   _quantity: 10
   _weight: 10
+  _inPlayerQuantity: 0
   _itemType: 1
   _description: Ramen is a dish that uses Chinese-style wheat noodles, increases
     health by 60.

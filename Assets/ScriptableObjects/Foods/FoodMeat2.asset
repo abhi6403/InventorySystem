@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -7702037988901575266, guid: 46cd538b0aaebb84b81500f5f318f5f8, type: 3}
   _name: Fish
   _amount: 250
+  _fixedQuantity: 10
   _quantity: 10
   _weight: 8
+  _inPlayerQuantity: 0
   _itemType: 1
   _description: Animal Meat increases health by 50.

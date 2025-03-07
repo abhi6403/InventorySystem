@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlayerService 
 {
     private PlayerController playerController;
-    public void Initialize(PlayerView _playerView,ItemView _itemView,ItemService _itemService,ShopService _shopService)
+    public void Initialize(PlayerView _playerView,ItemView _itemView,ItemService _itemService,ShopService _shopService,UIService _uiService)
     {
-        playerController = new PlayerController(_playerView,_itemView,_itemService,_shopService);
+        playerController = new PlayerController(_playerView,_itemView,_itemService,_shopService,_uiService);
     }
 
     public int GetSelectionQuantity()
@@ -18,19 +18,18 @@ public class PlayerService
         playerController.SetSelectionQuantity(quantity);
     }
 
+    public void DecreaseTotalWeight(int _totalWeight)
+    {
+        playerController.DecreaseTotalWeight(_totalWeight);
+    }
+
+    public void IncreaseTotalWeight(int _totalWeight)
+    {
+        playerController.IncreaseTotalWeight(_totalWeight);
+    }
     public int GetTotalBerries()
     {
         return playerController.GetTotalBerries();
-    }
-
-    public void IncreaseTotalBerries(int totalBerries)
-    {
-        playerController.IncreaseTotalBerries(totalBerries);
-    }
-
-    public void SetTotalWeight(int totalWeight)
-    {
-        playerController.SetTotalWeight(totalWeight);
     }
 
     public int GetTotalWeight()

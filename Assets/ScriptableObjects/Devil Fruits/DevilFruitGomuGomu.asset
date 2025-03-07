@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -3355523817095360204, guid: c17282486f073004cb02b5bb89d1b1f0, type: 3}
   _name: GomuGomu
   _amount: 5000
-  _quantity: 1
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 30
+  _inPlayerQuantity: 0
   _itemType: 3
   _description: A Mythical Zoan-type Devil Fruit that enables the user's body to
     stretch, making the user a rubber Human

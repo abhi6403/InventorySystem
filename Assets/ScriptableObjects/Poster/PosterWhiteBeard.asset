@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -7280245066184927123, guid: 8e4a9910a85166247917f733309919cb, type: 3}
   _name: WhiteBeard Poster
   _amount: 50
-  _quantity: 15
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 5
+  _inPlayerQuantity: 0
   _itemType: 6
   _description: Edward Newgate, more commonly known as "Whitebeard", was the captain
     of the Whitebeard Pirates and was widely known as the "Strongest Man in the World".

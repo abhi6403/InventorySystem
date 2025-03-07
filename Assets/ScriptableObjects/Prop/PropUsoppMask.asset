@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -2284259244362506082, guid: 77fa3d427e318b1459589f9fe38da31f, type: 3}
   _name: Sogeking Mask
   _amount: 850
-  _quantity: 6
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 5
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: God Usopp's Mask.

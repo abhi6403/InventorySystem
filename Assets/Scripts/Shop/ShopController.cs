@@ -8,16 +8,18 @@ public class ShopController
     private ItemView itemView;
     private ItemService itemService;
     private PlayerService playerService;
+    private UIService uiService;
     
     private int quantity;
 
-    public ShopController(ShopView _shopView, ItemView _itemView,ItemService _itemService,PlayerService _playerService)
+    public ShopController(ShopView _shopView, ItemView _itemView,ItemService _itemService,PlayerService _playerService,UIService _uiService)
     {
         shopView = _shopView;
         shopModel = new ShopModel();
         itemView = _itemView;
         itemService = _itemService;
         playerService = _playerService;
+        uiService = _uiService;
         shopView.SetShopController(this);
         PopulateList();
         PopulateShop();
@@ -85,7 +87,7 @@ public class ShopController
                     quantity > shopModel.ShopItemList[i].GetItem()._quantity
                 )
             {
-                Debug.Log("Not enough quantity");
+                uiService.GiveErrorMessage();
             }
         }
     }
@@ -105,7 +107,7 @@ public class ShopController
                shopModel.ShopItemList[i].GetItem()._quantity > shopModel.ShopItemList[i].GetItem()._fixedQuantity
               )
             {
-                Debug.Log(" quantity full");
+                uiService.GiveErrorMessage();
             }
         }
     }

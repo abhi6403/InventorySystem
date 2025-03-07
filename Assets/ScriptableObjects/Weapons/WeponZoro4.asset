@@ -15,8 +15,8 @@ MonoBehaviour:
   _sprite: {fileID: 8952377895117822751, guid: 1d362c42ac375d64ca58ab9e798ce8ed, type: 3}
   _name: Wado Ichimonji
   _amount: 950
-  _fixedQuantity: 1
-  _quantity: 1
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 20
   _inPlayerQuantity: 0
   _itemType: 0

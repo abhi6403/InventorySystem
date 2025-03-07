@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -8855647465323266538, guid: 73c0daba3d3901844bb7b7aba2fff057, type: 3}
   _name: Axe
   _amount: 350
+  _fixedQuantity: 3
   _quantity: 3
   _weight: 25
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Axe can be used to cut things.

@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: 4198676382980086050, guid: 3c80771fe2bccab4891c4e5621a8c139, type: 3}
   _name: LogPose
   _amount: 300
-  _quantity: 2
+  _fixedQuantity: 5
+  _quantity: 5
   _weight: 5
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Log Pose shows the Direction to nearby island.

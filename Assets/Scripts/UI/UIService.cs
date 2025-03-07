@@ -95,6 +95,7 @@ public class UIService : MonoBehaviour
     {
         EventService.Instance.OnConfirmBuyButtonClickedEvent.InvokeEvent(_itemModel);
         itemBerries.text = playerService.GetTotalBerries().ToString();
+        itemWeightText.text = playerService.GetTotalWeight() + "/" + playerService.GetMaxWeight(); ;
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         shopService.SetSelectionQuantity(0);
@@ -105,6 +106,7 @@ public class UIService : MonoBehaviour
     {
         EventService.Instance.OnConfirmSellButtonClickedEvent.InvokeEvent(_itemModel);
         itemBerries.text = playerService.GetTotalBerries().ToString();
+        itemWeightText.text = playerService.GetTotalWeight() + "/" + playerService.GetMaxWeight(); ;
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         shopService.SetSelectionQuantity(0);
@@ -113,8 +115,9 @@ public class UIService : MonoBehaviour
     public void OnBuyButtonClicked()
     {
         int temp = shopService.GetSelectionQuantity() * _itemModel.GetItemPrice();
+        int temp2 = playerService.GetSelectionQuantity() * _itemModel.GetItemWeight();
 
-        if (playerService.GetTotalBerries() >= temp)
+        if (playerService.GetTotalBerries() >= temp && temp2 < playerService.GetMaxWeight())
         {
             itemPriceInConfirmPannel.text = temp.ToString();
             confirmationPannel.SetActive(true);
@@ -130,7 +133,7 @@ public class UIService : MonoBehaviour
     public void OnSellButtonClicked()
     {
         int temp = playerService.GetSelectionQuantity() * _itemModel.GetItemPrice() - 100;
-
+        
         if (playerService.GetSelectionQuantity() <= _itemModel.GetItem()._inPlayerQuantity)
         {
             itemPriceInConfirmPannel.text = temp.ToString();
@@ -204,6 +207,10 @@ public class UIService : MonoBehaviour
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.MAP);
     }
-    
+    public void GiveErrorMessage()
+    {
+        errorPannel.SetActive(true);
+        confirmationPannel.SetActive(false);
+    }
     
 }

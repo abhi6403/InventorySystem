@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -1354795570917898186, guid: 9704e110f993b4b498957f15553da86c, type: 3}
   _name: Teasure Box 2
   _amount: 850
-  _quantity: 22
+  _fixedQuantity: 2
+  _quantity: 2
   _weight: 100
+  _inPlayerQuantity: 0
   _itemType: 2
   _description: Box with max Tressure of 20000 Berries.

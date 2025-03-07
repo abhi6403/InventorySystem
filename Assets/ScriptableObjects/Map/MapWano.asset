@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 7745779203188830810, guid: f1e7db1ab99f8c94aaafc5f6f315d41b, type: 3}
   _name: Wano Map
   _amount: 350
-  _quantity: 5
+  _fixedQuantity: 4
+  _quantity: 4
   _weight: 3
+  _inPlayerQuantity: 0
   _itemType: 4
   _description: Wano Country features a river that splits and divides the land into
     six areas called regions, and it also included the nearby island Onigashima.
