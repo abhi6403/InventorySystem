@@ -1,5 +1,3 @@
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemController
@@ -77,7 +75,7 @@ public class ItemController
     }
     public int GetQantityOfPlayer()
     {
-        return itemModel.GetQantityOfPlayer();
+        return itemModel.GetQuantityOfPlayer();
     }
 
     public int GetQuantityOfShop()

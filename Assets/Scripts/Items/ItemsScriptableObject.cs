@@ -16,5 +16,4 @@ public class ItemsScriptableObject : ScriptableObject
     
     [TextArea(10,15)]
     public string _description;
-    
 }

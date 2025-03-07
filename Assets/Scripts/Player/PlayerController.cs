@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
-using static UnityEngine.Object;
 using UnityEngine;
 
 public class PlayerController 
@@ -37,7 +33,7 @@ public class PlayerController
 
     }
     
-    public void PopulateList()
+    private void PopulateList()
     {
         for (int i = 0; i < GetInventoryObject().items.Count; i++)
         {
@@ -46,7 +42,7 @@ public class PlayerController
         }
     }
 
-    public void BuyItem(ItemModel item)
+    private void BuyItem(ItemModel item)
     {
         for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
         {
@@ -57,7 +53,7 @@ public class PlayerController
         }
     }
 
-    public void SellItem(ItemModel item)
+    private void SellItem(ItemModel item)
     {
         for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
         {
@@ -73,7 +69,7 @@ public class PlayerController
         }
     }
 
-    public void OnSellButtonClicked(ItemModel item)
+    private void OnSellButtonClicked(ItemModel item)
     {
         int temp1 = quantity * item.GetItemPrice();
         int temp2 = quantity * item.GetItemWeight();
@@ -81,7 +77,7 @@ public class PlayerController
         IncreaseTotalBerries(temp1);
     }
 
-    public void OnBuyButtonClicked(ItemModel item)
+    private void OnBuyButtonClicked(ItemModel item)
     {
         int temp1 = shopService.GetSelectionQuantity() * item.GetItemPrice();
         int temp2 = shopService.GetSelectionQuantity() * item.GetItemWeight();
@@ -89,17 +85,17 @@ public class PlayerController
         IncreaseTotalWeight(temp2);
     }
     
-    public void ProcessPlusButton()
+    private void ProcessPlusButton()
     {
             quantity++;
     }
 
-    public void ProcessMinusButton()
+    private void ProcessMinusButton()
     {
             quantity--;
     }
     
-    public void ProcessConfirmBuyButton(ItemModel _itemModel)
+    private void ProcessConfirmBuyButton(ItemModel _itemModel)
     {
         
         for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
@@ -123,7 +119,7 @@ public class PlayerController
         }
     }
 
-    public void ProcessConfirmSellButton(ItemModel _itemModel)
+    private void ProcessConfirmSellButton(ItemModel _itemModel)
     {
         
         for (int i = 0; i < playerModel.PlayerItemList.Count; i++)

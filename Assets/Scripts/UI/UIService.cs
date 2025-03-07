@@ -1,6 +1,4 @@
-using System;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -68,7 +66,7 @@ public class UIService : MonoBehaviour
             itemName.text = _itemModel.GetItemName(); 
             itemDescription.text = _itemModel.GetItemDescription();
             itemPrice.text = "Berries - " + _itemModel.GetItemPrice();
-            itemAvailableInPlayer.text = "Available - " + _itemModel.GetQantityOfPlayer();
+            itemAvailableInPlayer.text = "Available - " + _itemModel.GetQuantityOfPlayer();
             itemQuantity.text = playerService.GetSelectionQuantity().ToString();
             itemWeight.text = "Weight - " + _itemModel.GetItemWeight();
             itemAvailableInPlayer.gameObject.SetActive(true);

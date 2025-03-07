@@ -1,6 +1,4 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ItemModel
 {
@@ -103,7 +101,7 @@ public class ItemModel
       return itemType;
    }
 
-   public int GetQantityOfPlayer()
+   public int GetQuantityOfPlayer()
    {
       return item._inPlayerQuantity;
    }

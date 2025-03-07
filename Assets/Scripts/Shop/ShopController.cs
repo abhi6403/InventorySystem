@@ -31,7 +31,7 @@ public class ShopController
         EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
     }
 
-    public void PopulateShop()
+    private void PopulateShop()
     {
         for (int i = 0; i < shopModel.ShopItemList.Count; i++)
         {
@@ -39,7 +39,7 @@ public class ShopController
         }
     }
 
-    public void PopulateList()
+    private void PopulateList()
     {
         for (int i = 0; i < GetShopScriptableObject().items.Count; i++)
         {
@@ -48,7 +48,7 @@ public class ShopController
         }
     }
 
-    public void FilterShop(ItemTypes _itemType)
+    private void FilterShop(ItemTypes _itemType)
     {
         for (int i = 0; i < shopModel.ShopItemList.Count; i++)
         {
@@ -63,16 +63,16 @@ public class ShopController
         }
     }
 
-    public void ProcessPlusButton()
+    private void ProcessPlusButton()
     {
             quantity++;
     }
 
-    public void ProcessMinusButton()
+    private void ProcessMinusButton()
     {
             quantity--;
     }
-    public void ProcessConfirmBuyButton(ItemModel _itemModel)
+    private void ProcessConfirmBuyButton(ItemModel _itemModel)
     {
         for (int i = 0; i < shopModel.ShopItemList.Count; i++)
         {
@@ -92,7 +92,7 @@ public class ShopController
         }
     }
 
-    public void ProcessConfirmSellButton(ItemModel _itemModel)
+    private void ProcessConfirmSellButton(ItemModel _itemModel)
     {
         for (int i = 0; i < shopModel.ShopItemList.Count; i++)
         {
