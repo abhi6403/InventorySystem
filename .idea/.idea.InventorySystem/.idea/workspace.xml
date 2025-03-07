@@ -8,9 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InventorySystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InventorySystem/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsScriptableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,7 @@
       <workItem from="1741050989048" duration="20006000" />
       <workItem from="1741138153847" duration="57981000" />
       <workItem from="1741261485582" duration="19000" />
-      <workItem from="1741309359314" duration="13531000" />
+      <workItem from="1741309359314" duration="17985000" />
     </task>
     <servers />
   </component>

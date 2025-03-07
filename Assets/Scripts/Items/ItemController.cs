@@ -31,13 +31,6 @@ public class ItemController
             SetAvailableQuantityTextInShop();
         }else if (GetItemParentType() == ItemParentType.PLAYER)
         {
-            /*itemDetails = itemView.GetItemDetails();
-            SetItemDetailsUIGameObject(itemDetails);
-            SetCurrentQuantityTextInShop();
-            SetAvailableQuantityTextInPlayer();
-            itemView.InitializePlayerItemDetails(itemModel.GetItem());
-            itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
-            itemDetails.SetActive(true);*/
             itemView.InitializePlayerItemDetails(itemModel.GetItem());
             itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
             itemDetails.SetActive(true);

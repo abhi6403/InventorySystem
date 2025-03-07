@@ -17,6 +17,7 @@ public class ItemModel
    private int itemWeight;
    private int currentQuantityInShop;
    private int currentQuantityInPlayer;
+   
 
    private Transform parentTransform;
 
@@ -41,19 +42,20 @@ public class ItemModel
       itemDescription = item._description;
       itemPrice = item._amount;
       item._quantity = item._fixedQuantity;
-      item._inPlayerQuantity = 0;
       itemWeight = item._weight;
+      item._inPlayerQuantity = 0;
+      itemAvailableQuantityInPlayer = item._inPlayerQuantity;
+      itemAvailableQuantityInShop = item._quantity;
       parentTransform = _parentTransform;
    }
 
-   public void exchange()
+   private void SetPlayerItemQuantity()
    {
-      if (item._quantity == 0)
+      if (item._inPlayerQuantity != 0)
       {
-         item._quantity = item._inPlayerQuantity;
+         item._inPlayerQuantity = 0;
       }
    }
-   
    //Setters
    public void SetItemController(ItemController _controller)
    {
@@ -71,20 +73,32 @@ public class ItemModel
    }
    public void IncreaseAvailableQuantityInShop(int _quantity)
    {
-      item._quantity += _quantity;
+      itemAvailableQuantityInShop += _quantity;
+      item._quantity = itemAvailableQuantityInShop; 
+      Debug.Log(itemAvailableQuantityInShop);
+      //item._quantity += _quantity;
    }
    public void DecreaseAvailableQuantityInShop(int _quantity)
    {
-      item._quantity -= _quantity;
+      itemAvailableQuantityInShop -= _quantity;
+      item._quantity = itemAvailableQuantityInShop;
+      Debug.Log(itemAvailableQuantityInShop);
+      //item._quantity -= _quantity;
    }
    public void IncreaseAvailableQuantityInPlayer(int _quantity)
    {
-      item._inPlayerQuantity += _quantity;
+      itemAvailableQuantityInPlayer += _quantity;
+      item._inPlayerQuantity = itemAvailableQuantityInPlayer;
+      Debug.Log(itemAvailableQuantityInPlayer);
+      //item._inPlayerQuantity += _quantity;
    }
 
    public void DecreaseAvailableQuantityInPlayer(int _quantity)
    {
-      item._inPlayerQuantity -= _quantity;
+      itemAvailableQuantityInPlayer -= _quantity;
+      item._inPlayerQuantity = itemAvailableQuantityInPlayer;
+      Debug.Log(itemAvailableQuantityInPlayer);
+      //item._inPlayerQuantity -= _quantity;
    }
    public void IncreaseCurrentQuantityInShop(int _quantity)
    {
