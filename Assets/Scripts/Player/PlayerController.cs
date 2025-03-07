@@ -24,7 +24,7 @@ public class PlayerController
         PopulateList();
         quantity = 0;
         EventService.Instance.OnBuyEvent.AddListener(BuyItem);
-        EventService.Instance.OnConfirmButtonClickedEvent.AddListener(ProcessConfirmButton);
+        EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
         EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
         EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
     }
@@ -59,21 +59,32 @@ public class PlayerController
 
     public void ProcessPlusButton()
     {
-        quantity++;
+            quantity++;
     }
 
     public void ProcessMinusButton()
     {
-        quantity--;
+            quantity--;
     }
     
-    public void ProcessConfirmButton(ItemModel _itemModel)
+    public void ProcessConfirmBuyButton(ItemModel _itemModel)
     {
         for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
         {
-            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() && playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity <= playerModel.PlayerItemList[i].GetItem()._fixedQuantity)
+            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() && 
+                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity < 
+                playerModel.PlayerItemList[i].GetItem()._fixedQuantity 
+                )
             {
                 playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity += shopService.GetSelectionQuantity();
+            }
+            else 
+            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                      playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity >
+                      playerModel.PlayerItemList[i].GetItem()._fixedQuantity 
+                      )
+            {
+                Debug.Log("Not Enough Quantity in player");
             }
         }
     }

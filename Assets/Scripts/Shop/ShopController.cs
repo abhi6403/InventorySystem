@@ -23,7 +23,7 @@ public class ShopController
         PopulateShop();
         quantity = 0;
         EventService.Instance.OnFilterButtonClickedEvent.AddListener(FilterShop);
-        EventService.Instance.OnConfirmButtonClickedEvent.AddListener(ProcessConfirmButton);
+        EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
         EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
         EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
     }
@@ -62,20 +62,29 @@ public class ShopController
 
     public void ProcessPlusButton()
     {
-        quantity++;
+            quantity++;
     }
 
     public void ProcessMinusButton()
     {
-        quantity--;
+            quantity--;
     }
-    public void ProcessConfirmButton(ItemModel _itemModel)
+    public void ProcessConfirmBuyButton(ItemModel _itemModel)
     {
         for (int i = 0; i < shopModel.ShopItemList.Count; i++)
         {
-            if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && quantity <= shopModel.ShopItemList[i].GetItem()._quantity)
+            if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
+                quantity <= shopModel.ShopItemList[i].GetItem()._quantity
+                )
             {
                 shopModel.ShopItemList[i].GetItem()._quantity -= quantity;
+            }
+            else 
+            if(shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
+                    quantity > shopModel.ShopItemList[i].GetItem()._quantity
+                )
+            {
+                Debug.Log("Not enough quantity");
             }
         }
     }
