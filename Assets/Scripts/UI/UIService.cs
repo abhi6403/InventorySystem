@@ -1,9 +1,15 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Inventory.Event;
+using Inventory.Item;
+using Inventory.Player;
+using Inventory.Shop;
 
-public class UIService : MonoBehaviour
+namespace Inventory.UI
 {
+    public class UIService : MonoBehaviour
+ {
     [SerializeField]private GameObject itemDetailsPannel;
     [SerializeField]private GameObject confirmationPannel;
     [SerializeField]private GameObject errorPannel;
@@ -211,4 +217,6 @@ public class UIService : MonoBehaviour
         confirmationPannel.SetActive(false);
     }
     
+ }
+
 }

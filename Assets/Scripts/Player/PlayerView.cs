@@ -1,26 +1,27 @@
 using UnityEngine;
 
-public class PlayerView : MonoBehaviour
+namespace Inventory.Player
 {
-   private PlayerController playerController;
-   
-   [SerializeField]
-   private InventoryScriptableObject shopInventoryObject;
-   [SerializeField]
-   private Transform playerTransform;
-
-   public void SetPlayerController(PlayerController _playerController)
+   public class PlayerView : MonoBehaviour
    {
-      playerController = _playerController;
-   }
+      private PlayerController playerController;
 
-   public Transform GetPlayerTransform()
-   {
-      return playerTransform;
-   }
+      [SerializeField] private InventoryScriptableObject shopInventoryObject;
+      [SerializeField] private Transform playerTransform;
 
-   public InventoryScriptableObject GetInventoryObject()
-   {
-      return shopInventoryObject;
+      public void SetPlayerController(PlayerController _playerController)
+      {
+         playerController = _playerController;
+      }
+
+      public Transform GetPlayerTransform()
+      {
+         return playerTransform;
+      }
+
+      public InventoryScriptableObject GetInventoryObject()
+      {
+         return shopInventoryObject;
+      }
    }
 }

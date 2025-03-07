@@ -1,159 +1,167 @@
 using UnityEngine;
+using Inventory.Event;
+using Inventory.Item;
+using Inventory.Shop;
+using Inventory.UI;
 
-public class PlayerController 
+namespace Inventory.Player
 {
-    private PlayerView playerView;
-    private PlayerModel playerModel;
-    private ItemView itemView;
-    private ItemService itemService;
-    private ShopService shopService;
-    private UIService uiService;
-
-    private int quantity;
-    public PlayerController(PlayerView _playerView, ItemView _itemView,ItemService _itemService,ShopService _shopService,UIService _uiService)
+    public class PlayerController
     {
-        playerView = _playerView;
-        playerModel = new PlayerModel();
-        itemView = _itemView;
-        itemService = _itemService;
-        shopService = _shopService;
-        uiService = _uiService;
-        playerView.SetPlayerController(this);
-        playerModel.SetController(this);
-        PopulateList();
-        quantity = 0;
-        IncreaseTotalBerries(500);
-        EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(BuyItem);
-        EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
-        EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
-        EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
-        EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
-        EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(SellItem);
-        EventService.Instance.OnButtonRandomClickedEvent.AddListener(GetRandomItems);
+        private PlayerView playerView;
+        private PlayerModel playerModel;
+        private ItemView itemView;
+        private ItemService itemService;
+        private ShopService shopService;
+        private UIService uiService;
 
-    }
-    
-    private void PopulateList()
-    {
-        for (int i = 0; i < GetInventoryObject().items.Count; i++)
+        private int quantity;
+
+        public PlayerController(PlayerView _playerView, ItemView _itemView, ItemService _itemService,
+            ShopService _shopService, UIService _uiService)
         {
-            ItemController itemController = itemService.CreateItem(GetInventoryObject().items[i],itemView,GetPlayerTransform(),ItemParentType.PLAYER);
-            playerModel.AddItem(itemController);
+            playerView = _playerView;
+            playerModel = new PlayerModel();
+            itemView = _itemView;
+            itemService = _itemService;
+            shopService = _shopService;
+            uiService = _uiService;
+            playerView.SetPlayerController(this);
+            playerModel.SetController(this);
+            PopulateList();
+            quantity = 0;
+            IncreaseTotalBerries(500);
+            EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(BuyItem);
+            EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
+            EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
+            EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
+            EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
+            EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(SellItem);
+            EventService.Instance.OnButtonRandomClickedEvent.AddListener(GetRandomItems);
+
         }
-    }
 
-    private void BuyItem(ItemModel item)
-    {
-        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        private void PopulateList()
         {
-            if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName())
+            for (int i = 0; i < GetInventoryObject().items.Count; i++)
             {
-                playerModel.PlayerItemList[i].ShowItem();
+                ItemController itemController = itemService.CreateItem(GetInventoryObject().items[i], itemView,
+                    GetPlayerTransform(), ItemParentType.PLAYER);
+                playerModel.AddItem(itemController);
             }
         }
-    }
 
-    private void SellItem(ItemModel item)
-    {
-        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        private void BuyItem(ItemModel item)
         {
-            if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName() && 
-                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity == 0
-                )
+            for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
             {
-                playerModel.PlayerItemList[i].HideItem();
-            } else if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName())
-            {
-                
+                if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName())
+                {
+                    playerModel.PlayerItemList[i].ShowItem();
+                }
             }
         }
-    }
 
-    private void OnSellButtonClicked(ItemModel item)
-    {
-        int temp1 = quantity * item.GetItemPrice();
-        int temp2 = quantity * item.GetItemWeight();
-        DecreaseTotalWeight(temp2);
-        IncreaseTotalBerries(temp1);
-    }
+        private void SellItem(ItemModel item)
+        {
+            for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+            {
+                if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName() &&
+                    playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity == 0
+                   )
+                {
+                    playerModel.PlayerItemList[i].HideItem();
+                }
+                else if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName())
+                {
 
-    private void OnBuyButtonClicked(ItemModel item)
-    {
-        int temp1 = shopService.GetSelectionQuantity() * item.GetItemPrice();
-        int temp2 = shopService.GetSelectionQuantity() * item.GetItemWeight();
-        DecreaseTotalBerries(temp1);
-        IncreaseTotalWeight(temp2);
-    }
-    
-    private void ProcessPlusButton()
-    {
+                }
+            }
+        }
+
+        private void OnSellButtonClicked(ItemModel item)
+        {
+            int temp1 = quantity * item.GetItemPrice();
+            int temp2 = quantity * item.GetItemWeight();
+            DecreaseTotalWeight(temp2);
+            IncreaseTotalBerries(temp1);
+        }
+
+        private void OnBuyButtonClicked(ItemModel item)
+        {
+            int temp1 = shopService.GetSelectionQuantity() * item.GetItemPrice();
+            int temp2 = shopService.GetSelectionQuantity() * item.GetItemWeight();
+            DecreaseTotalBerries(temp1);
+            IncreaseTotalWeight(temp2);
+        }
+
+        private void ProcessPlusButton()
+        {
             quantity++;
-    }
+        }
 
-    private void ProcessMinusButton()
-    {
+        private void ProcessMinusButton()
+        {
             quantity--;
-    }
-    
-    private void ProcessConfirmBuyButton(ItemModel _itemModel)
-    {
-        
-        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        }
+
+        private void ProcessConfirmBuyButton(ItemModel _itemModel)
         {
-            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() && 
-                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity < 
-                playerModel.PlayerItemList[i].GetItem()._fixedQuantity
-                )
+
+            for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
             {
-                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity += shopService.GetSelectionQuantity();
-                OnBuyButtonClicked(_itemModel);
-            }
-            else 
-            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
-                      playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity >
-                      playerModel.PlayerItemList[i].GetItem()._fixedQuantity 
-                      )
-            {
-                uiService.GiveErrorMessage();
+                if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                    playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity <
+                    playerModel.PlayerItemList[i].GetItem()._fixedQuantity
+                   )
+                {
+                    playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity += shopService.GetSelectionQuantity();
+                    OnBuyButtonClicked(_itemModel);
+                }
+                else if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                         playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity >
+                         playerModel.PlayerItemList[i].GetItem()._fixedQuantity
+                        )
+                {
+                    uiService.GiveErrorMessage();
+                }
             }
         }
-    }
 
-    private void ProcessConfirmSellButton(ItemModel _itemModel)
-    {
-        
-        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        private void ProcessConfirmSellButton(ItemModel _itemModel)
         {
-            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() && 
-                quantity <= playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
-               )
+
+            for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
             {
-                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity -= quantity;
-                OnSellButtonClicked(_itemModel);
-            }
-            else 
-            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
-                quantity >  playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
-               )
-            {
-                uiService.GiveErrorMessage();
+                if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                    quantity <= playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
+                   )
+                {
+                    playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity -= quantity;
+                    OnSellButtonClicked(_itemModel);
+                }
+                else if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                         quantity > playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
+                        )
+                {
+                    uiService.GiveErrorMessage();
+                }
             }
         }
-    }
 
-    private void GetRandomItems()
-    {
-        int numberOfItemsToSelect = Random.Range(1, 6);
-
-        for (int i = 0; i < numberOfItemsToSelect; i++)
+        private void GetRandomItems()
         {
+            int numberOfItemsToSelect = Random.Range(1, 6);
+
+            for (int i = 0; i < numberOfItemsToSelect; i++)
+            {
                 int randomIndex = Random.Range(0, playerModel.PlayerItemList.Count);
                 ItemController selectedItem = playerModel.PlayerItemList[randomIndex];
-                
-                selectedItem.GetItem()._inPlayerQuantity = Random.Range(1,selectedItem.GetItem()._fixedQuantity);
+
+                selectedItem.GetItem()._inPlayerQuantity = Random.Range(1, selectedItem.GetItem()._fixedQuantity);
                 selectedItem.GetItem()._quantity = 0;
                 int tempWeight = selectedItem.GetItem()._inPlayerQuantity * selectedItem.GetItem()._weight;
-                if (GetMaxWeight() >= GetTotalWeight() )
+                if (GetMaxWeight() >= GetTotalWeight())
                 {
                     IncreaseTotalWeight(tempWeight);
                     selectedItem.ShowItem();
@@ -162,59 +170,64 @@ public class PlayerController
                 {
                     break;
                 }
+            }
         }
-    }
-    public void SetSelectionQuantity(int _quantity)
-    {
-        quantity = _quantity;
-    }
-    public int GetSelectionQuantity()
-    {
-        return quantity;
-    }
-    public Transform GetPlayerTransform()
-    {
-        return playerView.GetPlayerTransform();
-    }
 
-    public int GetTotalBerries()
-    {
-        return playerModel.GetTotalBerries();
-    }
+        public void SetSelectionQuantity(int _quantity)
+        {
+            quantity = _quantity;
+        }
 
-    public void IncreaseTotalBerries(int _totalBerries)
-    {
-        playerModel.IncreaseTotalBerries(_totalBerries);
-    }
+        public int GetSelectionQuantity()
+        {
+            return quantity;
+        }
 
-    public void DecreaseTotalBerries(int _totalBerries)
-    {
-        playerModel.DecreaseTotalBerries(_totalBerries);
-    }
+        public Transform GetPlayerTransform()
+        {
+            return playerView.GetPlayerTransform();
+        }
 
-    public int GetTotalWeight()
-    {
-        return playerModel.GetTotalWeight();
-    }
+        public int GetTotalBerries()
+        {
+            return playerModel.GetTotalBerries();
+        }
 
-    public int GetMaxWeight()
-    {
-        return playerModel.GetMaxWeight();
-    }
+        public void IncreaseTotalBerries(int _totalBerries)
+        {
+            playerModel.IncreaseTotalBerries(_totalBerries);
+        }
 
-    public void DecreaseTotalWeight(int _totalWeight)
-    {
-        playerModel.DecreaseTotalWeight(_totalWeight);
-    }
+        public void DecreaseTotalBerries(int _totalBerries)
+        {
+            playerModel.DecreaseTotalBerries(_totalBerries);
+        }
 
-    public void IncreaseTotalWeight(int _totalWeight)
-    {
-        playerModel.IncreaseTotalWeight(_totalWeight);
-    }
-    public InventoryScriptableObject GetInventoryObject()
-    {
-        return playerView.GetInventoryObject();
-    }
+        public int GetTotalWeight()
+        {
+            return playerModel.GetTotalWeight();
+        }
 
-    
+        public int GetMaxWeight()
+        {
+            return playerModel.GetMaxWeight();
+        }
+
+        public void DecreaseTotalWeight(int _totalWeight)
+        {
+            playerModel.DecreaseTotalWeight(_totalWeight);
+        }
+
+        public void IncreaseTotalWeight(int _totalWeight)
+        {
+            playerModel.IncreaseTotalWeight(_totalWeight);
+        }
+
+        public InventoryScriptableObject GetInventoryObject()
+        {
+            return playerView.GetInventoryObject();
+        }
+
+
+    }
 }

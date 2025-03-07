@@ -1,132 +1,144 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopController 
+using Inventory.Event;
+using Inventory.Item;
+using Inventory.Player;
+
+using Inventory.UI;
+
+namespace Inventory.Shop
 {
-    private ShopView shopView;
-    private ShopModel shopModel;
-    private ItemView itemView;
-    private ItemService itemService;
-    private PlayerService playerService;
-    private UIService uiService;
-    
-    private int quantity;
-
-    public ShopController(ShopView _shopView, ItemView _itemView,ItemService _itemService,PlayerService _playerService,UIService _uiService)
+    public class ShopController
     {
-        shopView = _shopView;
-        shopModel = new ShopModel();
-        itemView = _itemView;
-        itemService = _itemService;
-        playerService = _playerService;
-        uiService = _uiService;
-        shopView.SetShopController(this);
-        PopulateList();
-        PopulateShop();
-        quantity = 0;
-        EventService.Instance.OnFilterButtonClickedEvent.AddListener(FilterShop);
-        EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
-        EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
-        EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
-        EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
-    }
+        private ShopView shopView;
+        private ShopModel shopModel;
+        private ItemView itemView;
+        private ItemService itemService;
+        private PlayerService playerService;
+        private UIService uiService;
 
-    private void PopulateShop()
-    {
-        for (int i = 0; i < shopModel.ShopItemList.Count; i++)
+        private int quantity;
+
+        public ShopController(ShopView _shopView, ItemView _itemView, ItemService _itemService,
+            PlayerService _playerService, UIService _uiService)
         {
-            shopModel.ShopItemList[i].ShowItem();
+            shopView = _shopView;
+            shopModel = new ShopModel();
+            itemView = _itemView;
+            itemService = _itemService;
+            playerService = _playerService;
+            uiService = _uiService;
+            shopView.SetShopController(this);
+            PopulateList();
+            PopulateShop();
+            quantity = 0;
+            EventService.Instance.OnFilterButtonClickedEvent.AddListener(FilterShop);
+            EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
+            EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
+            EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
+            EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
         }
-    }
 
-    private void PopulateList()
-    {
-        for (int i = 0; i < GetShopScriptableObject().items.Count; i++)
+        private void PopulateShop()
         {
-            ItemController itemController = itemService.CreateItem(GetShopScriptableObject().items[i],itemView,GetShopTransform(),ItemParentType.SHOP);
-            shopModel.AddItem(itemController);
-        }
-    }
-
-    private void FilterShop(ItemTypes _itemType)
-    {
-        for (int i = 0; i < shopModel.ShopItemList.Count; i++)
-        {
-            if (shopModel.ShopItemList[i].GetItemType() == _itemType)
+            for (int i = 0; i < shopModel.ShopItemList.Count; i++)
             {
                 shopModel.ShopItemList[i].ShowItem();
             }
-            else
+        }
+
+        private void PopulateList()
+        {
+            for (int i = 0; i < GetShopScriptableObject().items.Count; i++)
             {
-                shopModel.ShopItemList[i].HideItem();
+                ItemController itemController = itemService.CreateItem(GetShopScriptableObject().items[i], itemView,
+                    GetShopTransform(), ItemParentType.SHOP);
+                shopModel.AddItem(itemController);
             }
         }
-    }
 
-    private void ProcessPlusButton()
-    {
+        private void FilterShop(ItemTypes _itemType)
+        {
+            for (int i = 0; i < shopModel.ShopItemList.Count; i++)
+            {
+                if (shopModel.ShopItemList[i].GetItemType() == _itemType)
+                {
+                    shopModel.ShopItemList[i].ShowItem();
+                }
+                else
+                {
+                    shopModel.ShopItemList[i].HideItem();
+                }
+            }
+        }
+
+        private void ProcessPlusButton()
+        {
             quantity++;
-    }
+        }
 
-    private void ProcessMinusButton()
-    {
+        private void ProcessMinusButton()
+        {
             quantity--;
-    }
-    private void ProcessConfirmBuyButton(ItemModel _itemModel)
-    {
-        for (int i = 0; i < shopModel.ShopItemList.Count; i++)
+        }
+
+        private void ProcessConfirmBuyButton(ItemModel _itemModel)
         {
-            if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
-                quantity <= shopModel.ShopItemList[i].GetItem()._quantity
-                )
+            for (int i = 0; i < shopModel.ShopItemList.Count; i++)
             {
-                shopModel.ShopItemList[i].GetItem()._quantity -= quantity;
-            }
-            else 
-            if(shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
-                    quantity > shopModel.ShopItemList[i].GetItem()._quantity
-                )
-            {
-                uiService.GiveErrorMessage();
+                if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                    quantity <= shopModel.ShopItemList[i].GetItem()._quantity
+                   )
+                {
+                    shopModel.ShopItemList[i].GetItem()._quantity -= quantity;
+                }
+                else if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                         quantity > shopModel.ShopItemList[i].GetItem()._quantity
+                        )
+                {
+                    uiService.GiveErrorMessage();
+                }
             }
         }
-    }
 
-    private void ProcessConfirmSellButton(ItemModel _itemModel)
-    {
-        for (int i = 0; i < shopModel.ShopItemList.Count; i++)
+        private void ProcessConfirmSellButton(ItemModel _itemModel)
         {
-            if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
-                shopModel.ShopItemList[i].GetItem()._quantity <= shopModel.ShopItemList[i].GetItem()._fixedQuantity
-               )
+            for (int i = 0; i < shopModel.ShopItemList.Count; i++)
             {
-                shopModel.ShopItemList[i].GetItem()._quantity += playerService.GetSelectionQuantity();
-            }
-            else 
-            if(shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() && 
-               shopModel.ShopItemList[i].GetItem()._quantity > shopModel.ShopItemList[i].GetItem()._fixedQuantity
-              )
-            {
-                uiService.GiveErrorMessage();
+                if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                    shopModel.ShopItemList[i].GetItem()._quantity <= shopModel.ShopItemList[i].GetItem()._fixedQuantity
+                   )
+                {
+                    shopModel.ShopItemList[i].GetItem()._quantity += playerService.GetSelectionQuantity();
+                }
+                else if (shopModel.ShopItemList[i].GetItemName() == _itemModel.GetItemName() &&
+                         shopModel.ShopItemList[i].GetItem()._quantity >
+                         shopModel.ShopItemList[i].GetItem()._fixedQuantity
+                        )
+                {
+                    uiService.GiveErrorMessage();
+                }
             }
         }
-    }
-    public int GetSelectedQuantity()
-    {
-        return quantity;
-    }
 
-    public void SetSelectionQuantity(int _quantity)
-    {
-        this.quantity = _quantity;
-    }
-    public Transform GetShopTransform()
-    {
-        return shopView.GetShopTransform();
-    }
+        public int GetSelectedQuantity()
+        {
+            return quantity;
+        }
 
-    public InventoryScriptableObject GetShopScriptableObject()
-    {
-        return shopView.GetShopInventoryObject();
+        public void SetSelectionQuantity(int _quantity)
+        {
+            this.quantity = _quantity;
+        }
+
+        public Transform GetShopTransform()
+        {
+            return shopView.GetShopTransform();
+        }
+
+        public InventoryScriptableObject GetShopScriptableObject()
+        {
+            return shopView.GetShopInventoryObject();
+        }
     }
 }

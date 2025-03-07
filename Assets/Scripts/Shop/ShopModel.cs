@@ -1,33 +1,44 @@
 using System.Collections.Generic;
-using UnityEngine;
 
-public class ShopModel 
+using Inventory.Item;
+
+
+namespace Inventory.Shop
 {
-    private ShopController _shopController;
-
-    private List<ItemController> _shopItemList;
-
-    public ShopModel()
+    public class ShopModel
     {
-        _shopItemList = new List<ItemController>();
-    }
-    ~ShopModel() { }
+        private ShopController _shopController;
 
-    public void SetController(ShopController shopController)
-    {
-        _shopController = shopController;
-    }
+        private List<ItemController> _shopItemList;
 
-    public void AddItem(ItemController newItem)
-    {
-        _shopItemList.Add(newItem);
-    }
+        public ShopModel()
+        {
+            _shopItemList = new List<ItemController>();
+        }
 
-    public void RemoveItem(ItemController item)
-    {
-        _shopItemList.Remove(item);
-    }
+        ~ShopModel()
+        {
+        }
 
-    public List<ItemController> ShopItemList { get => _shopItemList; }
+        public void SetController(ShopController shopController)
+        {
+            _shopController = shopController;
+        }
+
+        public void AddItem(ItemController newItem)
+        {
+            _shopItemList.Add(newItem);
+        }
+
+        public void RemoveItem(ItemController item)
+        {
+            _shopItemList.Remove(item);
+        }
+
+        public List<ItemController> ShopItemList
+        {
+            get => _shopItemList;
+        }
+    }
 }
 

@@ -1,20 +1,28 @@
-using UnityEngine;
 
-public class ShopService 
+using Inventory.Item;
+using Inventory.Player;
+using Inventory.UI;
+
+namespace Inventory.Shop
 {
-    private ShopController shopController;
-    public void Initialize(ShopView shopView,ItemView _itemView,ItemService _itemService,PlayerService playerService,UIService uiService)
+    public class ShopService
     {
-        shopController = new ShopController(shopView,_itemView,_itemService,playerService,uiService);
-    }
+        private ShopController shopController;
 
-    public int GetSelectionQuantity()
-    {
-        return shopController.GetSelectedQuantity();
-    }
+        public void Initialize(ShopView shopView, ItemView _itemView, ItemService _itemService,
+            PlayerService playerService, UIService uiService)
+        {
+            shopController = new ShopController(shopView, _itemView, _itemService, playerService, uiService);
+        }
 
-    public void SetSelectionQuantity(int quantity)
-    {
-        shopController.SetSelectionQuantity(quantity);
+        public int GetSelectionQuantity()
+        {
+            return shopController.GetSelectedQuantity();
+        }
+
+        public void SetSelectionQuantity(int quantity)
+        {
+            shopController.SetSelectionQuantity(quantity);
+        }
     }
 }

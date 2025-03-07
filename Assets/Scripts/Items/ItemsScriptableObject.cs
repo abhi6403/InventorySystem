@@ -1,6 +1,6 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Inventory.Item;
+
 
 [CreateAssetMenu(fileName = "ItemsScriptableObject", menuName = "Scriptable Objects/ItemsScriptableObject")]
 public class ItemsScriptableObject : ScriptableObject

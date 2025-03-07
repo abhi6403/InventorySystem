@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public enum ItemTypes
+namespace Inventory.Item
 {
-    WEAPON,
-    HEALTH,
-    PROPS,
-    DEVILFRUIT,
-    MAP,
-    POTION,
-    POSTER,
-    SHIPITEMS,
-}
+    public enum ItemTypes
+    {
+        WEAPON,
+        HEALTH,
+        PROPS,
+        DEVILFRUIT,
+        MAP,
+        POTION,
+        POSTER,
+        SHIPITEMS,
+    }
 
-public enum ItemParentType
-{
-    SHOP,
-    PLAYER,
+    public enum ItemParentType
+    {
+        SHOP,
+        PLAYER,
+    }
 }

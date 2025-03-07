@@ -1,37 +1,46 @@
 using UnityEngine;
 
-public class GameService : MonoBehaviour
+using Inventory.Event;
+using Inventory.Item;
+using Inventory.Player;
+using Inventory.Shop;
+using Inventory.UI;
+
+namespace Inventory.Main
 {
-    public ItemService itemService;
-    public ShopService shopService;
-    public PlayerService playerService;
-    public EventService eventService;
-    public UIService uiService;
 
-    [SerializeField]
-    private ShopView shopView;
-    [SerializeField]
-    private PlayerView playerView;
-    [SerializeField]
-    private ItemView itemView;
-    void Start()
-    {
-        CreateServices();
-        InjectDependencies();
-    }
 
-    private void CreateServices()
+    public class GameService : MonoBehaviour
     {
-        eventService = new EventService();
-        shopService = new ShopService();
-        playerService = new PlayerService();
-        itemService = new ItemService();
-    }
+        public ItemService itemService;
+        public ShopService shopService;
+        public PlayerService playerService;
+        public EventService eventService;
+        public UIService uiService;
 
-    private void InjectDependencies()
-    {
-        shopService.Initialize(shopView,itemView,itemService,playerService,uiService);
-        playerService.Initialize(playerView,itemView,itemService,shopService,uiService);
-        uiService.Initialize(shopService,playerService);
+        [SerializeField] private ShopView shopView;
+        [SerializeField] private PlayerView playerView;
+        [SerializeField] private ItemView itemView;
+
+        void Start()
+        {
+            CreateServices();
+            InjectDependencies();
+        }
+
+        private void CreateServices()
+        {
+            eventService = new EventService();
+            shopService = new ShopService();
+            playerService = new PlayerService();
+            itemService = new ItemService();
+        }
+
+        private void InjectDependencies()
+        {
+            shopService.Initialize(shopView, itemView, itemService, playerService, uiService);
+            playerService.Initialize(playerView, itemView, itemService, shopService, uiService);
+            uiService.Initialize(shopService, playerService);
+        }
     }
 }

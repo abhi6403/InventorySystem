@@ -1,69 +1,82 @@
 using System.Collections.Generic;
-using UnityEngine;
 
-public class PlayerModel 
+using Inventory.Item;
+
+
+namespace Inventory.Player
 {
-    private PlayerController _playerController;
-
-    private List<ItemController> _playerItemList;
-
-    private int _totalBerries;
-    private int _maxWeight = 150;
-    private int _totalWeight;
-
-    public PlayerModel()
+    public class PlayerModel
     {
-        _playerItemList = new List<ItemController>();
-    }
-    ~PlayerModel() { }
+        private PlayerController _playerController;
 
-    public void SetController(PlayerController playerController)
-    {
-        _playerController = playerController;
-    }
+        private List<ItemController> _playerItemList;
 
-    public void AddItem(ItemController newItem)
-    {
-        _playerItemList.Add(newItem);
-    }
+        private int _totalBerries;
+        private int _maxWeight = 150;
+        private int _totalWeight;
 
-    public void RemoveItem(ItemController item)
-    {
-        _playerItemList.Remove(item);
-    }
+        public PlayerModel()
+        {
+            _playerItemList = new List<ItemController>();
+        }
 
-    public List<ItemController> PlayerItemList { get => _playerItemList; }
+        ~PlayerModel()
+        {
+        }
 
-    public int GetTotalBerries()
-    {
-        return _totalBerries;
-    }
+        public void SetController(PlayerController playerController)
+        {
+            _playerController = playerController;
+        }
 
-    public void IncreaseTotalBerries(int totalBerries)
-    {
-        _totalBerries += totalBerries;
-    }
+        public void AddItem(ItemController newItem)
+        {
+            _playerItemList.Add(newItem);
+        }
 
-    public void DecreaseTotalBerries(int totalBerries)
-    {
-        _totalBerries -= totalBerries;
-    }
-    public int GetMaxWeight()
-    {
-        return _maxWeight;
-    }
-    public int GetTotalWeight()
-    {
-        return _totalWeight;
-    }
+        public void RemoveItem(ItemController item)
+        {
+            _playerItemList.Remove(item);
+        }
 
-    public void DecreaseTotalWeight(int totalWeight)
-    {
-        _totalWeight -= totalWeight;
-    }
+        public List<ItemController> PlayerItemList
+        {
+            get => _playerItemList;
+        }
 
-    public void IncreaseTotalWeight(int totalWeight)
-    {
-        _totalWeight += totalWeight;
+        public int GetTotalBerries()
+        {
+            return _totalBerries;
+        }
+
+        public void IncreaseTotalBerries(int totalBerries)
+        {
+            _totalBerries += totalBerries;
+        }
+
+        public void DecreaseTotalBerries(int totalBerries)
+        {
+            _totalBerries -= totalBerries;
+        }
+
+        public int GetMaxWeight()
+        {
+            return _maxWeight;
+        }
+
+        public int GetTotalWeight()
+        {
+            return _totalWeight;
+        }
+
+        public void DecreaseTotalWeight(int totalWeight)
+        {
+            _totalWeight -= totalWeight;
+        }
+
+        public void IncreaseTotalWeight(int totalWeight)
+        {
+            _totalWeight += totalWeight;
+        }
     }
 }

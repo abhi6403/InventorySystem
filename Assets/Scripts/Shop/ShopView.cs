@@ -1,26 +1,27 @@
 using UnityEngine;
 
-public class ShopView : MonoBehaviour
+namespace Inventory.Shop
 {
-    private ShopController shopController;
-    
-    [SerializeField]
-    private InventoryScriptableObject shopInventoryObject;
-    [SerializeField]
-    private Transform shopTransform;
+    public class ShopView : MonoBehaviour
+    {
+        private ShopController shopController;
 
-    public void SetShopController(ShopController _shopController)
-    {
-        shopController = _shopController;
-    }
-    
-    public InventoryScriptableObject GetShopInventoryObject()
-    {
-        return shopInventoryObject;
-    }
+        [SerializeField] private InventoryScriptableObject shopInventoryObject;
+        [SerializeField] private Transform shopTransform;
 
-    public Transform GetShopTransform()
-    {
-        return shopTransform;
+        public void SetShopController(ShopController _shopController)
+        {
+            shopController = _shopController;
+        }
+
+        public InventoryScriptableObject GetShopInventoryObject()
+        {
+            return shopInventoryObject;
+        }
+
+        public Transform GetShopTransform()
+        {
+            return shopTransform;
+        }
     }
 }
