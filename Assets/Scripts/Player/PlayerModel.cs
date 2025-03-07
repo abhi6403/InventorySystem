@@ -7,6 +7,8 @@ public class PlayerModel
 
     private List<ItemController> _playerItemList;
 
+    private int _totalBerries;
+
     public PlayerModel()
     {
         _playerItemList = new List<ItemController>();
@@ -29,4 +31,14 @@ public class PlayerModel
     }
 
     public List<ItemController> PlayerItemList { get => _playerItemList; }
+
+    public int GetTotalBerries()
+    {
+        return _totalBerries;
+    }
+
+    public void SetTotalBerries(int totalBerries)
+    {
+        _totalBerries = totalBerries;
+    }
 }

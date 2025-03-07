@@ -24,12 +24,14 @@ public class PlayerController
         playerModel.SetController(this);
         PopulateList();
         quantity = 0;
-        EventService.Instance.OnBuyEvent.AddListener(BuyItem);
+        SetTotalBerries(500);
+        EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(BuyItem);
         EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
         EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
         EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
         EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
-        EventService.Instance.OnSellEvent.AddListener(SellItem);
+        EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(SellItem);
+
     }
 
     public void PopulatePlayerInventory()
@@ -137,6 +139,15 @@ public class PlayerController
         return playerView.GetPlayerTransform();
     }
 
+    public int GetTotalBerries()
+    {
+        return playerModel.GetTotalBerries();
+    }
+
+    public void SetTotalBerries(int _totalBerries)
+    {
+        playerModel.SetTotalBerries(_totalBerries);
+    }
     public InventoryScriptableObject GetInventoryObject()
     {
         return playerView.GetInventoryObject();

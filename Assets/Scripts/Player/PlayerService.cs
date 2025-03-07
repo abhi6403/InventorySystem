@@ -17,4 +17,14 @@ public class PlayerService
     {
         playerController.SetSelectionQuantity(quantity);
     }
+
+    public int GetTotalBerries()
+    {
+        return playerController.GetTotalBerries();
+    }
+
+    public void SetTotalBerries(int totalBerries)
+    {
+        playerController.SetTotalBerries(totalBerries);
+    }
 }

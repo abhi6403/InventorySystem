@@ -8,6 +8,7 @@ public class UIService : MonoBehaviour
 {
     [SerializeField]private GameObject itemDetailsPannel;
     [SerializeField]private GameObject confirmationPannel;
+    [SerializeField]private GameObject errorPannel;
     
     [SerializeField]private Image itemDetailsImage;
     [SerializeField]private TextMeshProUGUI itemPrice;
@@ -18,6 +19,7 @@ public class UIService : MonoBehaviour
     [SerializeField]private TextMeshProUGUI itemAvailableQuantity;
     [SerializeField]private TextMeshProUGUI itemAvailableInPlayer;
     [SerializeField]private TextMeshProUGUI itemWeight;
+    [SerializeField] private TextMeshProUGUI itemPriceInConfirmPannel;
     
     [SerializeField]private Button plusButton;
     [SerializeField]private Button minusButton;
@@ -37,6 +39,7 @@ public class UIService : MonoBehaviour
         shopService = _shopService;
         playerService = _playerService;
         EventService.Instance.OnItemButtonClickedEvent.AddListener(ShowItemDetails);
+        itemBerries.text = playerService.GetTotalBerries().ToString();
     }
     
     private void ShowItemDetails(ItemModel itemData)
@@ -48,7 +51,7 @@ public class UIService : MonoBehaviour
             itemDetailsImage.sprite = _itemModel.GetItemImage();
             itemName.text = _itemModel.GetItemName();
             itemDescription.text = _itemModel.GetItemDescription();
-            itemBerries.text = "Berries - " + _itemModel.GetItemPrice();
+            itemPrice.text = "Berries - " + _itemModel.GetItemPrice();
             itemAvailableQuantity.text = "Available - " + _itemModel.GetQuantityOfShop();
             itemQuantity.text = shopService.GetSelectionQuantity().ToString();
             itemWeight.text = "Weight - " + _itemModel.GetItemWeight();
@@ -61,7 +64,7 @@ public class UIService : MonoBehaviour
             itemDetailsImage.sprite = _itemModel.GetItemImage();
             itemName.text = _itemModel.GetItemName(); 
             itemDescription.text = _itemModel.GetItemDescription();
-            itemBerries.text = "Berries - " + _itemModel.GetItemPrice();
+            itemPrice.text = "Berries - " + _itemModel.GetItemPrice();
             itemAvailableInPlayer.text = "Available - " + _itemModel.GetQantityOfPlayer();
             itemQuantity.text = playerService.GetSelectionQuantity().ToString();
             itemWeight.text = "Weight - " + _itemModel.GetItemWeight();
@@ -88,7 +91,6 @@ public class UIService : MonoBehaviour
     public void OnConfirmBuyButtonClicked()
     {
         EventService.Instance.OnConfirmBuyButtonClickedEvent.InvokeEvent(_itemModel);
-        EventService.Instance.OnBuyEvent.InvokeEvent(_itemModel);
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         shopService.SetSelectionQuantity(0);
@@ -98,7 +100,6 @@ public class UIService : MonoBehaviour
     public void OnConfirmSellButtonClicked()
     {
         EventService.Instance.OnConfirmSellButtonClickedEvent.InvokeEvent(_itemModel);
-        EventService.Instance.OnSellEvent.InvokeEvent(_itemModel);
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         shopService.SetSelectionQuantity(0);
@@ -106,26 +107,48 @@ public class UIService : MonoBehaviour
     }
     public void OnBuyButtonClicked()
     {
-        confirmationPannel.SetActive(true);
-        confirmBuyButton.gameObject.SetActive(true);
-        confirmSellButton.gameObject.SetActive(false);
+        int temp = shopService.GetSelectionQuantity() * _itemModel.GetItemPrice();
+
+        if (playerService.GetTotalBerries() >= temp)
+        {
+            itemPriceInConfirmPannel.text = temp.ToString();
+            confirmationPannel.SetActive(true);
+            confirmBuyButton.gameObject.SetActive(true);
+            confirmSellButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            errorPannel.SetActive(true);
+        }
     }
 
     public void OnSellButtonClicked()
     {
-        confirmationPannel.SetActive(true);
-        confirmBuyButton.gameObject.SetActive(false);
-        confirmSellButton.gameObject.SetActive(true);
+        int temp = playerService.GetSelectionQuantity() * _itemModel.GetItemPrice() - 100;
+
+        if (playerService.GetSelectionQuantity() <= _itemModel.GetItem()._inPlayerQuantity)
+        {
+            itemPriceInConfirmPannel.text = temp.ToString();
+            confirmationPannel.SetActive(true);
+            confirmBuyButton.gameObject.SetActive(false);
+            confirmSellButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            errorPannel.SetActive(true);
+        }
     }
 
     public void OnCancelButtonClicked()
     {
         confirmationPannel.SetActive(false);
+        errorPannel.SetActive(false);
     }
     public void OnCloseButtonClicked()
     {
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
+        errorPannel.SetActive(false);
     }
    public void getAllItemsInShop()
     {

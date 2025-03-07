@@ -22,8 +22,6 @@ public class EventService
     public EventController OnMinusButtonClickedEvent { get; private set; }
     public EventController<ItemModel> OnConfirmBuyButtonClickedEvent { get; private set; }
     public EventController<ItemModel> OnConfirmSellButtonClickedEvent { get; private set; }
-    public EventController<ItemModel> OnBuyEvent { get; private set; }
-    public EventController<ItemModel> OnSellEvent { get; private set; }
     public EventController<ItemModel> OnItemButtonClickedEvent { get; private set; }
     public EventController<ItemTypes> OnFilterButtonClickedEvent { get; private set; }
     
@@ -39,7 +37,5 @@ public class EventService
         OnMinusButtonClickedEvent = new EventController();
         OnConfirmBuyButtonClickedEvent = new EventController<ItemModel>();
         OnConfirmSellButtonClickedEvent = new EventController<ItemModel>();
-        OnSellEvent = new EventController<ItemModel>();
-        OnBuyEvent = new EventController<ItemModel>();
     }
 }
