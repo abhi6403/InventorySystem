@@ -10,6 +10,7 @@ public class ItemController
     private GameObject itemDetails;
     private GameObject confirmationPannel;
 
+    private int quantity;
     public ItemController(ItemsScriptableObject itemData,ItemView _itemView,Transform _getParentTransform,ItemParentType _itemParentType)
     {
         itemModel = new ItemModel(itemData,_getParentTransform,_itemParentType);
@@ -17,77 +18,12 @@ public class ItemController
         itemView.Initialize(GetItemImage(),GetItemPrice());
         itemModel.SetItemController(this);
         itemView.SetItemController(this);
-        
-        EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButtonClicked);
-        EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButtonClicked);
-        EventService.Instance.OnConfirmButtonClickedEvent.AddListener(processConfirmButtonClicked);
+        quantity = 0;
     }
 
     public void ShowItemDetails()
     {
         EventService.Instance.OnItemButtonClickedEvent.InvokeEvent(itemModel);
-    }
-    
-    public void ProcessPlusButtonClicked()
-    {
-        if (GetCurrentQuantityInShop() < GetItemAvailableQuantityInShop())
-        {
-            IncreaseCurrentQuantityInShop(1);
-        }
-    }
-
-    public void ProcessMinusButtonClicked()
-    {
-        if (GetCurrentQuantityInShop() > 0)
-        {
-            DecreaseCurrentQuantityInShop(1);
-        }
-    }
-
-    public void processConfirmButtonClicked()
-    {
-        IncreaseAvailableQuantityInPlayer(GetCurrentQuantityInShop());
-        DecreaseAvailableQuantityInShop(GetItemAvailableQuantityInPlayer());
-        
-    }
-
-    public void SetCurrentQuantityInShop()
-    {
-        itemModel.SetCurrentQuantityInShop();
-    }
-    public void IncreaseAvailableQuantityInShop(int _quantity)
-    {
-        itemModel.IncreaseAvailableQuantityInShop(_quantity);
-    }
-    public void DecreaseAvailableQuantityInShop(int _quantity)
-    {
-        itemModel.DecreaseAvailableQuantityInShop(_quantity);
-    }
-    public void IncreaseAvailableQuantityInPlayer(int _quantity)
-    {
-        itemModel.IncreaseAvailableQuantityInPlayer(_quantity);
-    }
-    
-    public void DecreaseAvailableQuantityInPlayer(int _quantity)
-    {
-        itemModel.DecreaseAvailableQuantityInPlayer(_quantity);
-    }
-    public void IncreaseCurrentQuantityInShop(int _quantity)
-    {
-        itemModel.IncreaseCurrentQuantityInShop(_quantity);
-    }
-    public void DecreaseCurrentQuantityInShop(int _quantity)
-    {
-        itemModel.DecreaseCurrentQuantityInShop(_quantity);
-    }
-    public void IncreaseCurrentQuantityInPlayer(int _quantity)
-    {
-        itemModel.IncreaseCurrentQuantityInPlayer(_quantity);
-    }
-
-    public void DecreaseCurrentQuantityInPlayer(int _quantity)
-    {
-        itemModel.DecreaseCurrentQuantityInPlayer(_quantity);
     }
     
     public Sprite GetItemImage()
@@ -107,25 +43,9 @@ public class ItemController
     {
         return itemModel.GetItemPrice();
     }
-    public int GetItemAvailableQuantityInShop()
-    {
-        return itemModel.GetItemAvailableQuantityInShop();
-    }
-    public int GetItemAvailableQuantityInPlayer()
-    {
-        return itemModel.GetAvailableQuantityInPlayer();
-    }
     public int GetItemWeight()
     {
         return itemModel.GetItemWeight();
-    }
-    public int GetCurrentQuantityInShop()
-    {
-        return itemModel.GetCurrentQuantityInShop();
-    }
-    public int GetCurrentQuantityInPlayer()
-    {
-        return itemModel.GetCurrentQuantityInPlayer();
     }
     public Transform GetParentTransform()
     {

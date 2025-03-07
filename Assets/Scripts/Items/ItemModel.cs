@@ -12,11 +12,7 @@ public class ItemModel
    private string itemDescription;
 
    private int itemPrice;
-   private int itemAvailableQuantityInShop;
-   private int itemAvailableQuantityInPlayer;
    private int itemWeight;
-   private int currentQuantityInShop;
-   private int currentQuantityInPlayer;
    
    private Transform parentTransform;
 
@@ -35,10 +31,8 @@ public class ItemModel
       itemName = item._name;
       itemDescription = item._description;
       itemPrice = item._amount;
-      itemAvailableQuantityInShop = item._fixedQuantity;
       item._quantity = item._fixedQuantity;
       item._inPlayerQuantity = 0;
-      itemAvailableQuantityInPlayer = item._inPlayerQuantity;
       itemWeight = item._weight;
       itemType = item._itemType;
       parentTransform = _parentTransform;
@@ -55,53 +49,7 @@ public class ItemModel
    {
       itemDetailsUI = _gameObject;
    }
-
-   public void SetCurrentQuantityInShop()
-   {
-      currentQuantityInShop = 0;
-   }
-   public void IncreaseAvailableQuantityInShop(int _quantity)
-   {
-      itemAvailableQuantityInShop += _quantity;
-      item._quantity = itemAvailableQuantityInShop; 
-      Debug.Log(itemAvailableQuantityInShop);
-   }
-   public void DecreaseAvailableQuantityInShop(int _quantity)
-   {
-      itemAvailableQuantityInShop -= _quantity;
-      item._quantity = itemAvailableQuantityInShop;
-      Debug.Log(itemAvailableQuantityInShop);
-   }
-   public void IncreaseAvailableQuantityInPlayer(int _quantity)
-   {
-      itemAvailableQuantityInPlayer += _quantity;
-      item._inPlayerQuantity = itemAvailableQuantityInPlayer;
-      Debug.Log(itemAvailableQuantityInPlayer);
-   }
-
-   public void DecreaseAvailableQuantityInPlayer(int _quantity)
-   {
-      itemAvailableQuantityInPlayer -= _quantity;
-      item._inPlayerQuantity = itemAvailableQuantityInPlayer;
-      Debug.Log(itemAvailableQuantityInPlayer);
-   }
-   public void IncreaseCurrentQuantityInShop(int _quantity)
-   {
-      currentQuantityInShop += _quantity;
-   }
-   public void DecreaseCurrentQuantityInShop(int _quantity)
-   {
-      currentQuantityInShop -= _quantity;
-   }
-   public void IncreaseCurrentQuantityInPlayer(int _quantity)
-   {
-      currentQuantityInPlayer += _quantity;
-   }  
-
-   public void DecreaseCurrentQuantityInPlayer(int _quantity)
-   {
-      currentQuantityInPlayer -= _quantity;
-   }
+   
 
    //Getters
    public Sprite GetItemImage()
@@ -123,32 +71,12 @@ public class ItemModel
    {
       return itemPrice;
    }
-
-   public int GetItemAvailableQuantityInShop()
-   {
-      return item._quantity;
-   }
-
-   public int GetAvailableQuantityInPlayer()
-   {
-      return item._inPlayerQuantity;
-   }
-
+   
    public int GetItemWeight()
    {
       return itemWeight;
    }
-
-   public int GetCurrentQuantityInShop()
-   {
-      return currentQuantityInShop;
-   }
-
-   public int GetCurrentQuantityInPlayer()
-   {
-      return currentQuantityInPlayer;
-   }
-
+   
    public Transform GetParentTransform()
    {
       return parentTransform;
@@ -159,7 +87,6 @@ public class ItemModel
       return itemDetailsUI;
    }
    
-
    public ItemsScriptableObject GetItem()
    {
       return item;
@@ -173,5 +100,15 @@ public class ItemModel
    public ItemTypes GetItemType()
    {
       return itemType;
+   }
+
+   public int GetQantityOfPlayer()
+   {
+      return item._inPlayerQuantity;
+   }
+
+   public int GetQuantityOfShop()
+   {
+      return item._quantity;
    }
 }

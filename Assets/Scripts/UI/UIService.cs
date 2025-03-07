@@ -39,36 +39,48 @@ public class UIService : MonoBehaviour
     {
         _itemModel = itemData;
 
-        itemDetailsImage.sprite = itemData.GetItemImage();
-        itemName.text = itemData.GetItemName();
-        itemDescription.text = itemData.GetItemDescription();
-        itemBerries.text = "Berries - " + itemData.GetItemPrice();
-        itemAvailableQuantity.text = "Available - " + itemData.GetItemAvailableQuantityInShop();
-        itemQuantity.text = _itemModel.GetCurrentQuantityInShop().ToString();
-        itemWeight.text = "Weight - " + itemData.GetItemWeight();
-        
+        if (itemData.GetItemParentType() == ItemParentType.SHOP)
+        {
+            itemDetailsImage.sprite = _itemModel.GetItemImage();
+            itemName.text = _itemModel.GetItemName();
+            itemDescription.text = _itemModel.GetItemDescription();
+            itemBerries.text = "Berries - " + _itemModel.GetItemPrice();
+            itemAvailableQuantity.text = "Available - " + _itemModel.GetQuantityOfShop();
+            itemQuantity.text = "";
+            itemWeight.text = "Weight - " + _itemModel.GetItemWeight();
+            itemAvailableQuantity.gameObject.SetActive(true);
+            itemAvailableInPlayer.gameObject.SetActive(false);
+        }else if (itemData.GetItemParentType() == ItemParentType.PLAYER)
+        {
+            itemDetailsImage.sprite = _itemModel.GetItemImage();
+            itemName.text = _itemModel.GetItemName(); 
+            itemDescription.text = _itemModel.GetItemDescription();
+            itemBerries.text = "Berries - " + _itemModel.GetItemPrice();
+            itemAvailableInPlayer.text = "Available - " + _itemModel.GetQantityOfPlayer();
+            itemQuantity.text = "";
+            itemWeight.text = "Weight - " + _itemModel.GetItemWeight();
+            itemAvailableInPlayer.gameObject.SetActive(true);
+            itemAvailableQuantity.gameObject.SetActive(false);
+        }
         itemDetailsPannel.SetActive(true);
     }
 
     public void OnPlusButtonClicked()
     {
-        EventService.Instance.OnPlusButtonClickedEvent.InvokeEvent();
-        itemQuantity.text = _itemModel.GetCurrentQuantityInShop().ToString();
+        EventService.Instance.OnPlusButtonClickedEvent.InvokeEvent(_itemModel);
     }
 
     public void OnMinusButtonClicked()
     {
-        EventService.Instance.OnMinusButtonClickedEvent.InvokeEvent();
-        itemQuantity.text = _itemModel.GetCurrentQuantityInShop().ToString();
+        EventService.Instance.OnMinusButtonClickedEvent.InvokeEvent(_itemModel);
     }
 
     public void OnConfirmButtonClicked()
     {
-        EventService.Instance.OnConfirmButtonClickedEvent.InvokeEvent();
+        EventService.Instance.OnConfirmButtonClickedEvent.InvokeEvent(_itemModel);
         EventService.Instance.OnBuyEvent.InvokeEvent(_itemModel);
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
-        _itemModel.SetCurrentQuantityInShop();
     }
 
     public void OnBuyButtonClicked()
@@ -83,7 +95,6 @@ public class UIService : MonoBehaviour
 
     public void OnCancelButtonClicked()
     {
-        _itemModel.SetCurrentQuantityInShop();
         confirmationPannel.SetActive(false);
     }
     public void OnCloseButtonClicked()

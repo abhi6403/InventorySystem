@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shop/ShopController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shop/ShopController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -34,7 +34,7 @@ public class PlayerController
     {
         for (int i = 0; i < GetInventoryObject().items.Count; i++)
         {
-            ItemController itemController = itemService.CreateItem(GetInventoryObject().items[i],itemView,GetPlayerTransform(),ItemParentType.SHOP);
+            ItemController itemController = itemService.CreateItem(GetInventoryObject().items[i],itemView,GetPlayerTransform(),ItemParentType.PLAYER);
             playerModel.AddItem(itemController);
         }
     }
