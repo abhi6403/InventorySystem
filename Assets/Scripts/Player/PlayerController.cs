@@ -19,6 +19,7 @@ public class PlayerController
         playerView.SetPlayerController(this);
         playerModel.SetController(this);
         PopulateList();
+        EventService.Instance.OnBuyEvent.AddListener(BuyItem);
     }
 
     public void PopulatePlayerInventory()
@@ -35,6 +36,17 @@ public class PlayerController
         {
             ItemController itemController = itemService.CreateItem(GetInventoryObject().items[i],itemView,GetPlayerTransform(),ItemParentType.SHOP);
             playerModel.AddItem(itemController);
+        }
+    }
+
+    public void BuyItem(ItemModel item)
+    {
+        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        {
+            if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName())
+            {
+                playerModel.PlayerItemList[i].ShowItem();
+            }
         }
     }
    

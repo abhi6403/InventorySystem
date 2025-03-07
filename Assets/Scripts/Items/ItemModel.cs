@@ -18,7 +18,6 @@ public class ItemModel
    private int currentQuantityInShop;
    private int currentQuantityInPlayer;
    
-
    private Transform parentTransform;
 
    private GameObject itemDetailsUI;
@@ -37,10 +36,13 @@ public class ItemModel
       itemDescription = item._description;
       itemPrice = item._amount;
       itemAvailableQuantityInShop = item._fixedQuantity;
-      itemAvailableQuantityInPlayer = 0;
+      item._quantity = item._fixedQuantity;
+      item._inPlayerQuantity = 0;
+      itemAvailableQuantityInPlayer = item._inPlayerQuantity;
       itemWeight = item._weight;
       itemType = item._itemType;
       parentTransform = _parentTransform;
+      itemParentType = _itemParentType;
    }
    
    //Setters
@@ -63,21 +65,18 @@ public class ItemModel
       itemAvailableQuantityInShop += _quantity;
       item._quantity = itemAvailableQuantityInShop; 
       Debug.Log(itemAvailableQuantityInShop);
-      //item._quantity += _quantity;
    }
    public void DecreaseAvailableQuantityInShop(int _quantity)
    {
       itemAvailableQuantityInShop -= _quantity;
       item._quantity = itemAvailableQuantityInShop;
       Debug.Log(itemAvailableQuantityInShop);
-      //item._quantity -= _quantity;
    }
    public void IncreaseAvailableQuantityInPlayer(int _quantity)
    {
       itemAvailableQuantityInPlayer += _quantity;
       item._inPlayerQuantity = itemAvailableQuantityInPlayer;
       Debug.Log(itemAvailableQuantityInPlayer);
-      //item._inPlayerQuantity += _quantity;
    }
 
    public void DecreaseAvailableQuantityInPlayer(int _quantity)
@@ -85,7 +84,6 @@ public class ItemModel
       itemAvailableQuantityInPlayer -= _quantity;
       item._inPlayerQuantity = itemAvailableQuantityInPlayer;
       Debug.Log(itemAvailableQuantityInPlayer);
-      //item._inPlayerQuantity -= _quantity;
    }
    public void IncreaseCurrentQuantityInShop(int _quantity)
    {

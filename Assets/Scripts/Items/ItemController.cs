@@ -44,27 +44,11 @@ public class ItemController
         }
     }
 
-    public void ProcessBuyButtonClicked()
-    {
-        
-    }
-
     public void processConfirmButtonClicked()
     {
         IncreaseAvailableQuantityInPlayer(GetCurrentQuantityInShop());
         DecreaseAvailableQuantityInShop(GetItemAvailableQuantityInPlayer());
-        SetCurrentQuantityInShop();
-    }
-
-    public void processCancelButtonClicked()
-    {
-        GameObject.Destroy(confirmationPannel);
-    }
-    
-    public void CloseItemDetails()
-    {
-        GameObject.Destroy(itemDetails);
-        GameObject.Destroy(confirmationPannel);
+        
     }
 
     public void SetCurrentQuantityInShop()

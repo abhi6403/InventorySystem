@@ -44,6 +44,7 @@ public class UIService : MonoBehaviour
         itemDescription.text = itemData.GetItemDescription();
         itemBerries.text = "Berries - " + itemData.GetItemPrice();
         itemAvailableQuantity.text = "Available - " + itemData.GetItemAvailableQuantityInShop();
+        itemQuantity.text = _itemModel.GetCurrentQuantityInShop().ToString();
         itemWeight.text = "Weight - " + itemData.GetItemWeight();
         
         itemDetailsPannel.SetActive(true);
@@ -64,6 +65,10 @@ public class UIService : MonoBehaviour
     public void OnConfirmButtonClicked()
     {
         EventService.Instance.OnConfirmButtonClickedEvent.InvokeEvent();
+        EventService.Instance.OnBuyEvent.InvokeEvent(_itemModel);
+        itemDetailsPannel.SetActive(false);
+        confirmationPannel.SetActive(false);
+        _itemModel.SetCurrentQuantityInShop();
     }
 
     public void OnBuyButtonClicked()
@@ -78,6 +83,7 @@ public class UIService : MonoBehaviour
 
     public void OnCancelButtonClicked()
     {
+        _itemModel.SetCurrentQuantityInShop();
         confirmationPannel.SetActive(false);
     }
     public void OnCloseButtonClicked()
