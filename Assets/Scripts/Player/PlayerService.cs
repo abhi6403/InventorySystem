@@ -23,8 +23,23 @@ public class PlayerService
         return playerController.GetTotalBerries();
     }
 
-    public void SetTotalBerries(int totalBerries)
+    public void IncreaseTotalBerries(int totalBerries)
     {
-        playerController.SetTotalBerries(totalBerries);
+        playerController.IncreaseTotalBerries(totalBerries);
+    }
+
+    public void SetTotalWeight(int totalWeight)
+    {
+        playerController.SetTotalWeight(totalWeight);
+    }
+
+    public int GetTotalWeight()
+    {
+        return playerController.GetTotalWeight();
+    }
+
+    public int GetMaxWeight()
+    {
+        return playerController.GetMaxWeight();
     }
 }

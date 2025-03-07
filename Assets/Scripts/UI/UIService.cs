@@ -20,6 +20,7 @@ public class UIService : MonoBehaviour
     [SerializeField]private TextMeshProUGUI itemAvailableInPlayer;
     [SerializeField]private TextMeshProUGUI itemWeight;
     [SerializeField] private TextMeshProUGUI itemPriceInConfirmPannel;
+    [SerializeField] private TextMeshProUGUI itemWeightText;
     
     [SerializeField]private Button plusButton;
     [SerializeField]private Button minusButton;
@@ -41,6 +42,7 @@ public class UIService : MonoBehaviour
         playerService = _playerService;
         EventService.Instance.OnItemButtonClickedEvent.AddListener(ShowItemDetails);
         itemBerries.text = playerService.GetTotalBerries().ToString();
+        itemWeightText.text = 0 + " / " + playerService.GetMaxWeight();
     }
     
     private void ShowItemDetails(ItemModel itemData)
@@ -92,6 +94,7 @@ public class UIService : MonoBehaviour
     public void OnConfirmBuyButtonClicked()
     {
         EventService.Instance.OnConfirmBuyButtonClickedEvent.InvokeEvent(_itemModel);
+        itemBerries.text = playerService.GetTotalBerries().ToString();
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         shopService.SetSelectionQuantity(0);
@@ -101,6 +104,7 @@ public class UIService : MonoBehaviour
     public void OnConfirmSellButtonClicked()
     {
         EventService.Instance.OnConfirmSellButtonClickedEvent.InvokeEvent(_itemModel);
+        itemBerries.text = playerService.GetTotalBerries().ToString();
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         shopService.SetSelectionQuantity(0);
@@ -155,6 +159,7 @@ public class UIService : MonoBehaviour
     public void getRandomItem()
     {
         EventService.Instance.OnButtonRandomClickedEvent.InvokeEvent();
+        itemWeightText.text = playerService.GetTotalWeight() + " / " + playerService.GetMaxWeight();
     }
    public void getAllItemsInShop()
     {

@@ -2148,6 +2148,7 @@ MonoBehaviour:
   itemAvailableInPlayer: {fileID: 614635284}
   itemWeight: {fileID: 2061971154}
   itemPriceInConfirmPannel: {fileID: 621207914}
+  itemWeightText: {fileID: 1196242640}
   plusButton: {fileID: 470212408}
   minusButton: {fileID: 1798747573}
   closeButton: {fileID: 1457219424}
@@ -2556,7 +2557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You don't have enough money to buy!!
+  m_text: You cannot perform this operation!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7760,8 +7761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76.270676, y: 201.6122}
-  m_SizeDelta: {x: 68.6799, y: 23.734}
+  m_AnchoredPosition: {x: -77, y: 201.6122}
+  m_SizeDelta: {x: 60.3396, y: 23.734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742701812
 MonoBehaviour:
@@ -7819,7 +7820,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

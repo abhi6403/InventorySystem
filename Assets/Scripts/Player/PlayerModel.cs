@@ -8,6 +8,8 @@ public class PlayerModel
     private List<ItemController> _playerItemList;
 
     private int _totalBerries;
+    private int _maxWeight = 150;
+    private int _totalWeight;
 
     public PlayerModel()
     {
@@ -37,8 +39,29 @@ public class PlayerModel
         return _totalBerries;
     }
 
-    public void SetTotalBerries(int totalBerries)
+    public void IncreaseTotalBerries(int totalBerries)
     {
-        _totalBerries = totalBerries;
+        _totalBerries += totalBerries;
+    }
+
+    public void DecreaseTotalBerries(int totalBerries)
+    {
+        _totalBerries -= totalBerries;
+    }
+    public int GetMaxWeight()
+    {
+        return _maxWeight;
+    }
+    public int GetTotalWeight()
+    {
+        return _totalWeight;
+    }
+
+    public void SetTotalWeight(int totalWeight)
+    {
+        if (totalWeight < _maxWeight)
+        {
+            _totalWeight += totalWeight;
+        }
     }
 }
