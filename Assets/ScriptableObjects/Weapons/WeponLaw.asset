@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -4076306476670913269, guid: b05e2067f325a0046a3f0255291da9e8, type: 3}
   _name: Kikoku
   _amount: 500
+  _fixedQuantity: 4
   _quantity: 4
   _weight: 20
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: ' It is a "Cursed Sword", though is not a ranked blade. Deals da,age
     of 200.'

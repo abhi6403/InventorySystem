@@ -35,8 +35,8 @@ public class PlayerController
                     _itemsScriptableObject.name)
                 {
                     GetItemsInPlayerInventory().Add(_itemsScriptableObject);
-                    _itemsScriptableObject._inPlayerQuantity = 1;
                     weight += _itemsScriptableObject._weight * _itemsScriptableObject._inPlayerQuantity;
+                    Debug.Log(weight.ToString());
                 }
             }
         }
@@ -67,7 +67,6 @@ public class PlayerController
         {
             if (GetItemsInPlayerInventory()[i]._name == _itemsScriptableObject._name)
             {
-                _itemsScriptableObject._inPlayerQuantity++;
                 Debug.Log("Item is already added to player inventory");
                 added = true;
                 break;

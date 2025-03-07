@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 7061142727197211147, guid: f0197610e3ad96945b7d679fbae6020e, type: 3}
   _name: Smoker
   _amount: 600
+  _fixedQuantity: 7
   _quantity: 7
   _weight: 10
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: A large jitte that is tipped with Seastone, a material that affects
     Devil Fruit users in a similar way to the sea.

@@ -54,7 +54,7 @@ public class ItemView : MonoBehaviour
         itemName.text = _items._name;
         itemDescription.text = _items._description;
         itemBerries.text = "Berries - " + _items._amount;
-        itemAvailableQuantity.text = "Available - " + itemController.GetItemAvailableQuantityInShop();
+        itemAvailableQuantity.text = "Available - " + _items._quantity;
         itemWeight.text = "Weight - " + _items._weight;
     }
 
@@ -67,7 +67,7 @@ public class ItemView : MonoBehaviour
         itemName.text = _items._name;
         itemDescription.text = _items._description;
         itemBerries.text = "Berries - " + _items._amount;
-        itemAvailableInPlayer.text = "Available - " + itemController.GetItemAvailableQuantityInPlayer();
+        itemAvailableInPlayer.text = "Available - " + _items._inPlayerQuantity;
         itemWeight.text = "Weight - " + _items._weight;
     }
     public Transform GetItemDetailsObjectTransform()
@@ -114,7 +114,11 @@ public class ItemView : MonoBehaviour
     {
         return itemAvailableQuantity;
     }
-    
+
+    public TextMeshProUGUI GetItemQuantityText()
+    {
+        return itemQuantity;
+    }
     public GameObject GetItemDetails()
     {
         return itemDetails;

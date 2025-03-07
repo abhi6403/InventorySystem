@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -3215317080329722638, guid: 57b4c553a23709b45a711efef0225a12, type: 3}
   _name: Yoru
   _amount: 2000
+  _fixedQuantity: 1
   _quantity: 1
   _weight: 35
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: Yoru is one of the strongest swords in the world, ranked as one of
     the 12 Supreme Grade swords.It is a "Black Blade" that is currently owned by

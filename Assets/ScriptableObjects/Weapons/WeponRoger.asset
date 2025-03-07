@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 4761180676226132609, guid: 634a01c5d91bf254b999421b3ed88de8, type: 3}
   _name: Ace
   _amount: 2000
+  _fixedQuantity: 1
   _quantity: 1
   _weight: 30
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: Ace is a cutlass that was owned and wielded by the Pirate King Gol
     D. Roger, serving as his trademark weapon. It ranks as one of the 12 Supreme

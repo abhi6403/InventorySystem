@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -8387917508061575823, guid: ebe86387184cfd84c94e21530a9bd564, type: 3}
   _name: The Kabuto
   _amount: 400
+  _fixedQuantity: 6
   _quantity: 6
   _weight: 10
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: The Kabuto is a dial-powered giant slingshot.Has different types
     of shots with different damage power.

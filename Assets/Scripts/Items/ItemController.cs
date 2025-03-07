@@ -21,25 +21,36 @@ public class ItemController
 
     public void ShowItemDetails()
     {
-        if (itemModel.GetItemParentType() == ItemParentType.SHOP)
+        if (GetItemParentType() == ItemParentType.SHOP)
         {
             itemView.InitializeItemDetails(itemModel.GetItem());
             itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
             itemDetails.SetActive(true);
-            itemModel.SetItemDetailsUIGameObject(itemDetails);
+            SetItemDetailsUIGameObject(itemDetails);
             SetCurrentQuantityTextInShop();
             SetAvailableQuantityTextInShop();
-        }else if (itemModel.GetItemParentType() == ItemParentType.PLAYER)
+        }else if (GetItemParentType() == ItemParentType.PLAYER)
         {
-            itemDetails = itemView.GetItemDetails();
-            itemModel.SetItemDetailsUIGameObject(itemDetails);
-            SetCurrentQuantityTextInPlayer();
+            /*itemDetails = itemView.GetItemDetails();
+            SetItemDetailsUIGameObject(itemDetails);
+            SetCurrentQuantityTextInShop();
             SetAvailableQuantityTextInPlayer();
             itemView.InitializePlayerItemDetails(itemModel.GetItem());
             itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
+            itemDetails.SetActive(true);*/
+            itemView.InitializePlayerItemDetails(itemModel.GetItem());
+            itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
             itemDetails.SetActive(true);
+            SetItemDetailsUIGameObject(itemDetails);
+            SetCurrentQuantityTextInPlayer();
+            SetAvailableQuantityTextInPlayer();
         }
         
+    }
+
+    private void SetItemDetailsUIGameObject(GameObject gameObject)
+    {
+        itemModel.SetItemDetailsUIGameObject(gameObject);
     }
 
     public void SetCurrentQuantityTextInShop()
@@ -63,12 +74,29 @@ public class ItemController
     }
     public void ProcessPlusButtonClicked()
     {
-        
+        if (GetItemParentType() == ItemParentType.SHOP && GetCurrentQuantityInShop() < GetItem()._quantity)
+        {
+            IncreaseCurrentQuantityInShop(1);
+            GetCurrentQuantityTextInShop().text = GetCurrentQuantityInShop().ToString();
+        }else if (GetItemParentType() == ItemParentType.PLAYER && GetCurrentQuantityInPlayer() < GetItem()._inPlayerQuantity)
+        {
+            Debug.Log("Getting In");
+            IncreaseCurrentQuantityInPlayer(1);
+            GetCurrentQuantityTextInPlayer().text = GetCurrentQuantityInPlayer().ToString();
+        }
     }
 
     public void ProcessMinusButtonClicked()
     {
-       
+        if (GetItemParentType() == ItemParentType.SHOP && GetCurrentQuantityInShop() > GetItem()._quantity)
+        {
+            DecreaseCurrentQuantityInShop(1);
+            GetCurrentQuantityTextInShop().text = GetCurrentQuantityInShop().ToString();
+        }else if (GetItemParentType() == ItemParentType.PLAYER && GetCurrentQuantityInPlayer() > GetItem()._quantity)
+        {
+            DecreaseCurrentQuantityInPlayer(1);
+            GetCurrentQuantityTextInPlayer().text = GetCurrentQuantityInPlayer().ToString();
+        }
     }
 
     public void ProcessBuyButtonClicked()
@@ -79,10 +107,19 @@ public class ItemController
 
     public void processConfirmButtonClicked()
     {
-        EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
-        itemModel.SetCurrentQuantityInShop(0);
-        GameObject.Destroy(itemDetails);
-        GameObject.Destroy(confirmationPannel);
+        if (GetItemAvailableQuantityInShop() > 0)
+        {
+            EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
+            IncreaseAvailableQuantityInPlayer(GetCurrentQuantityInShop());
+            DecreaseAvailableQuantityInShop(GetCurrentQuantityInShop());
+            SetCurrentQuantityInShop();
+            GameObject.Destroy(itemDetails);
+            GameObject.Destroy(confirmationPannel);
+        }
+        else
+        {
+            Debug.Log("Not enough available quantity");
+        }
     }
 
     public void processCancelButtonClicked()
@@ -96,6 +133,49 @@ public class ItemController
         GameObject.Destroy(confirmationPannel);
     }
 
+    public void SetCurrentQuantityInShop()
+    {
+        itemModel.SetCurrentQuantityInShop();
+    }
+    public void IncreaseAvailableQuantityInShop(int _quantity)
+    {
+        itemModel.IncreaseAvailableQuantityInShop(_quantity);
+    }
+    public void DecreaseAvailableQuantityInShop(int _quantity)
+    {
+        itemModel.DecreaseAvailableQuantityInShop(_quantity);
+    }
+    public void IncreaseAvailableQuantityInPlayer(int _quantity)
+    {
+        itemModel.IncreaseAvailableQuantityInPlayer(_quantity);
+    }
+    
+    public void DecreaseAvailableQuantityInPlayer(int _quantity)
+    {
+        itemModel.DecreaseAvailableQuantityInPlayer(_quantity);
+    }
+    public void IncreaseCurrentQuantityInShop(int _quantity)
+    {
+        itemModel.IncreaseCurrentQuantityInShop(_quantity);
+    }
+    public void DecreaseCurrentQuantityInShop(int _quantity)
+    {
+        itemModel.DecreaseCurrentQuantityInShop(_quantity);
+    }
+    public void IncreaseCurrentQuantityInPlayer(int _quantity)
+    {
+        itemModel.IncreaseCurrentQuantityInPlayer(_quantity);
+    }
+
+    public void DecreaseCurrentQuantityInPlayer(int _quantity)
+    {
+        itemModel.DecreaseCurrentQuantityInPlayer(_quantity);
+    }
+
+    public TextMeshProUGUI GetItemQuantityText()
+    {
+        return itemView.GetItemQuantityText();
+    }
     public GameObject GetConfirmationPannel()
     {
         return itemView.GetConfirmationPannel();
@@ -158,7 +238,7 @@ public class ItemController
     {
         return itemModel.GetAvailableQuantityInShopText();
     }
-    public TextMeshProUGUI GetAvailableQuantityInPlayerText()
+    public TextMeshProUGUI GetAvailableQuantityTextInPlayer()
     {
         return itemModel.GetAvailableQuantityInPlayerText();
     }

@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -8472943562256492609, guid: f9b48ff26056e8943b0ff51441490baa, type: 3}
   _name: Hassaikai
   _amount: 1500
+  _fixedQuantity: 2
   _quantity: 2
   _weight: 40
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: ' It is made of a solid black metal, with a round cross-section,
     and features sharp spikes along its upper, bulkier half. Deals Damage of 500.'

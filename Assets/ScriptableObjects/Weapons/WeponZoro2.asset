@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: 2107238775781407586, guid: 3ceb51e27f4abc94495c4e1a3c499d05, type: 3}
   _name: Sandai Kitetsu
   _amount: 750
+  _fixedQuantity: 1
   _quantity: 1
   _weight: 0
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: The Sandai Kitetsu is one of the Grade swords. Like all of its predecessor
     Kitetsu swords, this one is said to be a "Cursed Sword". It is one of Kouzuki

@@ -15,8 +15,10 @@ MonoBehaviour:
   _sprite: {fileID: -2558576742997423257, guid: 083287d5dfee6a24fa5f7c62cab1a38b, type: 3}
   _name: Clima-Tact
   _amount: 300
-  _quantity: 5
+  _fixedQuantity: 5
+  _quantity: 3
   _weight: 10
+  _inPlayerQuantity: 2
   _itemType: 0
   _description: Each separate piece of the Clima-Tact is capable of producing a bubble
     of air. Though the bubbles alone cannot deal any true damage to the opponents

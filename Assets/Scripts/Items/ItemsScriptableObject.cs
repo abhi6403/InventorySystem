@@ -8,6 +8,7 @@ public class ItemsScriptableObject : ScriptableObject
     public Sprite _sprite;
     public string _name;
     public int _amount;
+    public int _fixedQuantity;
     public int _quantity;
     public int _weight;
     public int _inPlayerQuantity;

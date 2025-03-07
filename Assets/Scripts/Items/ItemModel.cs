@@ -40,12 +40,20 @@ public class ItemModel
       itemName = item.name;
       itemDescription = item._description;
       itemPrice = item._amount;
-      itemAvailableQuantityInShop = item._quantity;
-      itemAvailableQuantityInPlayer = item._inPlayerQuantity;
+      item._quantity = item._fixedQuantity;
+      item._inPlayerQuantity = 0;
       itemWeight = item._weight;
       parentTransform = _parentTransform;
    }
 
+   public void exchange()
+   {
+      if (item._quantity == 0)
+      {
+         item._quantity = item._inPlayerQuantity;
+      }
+   }
+   
    //Setters
    public void SetItemController(ItemController _controller)
    {
@@ -57,24 +65,52 @@ public class ItemModel
       itemDetailsUI = _gameObject;
    }
 
-   public void SetCurrentQuantityInShop(int quantity)
+   public void SetCurrentQuantityInShop()
    {
-      currentQuantityInShop = quantity;
+      currentQuantityInShop = 0;
+   }
+   public void IncreaseAvailableQuantityInShop(int _quantity)
+   {
+      item._quantity += _quantity;
+   }
+   public void DecreaseAvailableQuantityInShop(int _quantity)
+   {
+      item._quantity -= _quantity;
+   }
+   public void IncreaseAvailableQuantityInPlayer(int _quantity)
+   {
+      item._inPlayerQuantity += _quantity;
    }
 
-   public void SetCurrentQuantityInPlayer(int quantity)
+   public void DecreaseAvailableQuantityInPlayer(int _quantity)
    {
-      currentQuantityInPlayer = quantity;
+      item._inPlayerQuantity -= _quantity;
+   }
+   public void IncreaseCurrentQuantityInShop(int _quantity)
+   {
+      currentQuantityInShop += _quantity;
+   }
+   public void DecreaseCurrentQuantityInShop(int _quantity)
+   {
+      currentQuantityInShop -= _quantity;
+   }
+   public void IncreaseCurrentQuantityInPlayer(int _quantity)
+   {
+      currentQuantityInPlayer += _quantity;
+   }  
+
+   public void DecreaseCurrentQuantityInPlayer(int _quantity)
+   {
+      currentQuantityInPlayer -= _quantity;
    }
 
    public void SetCurrentQuantityTextInShop()
    {
       currentQuantityTextInShop = itemDetailsUI.transform.Find("CurrentItemQuantity").GetComponent<TextMeshProUGUI>();
    }
-
    public void SetCurrentQuantityTextInPlayer()
    {
-      currentQuantityTextInPlayer = itemDetailsUI.transform.Find("CurrentItemQuantity").GetComponent<TextMeshProUGUI>();
+      currentQuantityTextInPlayer =  itemDetailsUI.transform.Find("CurrentItemQuantity").GetComponent<TextMeshProUGUI>();
    }
 
    public void SetAvailableQuantityTextInShop()
@@ -110,12 +146,12 @@ public class ItemModel
 
    public int GetItemAvailableQuantityInShop()
    {
-      return itemAvailableQuantityInShop;
+      return item._quantity;
    }
 
    public int GetAvailableQuantityInPlayer()
    {
-      return itemAvailableQuantityInPlayer;
+      return item._inPlayerQuantity;
    }
 
    public int GetItemWeight()

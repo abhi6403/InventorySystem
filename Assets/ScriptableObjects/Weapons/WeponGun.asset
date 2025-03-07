@@ -15,7 +15,9 @@ MonoBehaviour:
   _sprite: {fileID: -8067283565938183395, guid: 3b7c4a579a10a7c498b144b98ab9f158, type: 3}
   _name: Gun
   _amount: 200
+  _fixedQuantity: 10
   _quantity: 10
   _weight: 10
+  _inPlayerQuantity: 0
   _itemType: 0
   _description: Deals damage of 100.
