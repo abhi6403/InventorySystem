@@ -6,80 +6,45 @@ using UnityEngine;
 public class PlayerController 
 {
     private PlayerView playerView;
-    private int weight;
-    private const int maxWeight = 150;
-    
+    private PlayerModel playerModel;
     private ItemView itemView;
-    private TextMeshProUGUI playerItemAvailableText;
-    private int playerItemAvailable;
+    private ItemService itemService;
 
-    public PlayerController(PlayerView _playerView,ItemView _itemView)
+    public PlayerController(PlayerView _playerView, ItemView _itemView,ItemService _itemService)
     {
-        itemView = _itemView;
         playerView = _playerView;
+        playerModel = new PlayerModel();
+        itemView = _itemView;
+        itemService = _itemService;
         playerView.SetPlayerController(this);
-        EventService.Instance.OnBuyButtonClickedEvent.AddListener(AddToPlayerInventory);
-        
+        playerModel.SetController(this);
+        PopulateList();
     }
 
-    public void AddToPlayerInventory(ItemsScriptableObject _itemsScriptableObject)
+    public void PopulatePlayerInventory()
     {
-       
-        if (OnBuyItems(_itemsScriptableObject) == false)
+        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
         {
-            for (int i = 0; i < playerView.inventory.items.Count; i++)
-            {
-                if (playerView.inventory.items[i].name ==
-                    _itemsScriptableObject.name)
-                {
-                    GetItemsInPlayerInventory().Add(_itemsScriptableObject);
-                    weight += _itemsScriptableObject._weight * _itemsScriptableObject._inPlayerQuantity;
-                    Debug.Log(weight.ToString());
-                }
-            }
+            playerModel.PlayerItemList[i].ShowItem();
+            
         }
-        clearAllItems();
-        /*for (int i = 0; i < playerView.GetItemsInPlayerInventory().Count; i++)
-        {
-            ItemService item = new ItemService(itemView, playerView.GetItemsInPlayerInventory()[i], GetPlayerInventoryTransform(),ItemParentType.PLAYER);
-        }*/
     }
-    
-    public void clearAllItems()
+    public void PopulateList()
     {
-        foreach (Transform child in GetPlayerInventoryTransform())
+        for (int i = 0; i < GetInventoryObject().items.Count; i++)
         {
-            Destroy(child.gameObject);
+            ItemController itemController = itemService.CreateItem(GetInventoryObject().items[i],itemView,GetPlayerTransform(),ItemParentType.SHOP);
+            playerModel.AddItem(itemController);
         }
+    }
+   
+    public Transform GetPlayerTransform()
+    {
+        return playerView.GetPlayerTransform();
     }
 
-    public void AddWeightText()
+    public InventoryScriptableObject GetInventoryObject()
     {
-        playerView.GetWeightText().text = weight + "/150";
-    }
-    public bool OnBuyItems(ItemsScriptableObject _itemsScriptableObject)
-    {
-        bool added = false;
-
-        for (int i = 0; i < GetItemsInPlayerInventory().Count; i++)
-        {
-            if (GetItemsInPlayerInventory()[i]._name == _itemsScriptableObject._name)
-            {
-                Debug.Log("Item is already added to player inventory");
-                added = true;
-                break;
-            }
-        }
-        return added;
-    }
-    
-    public List<ItemsScriptableObject> GetItemsInPlayerInventory()
-    {
-       return playerView.GetItemsInPlayerInventory();
-    }
-    
-    public Transform GetPlayerInventoryTransform()
-    {
-        return playerView.GetPlayerInventoryTransform();
+        return playerView.GetInventoryObject();
     }
 }

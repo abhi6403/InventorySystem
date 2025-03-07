@@ -11,7 +11,6 @@ public class ShopModel
     {
         _shopItemList = new List<ItemController>();
     }
-
     ~ShopModel() { }
 
     public void SetController(ShopController shopController)

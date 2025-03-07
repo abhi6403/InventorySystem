@@ -1928,10 +1928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb38c90b905e04e4886dcc3aca13012e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventoryTransform: {fileID: 1325055720}
-  playerItems: []
-  weightText: {fileID: 1196242640}
-  inventory: {fileID: 11400000, guid: 0bd094b885b212d46b7bfcfc30a9ae1e, type: 2}
+  shopInventoryObject: {fileID: 11400000, guid: 0bd094b885b212d46b7bfcfc30a9ae1e, type: 2}
+  playerTransform: {fileID: 1325055720}
 --- !u!4 &735289487
 Transform:
   m_ObjectHideFlags: 0

@@ -7,35 +7,22 @@ public class PlayerView : MonoBehaviour
    private PlayerController playerController;
    
    [SerializeField]
-   private Transform playerInventoryTransform;
+   private InventoryScriptableObject shopInventoryObject;
    [SerializeField]
-   private List<ItemsScriptableObject> playerItems;
-   
-   [SerializeField]
-   private TextMeshProUGUI weightText;
-   public InventoryScriptableObject inventory;
+   private Transform playerTransform;
 
    public void SetPlayerController(PlayerController _playerController)
    {
       playerController = _playerController;
    }
 
-   public List<ItemsScriptableObject> GetItemsInPlayerInventory()
+   public Transform GetPlayerTransform()
    {
-      return playerItems;
+      return playerTransform;
    }
 
-   public Transform GetPlayerInventoryTransform()
+   public InventoryScriptableObject GetInventoryObject()
    {
-      return playerInventoryTransform;
-   }
-
-   public TextMeshProUGUI GetWeightText()
-   {
-      return weightText;
-   }
-   public InventoryScriptableObject GetPlayerInventory()
-   {
-      return inventory;
+      return shopInventoryObject;
    }
 }

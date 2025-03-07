@@ -24,5 +24,4 @@ public class ShopView : MonoBehaviour
     {
         return shopTransform;
     }
-    
 }

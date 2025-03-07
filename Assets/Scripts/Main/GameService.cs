@@ -31,6 +31,6 @@ public class GameService : MonoBehaviour
     private void InjectDependencies()
     {
         shopService.Initialize(shopView,itemView,itemService);
-        playerService.Initialize(playerView,itemView);
+        playerService.Initialize(playerView,itemView,itemService);
     }
 }
