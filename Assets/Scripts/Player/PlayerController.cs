@@ -31,6 +31,7 @@ public class PlayerController
         EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
         EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
         EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(SellItem);
+        EventService.Instance.OnButtonRandomClickedEvent.AddListener(GetRandomItems);
 
     }
 
@@ -126,6 +127,20 @@ public class PlayerController
         }
     }
 
+    private void GetRandomItems()
+    {
+        int numberOfItemsToSelect = Random.Range(1, 6);
+
+        for (int i = 0; i < numberOfItemsToSelect; i++)
+        {
+            int randomIndex = Random.Range(0, playerModel.PlayerItemList.Count);
+            ItemController selectedItem = playerModel.PlayerItemList[randomIndex];
+            
+            selectedItem.GetItem()._inPlayerQuantity = selectedItem.GetItem()._fixedQuantity;
+            selectedItem.GetItem()._quantity = 0;
+            selectedItem.ShowItem();
+        }
+    }
     public void SetSelectionQuantity(int _quantity)
     {
         quantity = _quantity;

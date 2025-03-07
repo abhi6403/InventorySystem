@@ -28,6 +28,7 @@ public class UIService : MonoBehaviour
     [SerializeField]private Button SellButton;
     [SerializeField]private Button confirmBuyButton;
     [SerializeField]private Button confirmSellButton;
+    [SerializeField]private Button randomButton;
     
     private ShopService shopService;
     private PlayerService playerService;
@@ -149,6 +150,11 @@ public class UIService : MonoBehaviour
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         errorPannel.SetActive(false);
+    }
+
+    public void getRandomItem()
+    {
+        EventService.Instance.OnButtonRandomClickedEvent.InvokeEvent();
     }
    public void getAllItemsInShop()
     {
