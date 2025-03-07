@@ -6,7 +6,6 @@ public class GameService : MonoBehaviour
     public ItemService itemService;
     public ShopService shopService;
     public InventoryService inventoryService;
-    public UIService uiService;
     public PlayerService playerService;
     public EventService eventService;
 

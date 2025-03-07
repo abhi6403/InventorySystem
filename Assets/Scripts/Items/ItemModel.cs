@@ -5,28 +5,34 @@ using UnityEngine.UI;
 public class ItemModel
 {
    private ItemController itemController;
-   
+
    private Sprite itemImage;
+
    private string itemName;
    private string itemDescription;
-   
+
    private int itemPrice;
-   private int itemAvailableQuantity;
+   private int itemAvailableQuantityInShop;
    private int itemAvailableQuantityInPlayer;
    private int itemWeight;
-   private int currentQuantity;
+   private int currentQuantityInShop;
    private int currentQuantityInPlayer;
-   
-   
+
    private Transform parentTransform;
+
    private GameObject itemDetailsUI;
-   private TextMeshProUGUI currentQuantityText;
+
+   private TextMeshProUGUI currentQuantityTextInShop;
+   private TextMeshProUGUI currentQuantityTextInPlayer;
    private TextMeshProUGUI availableQuantityInShopText;
    private TextMeshProUGUI availableQuantityInPlayerText;
+
    private ItemsScriptableObject item;
+
    private ItemParentType itemParentType;
-   
-   public ItemModel(ItemsScriptableObject _itemsScriptableObject, Transform _parentTransform, ItemParentType _itemParentType)
+
+   public ItemModel(ItemsScriptableObject _itemsScriptableObject, Transform _parentTransform,
+      ItemParentType _itemParentType)
    {
       item = _itemsScriptableObject;
       itemParentType = _itemParentType;
@@ -34,99 +40,54 @@ public class ItemModel
       itemName = item.name;
       itemDescription = item._description;
       itemPrice = item._amount;
-      itemAvailableQuantity = item._quantity;
-      itemWeight = item._weight;
+      itemAvailableQuantityInShop = item._quantity;
       itemAvailableQuantityInPlayer = item._inPlayerQuantity;
+      itemWeight = item._weight;
       parentTransform = _parentTransform;
    }
-   
-   public void SetItemDetailsUIGameObject(GameObject _gameObject)
-   {
-      itemDetailsUI = _gameObject;
-   }
+
+   //Setters
    public void SetItemController(ItemController _controller)
    {
       itemController = _controller;
    }
 
-   public void IncreaseQuantity(int quantity)
+   public void SetItemDetailsUIGameObject(GameObject _gameObject)
    {
-      if (currentQuantity < item._quantity)
-      {
-         currentQuantity += quantity;
-         itemAvailableQuantity -= quantity;
-      }
+      itemDetailsUI = _gameObject;
    }
 
-   public void DecreaseQuantity(int quantity)
+   public void SetCurrentQuantityInShop(int quantity)
    {
-      if (currentQuantity > 0)
-      {
-         currentQuantity -= quantity;
-         itemAvailableQuantity += quantity;
-      }
-      
+      currentQuantityInShop = quantity;
    }
 
-   public int GetAvailableQuantityInPlayer()
+   public void SetCurrentQuantityInPlayer(int quantity)
    {
-      return itemAvailableQuantityInPlayer;
-   }
-   public int GetCurrentQuantityInPlayer()
-   {
-      return currentQuantityInPlayer;
-   }
-   public void SetCurrentQuantity(int quantity)
-   {
-      currentQuantity = quantity;
-   }
-   public void SetCurrentQuantityText(TextMeshProUGUI _currentQuantityText)
-   {
-      currentQuantityText = _currentQuantityText;
-   }
-   public void SetAvailableQuantityText(TextMeshProUGUI _availableQuantityText)
-   {
-      availableQuantityInShopText = _availableQuantityText;
+      currentQuantityInPlayer = quantity;
    }
 
-   public void SetAvailableQuantityInPlayerText(TextMeshProUGUI _availableQuantityInPlayerText)
+   public void SetCurrentQuantityTextInShop()
    {
-      availableQuantityInPlayerText = _availableQuantityInPlayerText;
+      currentQuantityTextInShop = itemDetailsUI.transform.Find("CurrentItemQuantity").GetComponent<TextMeshProUGUI>();
    }
 
-   public TextMeshProUGUI GetAvailableQuantityInPlayerText()
+   public void SetCurrentQuantityTextInPlayer()
    {
-      return availableQuantityInPlayerText;
-   }
-   public ItemsScriptableObject GetItem()
-   {
-      return item;
-   }
-   public int GetCurrentQuantity()
-   {
-      return currentQuantity;
-   }
-   public TextMeshProUGUI GetCurrentQuantityText()
-   {
-      return currentQuantityText;
+      currentQuantityTextInPlayer = itemDetailsUI.transform.Find("CurrentItemQuantity").GetComponent<TextMeshProUGUI>();
    }
 
-   public ItemParentType GetItemParentType()
+   public void SetAvailableQuantityTextInShop()
    {
-      return itemParentType;
+      availableQuantityInShopText =  itemDetailsUI.transform.Find("AvailableQuantityInShop").GetComponent<TextMeshProUGUI>();
    }
-   public TextMeshProUGUI GetAvailableQuantityInShopText()
+
+   public void SetAvailableQuantityTextInPlayer()
    {
-      return availableQuantityInShopText;
+      availableQuantityInPlayerText = itemDetailsUI.transform.Find("AvailableQuantityInPlayer").GetComponent<TextMeshProUGUI>();
    }
-   public GameObject GetItemDetailsUIGameObject()
-   {
-      return itemDetailsUI;
-   }
-   public Transform GetParentTransform()
-   {
-      return parentTransform;
-   }
+
+   //Getters
    public Sprite GetItemImage()
    {
       return itemImage;
@@ -147,13 +108,68 @@ public class ItemModel
       return itemPrice;
    }
 
-   public int GetItemAvailableQuantity()
+   public int GetItemAvailableQuantityInShop()
    {
-      return itemAvailableQuantity;
+      return itemAvailableQuantityInShop;
+   }
+
+   public int GetAvailableQuantityInPlayer()
+   {
+      return itemAvailableQuantityInPlayer;
    }
 
    public int GetItemWeight()
    {
       return itemWeight;
+   }
+
+   public int GetCurrentQuantityInShop()
+   {
+      return currentQuantityInShop;
+   }
+
+   public int GetCurrentQuantityInPlayer()
+   {
+      return currentQuantityInPlayer;
+   }
+
+   public Transform GetParentTransform()
+   {
+      return parentTransform;
+   }
+
+   public GameObject GetItemDetailsUIGameObject()
+   {
+      return itemDetailsUI;
+   }
+
+   public TextMeshProUGUI GetCurrentQuantityTextInShop()
+   {
+      return currentQuantityTextInShop;
+   }
+
+   public TextMeshProUGUI GetCurrentQuantityTextInPlayer()
+   {
+      return currentQuantityTextInPlayer;
+   }
+
+   public TextMeshProUGUI GetAvailableQuantityInShopText()
+   {
+      return availableQuantityInShopText;
+   }
+
+   public TextMeshProUGUI GetAvailableQuantityInPlayerText()
+   {
+      return availableQuantityInPlayerText;
+   }
+
+   public ItemsScriptableObject GetItem()
+   {
+      return item;
+   }
+
+   public ItemParentType GetItemParentType()
+   {
+      return itemParentType;
    }
 }

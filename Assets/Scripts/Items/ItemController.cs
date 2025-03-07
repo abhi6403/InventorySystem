@@ -27,90 +27,87 @@ public class ItemController
             itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
             itemDetails.SetActive(true);
             itemModel.SetItemDetailsUIGameObject(itemDetails);
-            TextMeshProUGUI textMeshPro = itemDetails.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
-            SetItemQuantityText(textMeshPro);
-            TextMeshProUGUI textMeshPro1 = itemDetails.transform.Find("ItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
-            itemModel.SetAvailableQuantityText(textMeshPro1);
+            SetCurrentQuantityTextInShop();
+            SetAvailableQuantityTextInShop();
         }else if (itemModel.GetItemParentType() == ItemParentType.PLAYER)
         {
+            itemDetails = itemView.GetItemDetails();
+            itemModel.SetItemDetailsUIGameObject(itemDetails);
+            SetCurrentQuantityTextInPlayer();
+            SetAvailableQuantityTextInPlayer();
             itemView.InitializePlayerItemDetails(itemModel.GetItem());
             itemDetails = GameObject.Instantiate(itemView.GetItemDetails(),itemView.GetItemDetailsObjectTransform());
             itemDetails.SetActive(true);
-            itemModel.SetItemDetailsUIGameObject(itemDetails);
-            TextMeshProUGUI textMeshPro = itemDetails.transform.Find("ItemQuantity").GetComponent<TextMeshProUGUI>();
-            SetItemQuantityText(textMeshPro);
-            TextMeshProUGUI textMeshPro1 = itemDetails.transform.Find("PlayerItemAvailableQuantity").GetComponent<TextMeshProUGUI>();
-            itemModel.SetAvailableQuantityInPlayerText(textMeshPro1);
         }
         
     }
 
-    public void SetItemQuantityText(TextMeshProUGUI _quantityText)
+    public void SetCurrentQuantityTextInShop()
     {
-        itemModel.SetCurrentQuantityText(_quantityText);
+        itemModel.SetCurrentQuantityTextInShop();
     }
 
+    public void SetCurrentQuantityTextInPlayer()
+    {
+        itemModel.SetCurrentQuantityTextInPlayer();
+    }
+
+    public void SetAvailableQuantityTextInShop()
+    {
+        itemModel.SetAvailableQuantityTextInShop();
+    }
+
+    public void SetAvailableQuantityTextInPlayer()
+    {
+       itemModel.SetAvailableQuantityTextInPlayer();
+    }
     public void ProcessPlusButtonClicked()
     {
-        itemModel.IncreaseQuantity(1);
-        itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
-        itemModel.GetAvailableQuantityInShopText().text = "Available - " + GetItemAvailableQuantity();
+        
     }
 
     public void ProcessMinusButtonClicked()
     {
-        itemModel.DecreaseQuantity(1);
-        itemModel.GetCurrentQuantityText().text = itemModel.GetCurrentQuantity().ToString();
-        itemModel.GetAvailableQuantityInShopText().text = "Available - " + itemModel.GetItemAvailableQuantity();
+       
     }
 
     public void ProcessBuyButtonClicked()
     {
-        confirmationPannel = GameObject.Instantiate(itemView.confirmationPannel,itemView.GetItemDetailsObjectTransform());
+        confirmationPannel = GameObject.Instantiate(GetConfirmationPannel(),itemView.GetItemDetailsObjectTransform());
         confirmationPannel.SetActive(true);
     }
 
     public void processConfirmButtonClicked()
     {
         EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
-        itemModel.SetCurrentQuantity(0);
-        confirmationPannel.SetActive(false);
-        itemDetails.SetActive(false);
+        itemModel.SetCurrentQuantityInShop(0);
+        GameObject.Destroy(itemDetails);
+        GameObject.Destroy(confirmationPannel);
     }
 
     public void processCancelButtonClicked()
     {
-        itemView.confirmationPannel.gameObject.SetActive(false);
-        confirmationPannel.SetActive(false);
+        GameObject.Destroy(confirmationPannel);
     }
     
     public void CloseItemDetails()
     {
-        GameObject.Destroy(itemModel.GetItemDetailsUIGameObject());
+        GameObject.Destroy(itemDetails);
+        GameObject.Destroy(confirmationPannel);
     }
-    public Transform GetParentTransform()
+
+    public GameObject GetConfirmationPannel()
     {
-        return itemModel.GetParentTransform();
-    }
-    
-    public int GetAvailableQuantityInPlayer()
-    {
-        return itemModel.GetAvailableQuantityInPlayer();
-    }
-    public int GetCurrentQuantityInPlayer()
-    {
-        return itemModel.GetCurrentQuantityInPlayer();
+        return itemView.GetConfirmationPannel();
     }
     public Sprite GetItemImage()
     {
         return itemModel.GetItemImage();
     }
-    
     public string GetItemName()
     {
         return itemModel.GetItemName();
     }
-
     public string GetItemDescription()
     {
         return itemModel.GetItemDescription();
@@ -120,14 +117,57 @@ public class ItemController
     {
         return itemModel.GetItemPrice();
     }
-
-    public int GetItemAvailableQuantity()
+    public int GetItemAvailableQuantityInShop()
     {
-        return itemModel.GetItemAvailableQuantity();
+        return itemModel.GetItemAvailableQuantityInShop();
     }
-
+    public int GetItemAvailableQuantityInPlayer()
+    {
+        return itemModel.GetAvailableQuantityInPlayer();
+    }
     public int GetItemWeight()
     {
         return itemModel.GetItemWeight();
+    }
+    public int GetCurrentQuantityInShop()
+    {
+        return itemModel.GetCurrentQuantityInShop();
+    }
+    public int GetCurrentQuantityInPlayer()
+    {
+        return itemModel.GetCurrentQuantityInPlayer();
+    }
+    public Transform GetParentTransform()
+    {
+        return itemModel.GetParentTransform();
+    }
+    public GameObject GetItemDetailsUIGameObject()
+    {
+        return itemModel.GetItemDetailsUIGameObject();
+    }
+    public TextMeshProUGUI GetCurrentQuantityTextInShop()
+    {
+        return itemModel.GetCurrentQuantityTextInShop();
+    }
+
+    public TextMeshProUGUI GetCurrentQuantityTextInPlayer()
+    {
+        return itemModel.GetCurrentQuantityTextInPlayer();
+    }
+    public TextMeshProUGUI GetAvailableQuantityInShopText()
+    {
+        return itemModel.GetAvailableQuantityInShopText();
+    }
+    public TextMeshProUGUI GetAvailableQuantityInPlayerText()
+    {
+        return itemModel.GetAvailableQuantityInPlayerText();
+    }
+    public ItemsScriptableObject GetItem()
+    {
+        return itemModel.GetItem();
+    }
+    public ItemParentType GetItemParentType()
+    {
+        return itemModel.GetItemParentType();
     }
 }

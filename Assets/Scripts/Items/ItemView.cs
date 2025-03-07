@@ -6,27 +6,28 @@ using UnityEngine.UI;
 public class ItemView : MonoBehaviour
 {
     private ItemController itemController;
-    private Button thisbutton;
 
-    public Image itemImage;
-    public TextMeshProUGUI itemPrice;
+    [SerializeField]private Image itemImage;
+    [SerializeField]private Image itemDetailsImage;
     
-    public GameObject itemDetails;
-    public GameObject confirmationPannel;
+    [SerializeField]private GameObject itemDetails;
+    [SerializeField]private GameObject confirmationPannel;
     
-    public Image itemDetailsImage;
-    public TextMeshProUGUI itemName;
-    public TextMeshProUGUI itemDescription;
-    public TextMeshProUGUI itemBerries;
-    public TextMeshProUGUI itemQuantity;
-    public TextMeshProUGUI itemAvailableQuantity;
-    public TextMeshProUGUI itemAvailableInPlayer;
-    public TextMeshProUGUI itemWeight;
-    public Button plusButton;
-    public Button minusButton;
-    public Button closeButton;
-    public Button buyButton;
-    public Button SellButton;
+    [SerializeField]private TextMeshProUGUI itemPrice;
+    [SerializeField]private TextMeshProUGUI itemName;
+    [SerializeField]private TextMeshProUGUI itemDescription;
+    [SerializeField]private TextMeshProUGUI itemBerries;
+    [SerializeField]private TextMeshProUGUI itemQuantity;
+    [SerializeField]private TextMeshProUGUI itemAvailableQuantity;
+    [SerializeField]private TextMeshProUGUI itemAvailableInPlayer;
+    [SerializeField]private TextMeshProUGUI itemWeight;
+    
+    private Button thisbutton;
+    [SerializeField]private Button plusButton;
+    [SerializeField]private Button minusButton;
+    [SerializeField]private Button closeButton;
+    [SerializeField]private Button buyButton;
+    [SerializeField]private Button SellButton;
     
     public Canvas mainCanvas;
 
@@ -41,9 +42,10 @@ public class ItemView : MonoBehaviour
         thisbutton.onClick.AddListener(itemController.ShowItemDetails);
     }
 
-    public void SetItemController(ItemController _itemController)
+    public void Initialize(Sprite _sprite, int _price)
     {
-        itemController = _itemController;
+        itemImage.sprite = _sprite;
+        itemPrice.text = _price.ToString();
     }
 
     public void InitializeItemDetails(ItemsScriptableObject _items)
@@ -52,27 +54,25 @@ public class ItemView : MonoBehaviour
         itemName.text = _items._name;
         itemDescription.text = _items._description;
         itemBerries.text = "Berries - " + _items._amount;
-        itemAvailableQuantity.text = "Available - " + itemController.GetItemAvailableQuantity();
+        itemAvailableQuantity.text = "Available - " + itemController.GetItemAvailableQuantityInShop();
         itemWeight.text = "Weight - " + _items._weight;
     }
 
     public void InitializePlayerItemDetails(ItemsScriptableObject _items)
     {
+        itemAvailableQuantity.gameObject.SetActive(false);
+        itemAvailableInPlayer.gameObject.SetActive(true);
+        Debug.Log("Initiating in Player");
         itemDetailsImage.sprite = _items._sprite;
         itemName.text = _items._name;
         itemDescription.text = _items._description;
         itemBerries.text = "Berries - " + _items._amount;
-        itemAvailableInPlayer.text = "Available - " + itemController.GetAvailableQuantityInPlayer();
+        itemAvailableInPlayer.text = "Available - " + itemController.GetItemAvailableQuantityInPlayer();
         itemWeight.text = "Weight - " + _items._weight;
     }
     public Transform GetItemDetailsObjectTransform()
     {
         return mainCanvas.transform;
-    }
-    public void Initialize(Sprite _sprite, int _price)
-    {
-        itemImage.sprite = _sprite;
-        itemPrice.text = _price.ToString();
     }
 
     public void CloseItemDetails()
@@ -102,7 +102,10 @@ public class ItemView : MonoBehaviour
     {
         itemController.ProcessBuyButtonClicked();
     }
-
+    public void SetItemController(ItemController _itemController)
+    {
+        itemController = _itemController;
+    }
     public TextMeshProUGUI GetItemAvailableInPlayer()
     {
         return itemAvailableInPlayer;
@@ -116,6 +119,10 @@ public class ItemView : MonoBehaviour
     {
         return itemDetails;
     }
-    
+
+    public GameObject GetConfirmationPannel()
+    {
+        return confirmationPannel;
+    }
     
 }

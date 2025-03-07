@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.9245283, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 4231759548929618744}
   - component: {fileID: 2916147326801675596}
   m_Layer: 5
-  m_Name: ItemQuantity
+  m_Name: CurrentItemQuantity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1722,10 +1722,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7967829901593241403}
-  itemPrice: {fileID: 5973907763915442472}
+  itemDetailsImage: {fileID: 1061113509791286086}
   itemDetails: {fileID: 7027933912492260250}
   confirmationPannel: {fileID: 4694906018450600873}
-  itemDetailsImage: {fileID: 1061113509791286086}
+  itemPrice: {fileID: 5973907763915442472}
   itemName: {fileID: 4575322514995549365}
   itemDescription: {fileID: 4192769659919623322}
   itemBerries: {fileID: 4254932702363259458}
@@ -1928,7 +1928,7 @@ GameObject:
   - component: {fileID: 2914823959906544021}
   - component: {fileID: 6882711551489676536}
   m_Layer: 5
-  m_Name: PlayerItemAvailableQuantity
+  m_Name: AvailableQuantityInPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3113,7 +3113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do You Want To buy this Item for?
+  m_text: Do you want to perform this operation?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3140,8 +3140,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3468,7 +3468,7 @@ GameObject:
   - component: {fileID: 6101534684246202760}
   - component: {fileID: 1350288872251659412}
   m_Layer: 5
-  m_Name: ItemAvailableQuantity
+  m_Name: AvailableQuantityInShop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerController 
 {
     private PlayerView playerView;
+    private int weight;
+    private const int maxWeight = 150;
     
     private InventoryService inventoryService;
     private ItemView itemView;
@@ -34,6 +36,7 @@ public class PlayerController
                 {
                     GetItemsInPlayerInventory().Add(_itemsScriptableObject);
                     _itemsScriptableObject._inPlayerQuantity = 1;
+                    weight += _itemsScriptableObject._weight * _itemsScriptableObject._inPlayerQuantity;
                 }
             }
         }
@@ -52,6 +55,10 @@ public class PlayerController
         }
     }
 
+    public void AddWeightText()
+    {
+        playerView.GetWeightText().text = weight + "/150";
+    }
     public bool OnBuyItems(ItemsScriptableObject _itemsScriptableObject)
     {
         bool added = false;

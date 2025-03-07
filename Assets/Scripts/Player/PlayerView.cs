@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerView : MonoBehaviour
@@ -12,6 +13,8 @@ public class PlayerView : MonoBehaviour
    [SerializeField]
    private List<ItemsScriptableObject> playerItems;
    
+   [SerializeField]
+   private TextMeshProUGUI weightText;
    public InventoryScriptableObject inventory;
 
    public void SetPlayerController(PlayerController _playerController)
@@ -29,6 +32,10 @@ public class PlayerView : MonoBehaviour
       return playerInventoryTransform;
    }
 
+   public TextMeshProUGUI GetWeightText()
+   {
+      return weightText;
+   }
    public InventoryScriptableObject GetPlayerInventory()
    {
       return inventory;

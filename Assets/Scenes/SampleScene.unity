@@ -1931,6 +1931,7 @@ MonoBehaviour:
   playerInventoryTransform: {fileID: 1325055720}
   inventoryView: {fileID: 1180899923}
   playerItems: []
+  weightText: {fileID: 1196242640}
   inventory: {fileID: 11400000, guid: 0bd094b885b212d46b7bfcfc30a9ae1e, type: 2}
 --- !u!4 &735289487
 Transform:
