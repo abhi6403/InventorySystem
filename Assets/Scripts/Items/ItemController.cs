@@ -9,8 +9,7 @@ public class ItemController
 
     private GameObject itemDetails;
     private GameObject confirmationPannel;
-
-    private int quantity;
+    
     public ItemController(ItemsScriptableObject itemData,ItemView _itemView,Transform _getParentTransform,ItemParentType _itemParentType)
     {
         itemModel = new ItemModel(itemData,_getParentTransform,_itemParentType);
@@ -18,7 +17,6 @@ public class ItemController
         itemView.Initialize(GetItemImage(),GetItemPrice());
         itemModel.SetItemController(this);
         itemView.SetItemController(this);
-        quantity = 0;
     }
 
     public void ShowItemDetails()
@@ -76,5 +74,14 @@ public class ItemController
     public void HideItem()
     {
         itemView.HideItem();
+    }
+    public int GetQantityOfPlayer()
+    {
+        return itemModel.GetQantityOfPlayer();
+    }
+
+    public int GetQuantityOfShop()
+    {
+        return itemModel.GetQuantityOfShop();
     }
 }

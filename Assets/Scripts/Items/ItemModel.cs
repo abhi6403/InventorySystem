@@ -19,6 +19,7 @@ public class ItemModel
    private GameObject itemDetailsUI;
 
    private ItemsScriptableObject item;
+   
 
    private ItemParentType itemParentType;
    private ItemTypes itemType;

@@ -9,17 +9,24 @@ public class PlayerController
     private PlayerModel playerModel;
     private ItemView itemView;
     private ItemService itemService;
+    private ShopService shopService;
 
-    public PlayerController(PlayerView _playerView, ItemView _itemView,ItemService _itemService)
+    private int quantity;
+    public PlayerController(PlayerView _playerView, ItemView _itemView,ItemService _itemService,ShopService _shopService)
     {
         playerView = _playerView;
         playerModel = new PlayerModel();
         itemView = _itemView;
         itemService = _itemService;
+        shopService = _shopService;
         playerView.SetPlayerController(this);
         playerModel.SetController(this);
         PopulateList();
+        quantity = 0;
         EventService.Instance.OnBuyEvent.AddListener(BuyItem);
+        EventService.Instance.OnConfirmButtonClickedEvent.AddListener(ProcessConfirmButton);
+        EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
+        EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButton);
     }
 
     public void PopulatePlayerInventory()
@@ -49,7 +56,36 @@ public class PlayerController
             }
         }
     }
-   
+
+    public void ProcessPlusButton()
+    {
+        quantity++;
+    }
+
+    public void ProcessMinusButton()
+    {
+        quantity--;
+    }
+    
+    public void ProcessConfirmButton(ItemModel _itemModel)
+    {
+        for (int i = 0; i < playerModel.PlayerItemList.Count; i++)
+        {
+            if (playerModel.PlayerItemList[i].GetItemName() == _itemModel.GetItemName() && playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity <= playerModel.PlayerItemList[i].GetItem()._fixedQuantity)
+            {
+                playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity += shopService.GetSelectionQuantity();
+            }
+        }
+    }
+
+    public void SetSelectionQuantity(int _quantity)
+    {
+        quantity = _quantity;
+    }
+    public int GetSelectionQuantity()
+    {
+        return quantity;
+    }
     public Transform GetPlayerTransform()
     {
         return playerView.GetPlayerTransform();
