@@ -17,13 +17,17 @@ public class ItemController
         itemView.Initialize(GetItemImage(),GetItemPrice());
         itemModel.SetItemController(this);
         itemView.SetItemController(this);
+        
+        EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButtonClicked);
+        EventService.Instance.OnMinusButtonClickedEvent.AddListener(ProcessMinusButtonClicked);
+        EventService.Instance.OnConfirmButtonClickedEvent.AddListener(processConfirmButtonClicked);
     }
 
     public void ShowItemDetails()
     {
         EventService.Instance.OnItemButtonClickedEvent.InvokeEvent(itemModel);
     }
-
+    
     private void SetItemDetailsUIGameObject(GameObject gameObject)
     {
         itemModel.SetItemDetailsUIGameObject(gameObject);
@@ -50,29 +54,12 @@ public class ItemController
     }
     public void ProcessPlusButtonClicked()
     {
-        if (GetItemParentType() == ItemParentType.SHOP && GetCurrentQuantityInShop() < GetItem()._quantity)
-        {
-            IncreaseCurrentQuantityInShop(1);
-            GetCurrentQuantityTextInShop().text = GetCurrentQuantityInShop().ToString();
-        }else if (GetItemParentType() == ItemParentType.PLAYER && GetCurrentQuantityInPlayer() < GetItem()._inPlayerQuantity)
-        {
-            Debug.Log("Getting In");
-            IncreaseCurrentQuantityInPlayer(1);
-            GetCurrentQuantityTextInPlayer().text = GetCurrentQuantityInPlayer().ToString();
-        }
+        IncreaseCurrentQuantityInShop(1);
     }
 
     public void ProcessMinusButtonClicked()
     {
-        if (GetItemParentType() == ItemParentType.SHOP && GetCurrentQuantityInShop() > GetItem()._quantity)
-        {
-            DecreaseCurrentQuantityInShop(1);
-            GetCurrentQuantityTextInShop().text = GetCurrentQuantityInShop().ToString();
-        }else if (GetItemParentType() == ItemParentType.PLAYER && GetCurrentQuantityInPlayer() > GetItem()._quantity)
-        {
-            DecreaseCurrentQuantityInPlayer(1);
-            GetCurrentQuantityTextInPlayer().text = GetCurrentQuantityInPlayer().ToString();
-        }
+        DecreaseCurrentQuantityInShop(1);
     }
 
     public void ProcessBuyButtonClicked()
@@ -82,19 +69,9 @@ public class ItemController
 
     public void processConfirmButtonClicked()
     {
-        if (GetItemAvailableQuantityInShop() > 0)
-        {
-            EventService.Instance.OnBuyButtonClickedEvent.InvokeEvent(itemModel.GetItem());
-            IncreaseAvailableQuantityInPlayer(GetCurrentQuantityInShop());
-            DecreaseAvailableQuantityInShop(GetCurrentQuantityInShop());
-            SetCurrentQuantityInShop();
-            GameObject.Destroy(itemDetails);
-            GameObject.Destroy(confirmationPannel);
-        }
-        else
-        {
-            Debug.Log("Not enough available quantity");
-        }
+        IncreaseAvailableQuantityInPlayer(GetCurrentQuantityInShop());
+        DecreaseAvailableQuantityInShop(GetItemAvailableQuantityInPlayer());
+        SetCurrentQuantityInShop();
     }
 
     public void processCancelButtonClicked()

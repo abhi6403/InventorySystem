@@ -34,6 +34,37 @@ public class UIService : MonoBehaviour
         shopService = _shopService;
         EventService.Instance.OnItemButtonClickedEvent.AddListener(ShowItemDetails);
     }
+    
+    private void ShowItemDetails(ItemModel itemData)
+    {
+        _itemModel = itemData;
+
+        itemDetailsImage.sprite = itemData.GetItemImage();
+        itemName.text = itemData.GetItemName();
+        itemDescription.text = itemData.GetItemDescription();
+        itemBerries.text = "Berries - " + itemData.GetItemPrice();
+        itemAvailableQuantity.text = "Available - " + itemData.GetItemAvailableQuantityInShop();
+        itemWeight.text = "Weight - " + itemData.GetItemWeight();
+        
+        itemDetailsPannel.SetActive(true);
+    }
+
+    public void OnPlusButtonClicked()
+    {
+        EventService.Instance.OnPlusButtonClickedEvent.InvokeEvent();
+        itemQuantity.text = _itemModel.GetCurrentQuantityInShop().ToString();
+    }
+
+    public void OnMinusButtonClicked()
+    {
+        EventService.Instance.OnMinusButtonClickedEvent.InvokeEvent();
+        itemQuantity.text = _itemModel.GetCurrentQuantityInShop().ToString();
+    }
+
+    public void OnConfirmButtonClicked()
+    {
+        EventService.Instance.OnConfirmButtonClickedEvent.InvokeEvent();
+    }
    public void getAllItemsInShop()
     {
         EventService.Instance.OnButtonAllClickedEvent.InvokeEvent();
@@ -78,20 +109,5 @@ public class UIService : MonoBehaviour
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.MAP);
     }
     
-    private void ShowItemDetails(ItemModel itemData)
-    {
-        _itemModel = itemData;
-        int quantityShop = shopService.GetItemQuantity(itemData);
-        //int quantityInventory = _inventoryService.GetQuantityOfItem(itemData);
-
-        itemDetailsImage.sprite = itemData.GetItemImage();
-        itemName.text = itemData.GetItemName();
-        itemDescription.text = itemData.GetItemDescription();
-        itemBerries.text = itemData.GetItemPrice().ToString();
-        itemQuantity.text = quantityShop.ToString();
-        itemAvailableQuantity.text = quantityShop.ToString();
-        itemWeight.text = itemData.GetItemWeight().ToString();
-        
-        itemDetailsPannel.SetActive(true);
-    }
+    
 }

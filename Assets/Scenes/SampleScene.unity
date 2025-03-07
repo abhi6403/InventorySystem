@@ -1438,9 +1438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ItemView, Assembly-CSharp
-        m_MethodName: ProcessConfirmButtonClicked
+      - m_Target: {fileID: 448830019}
+        m_TargetAssemblyTypeName: UIService, Assembly-CSharp
+        m_MethodName: OnConfirmButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2041,9 +2041,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ItemView, Assembly-CSharp
-        m_MethodName: ProcessPlusButton
+      - m_Target: {fileID: 448830019}
+        m_TargetAssemblyTypeName: UIService, Assembly-CSharp
+        m_MethodName: OnPlusButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3087,7 +3087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &614635283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5471,7 +5471,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1270096419}
   m_HandleRect: {fileID: 1270096418}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 1
   m_OnValueChanged:
@@ -6882,9 +6882,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ItemView, Assembly-CSharp
-        m_MethodName: ProcessMinusButton
+      - m_Target: {fileID: 448830019}
+        m_TargetAssemblyTypeName: UIService, Assembly-CSharp
+        m_MethodName: OnMinusButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
