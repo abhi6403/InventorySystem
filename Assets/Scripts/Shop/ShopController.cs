@@ -39,6 +39,14 @@ namespace Inventory.Shop
             EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
         }
 
+        ~ShopController()
+        {
+            EventService.Instance.OnFilterButtonClickedEvent.RemoveListener(FilterShop);
+            EventService.Instance.OnConfirmBuyButtonClickedEvent.RemoveListener(ProcessConfirmBuyButton);
+            EventService.Instance.OnPlusButtonClickedEvent.RemoveListener(ProcessPlusButton);
+            EventService.Instance.OnMinusButtonClickedEvent.RemoveListener(ProcessMinusButton);
+            EventService.Instance.OnConfirmSellButtonClickedEvent.RemoveListener(ProcessConfirmSellButton);
+        }
         private void PopulateShop()
         {
             for (int i = 0; i < shopModel.ShopItemList.Count; i++)

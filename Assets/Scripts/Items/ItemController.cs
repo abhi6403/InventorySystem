@@ -37,19 +37,9 @@ namespace Inventory.Item
             return itemModel.GetItemName();
         }
 
-        public string GetItemDescription()
-        {
-            return itemModel.GetItemDescription();
-        }
-
         public int GetItemPrice()
         {
             return itemModel.GetItemPrice();
-        }
-
-        public int GetItemWeight()
-        {
-            return itemModel.GetItemWeight();
         }
 
         public Transform GetParentTransform()
@@ -57,21 +47,11 @@ namespace Inventory.Item
             return itemModel.GetParentTransform();
         }
 
-        public GameObject GetItemDetailsUIGameObject()
-        {
-            return itemModel.GetItemDetailsUIGameObject();
-        }
-
         public ItemsScriptableObject GetItem()
         {
             return itemModel.GetItem();
         }
-
-        public ItemParentType GetItemParentType()
-        {
-            return itemModel.GetItemParentType();
-        }
-
+        
         public ItemTypes GetItemType()
         {
             return itemModel.GetItemType();
@@ -86,15 +66,6 @@ namespace Inventory.Item
         {
             itemView.HideItem();
         }
-
-        public int GetQantityOfPlayer()
-        {
-            return itemModel.GetQuantityOfPlayer();
-        }
-
-        public int GetQuantityOfShop()
-        {
-            return itemModel.GetQuantityOfShop();
-        }
+        
     }
 }

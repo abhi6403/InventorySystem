@@ -5,6 +5,7 @@ using Inventory.Event;
 using Inventory.Item;
 using Inventory.Player;
 using Inventory.Shop;
+using Inventory.Sound;
 
 namespace Inventory.UI
 {
@@ -40,6 +41,7 @@ namespace Inventory.UI
     
     private ItemModel _itemModel;
 
+    ~UIService(){}
     public void Initialize(ShopService _shopService,PlayerService _playerService)
     {
         shopService = _shopService;
@@ -51,6 +53,7 @@ namespace Inventory.UI
     
     private void ShowItemDetails(ItemModel itemData)
     {
+        playClickSound();
         _itemModel = itemData;
 
         if (itemData.GetItemParentType() == ItemParentType.SHOP)
@@ -85,18 +88,21 @@ namespace Inventory.UI
 
     public void OnPlusButtonClicked()
     {
+        playClickSound();
         EventService.Instance.OnPlusButtonClickedEvent.InvokeEvent();
         itemQuantity.text = shopService.GetSelectionQuantity().ToString();
     }
 
     public void OnMinusButtonClicked()
     {
+        playClickSound();
         EventService.Instance.OnMinusButtonClickedEvent.InvokeEvent();
         itemQuantity.text = shopService.GetSelectionQuantity().ToString();
     }
 
     public void OnConfirmBuyButtonClicked()
     {
+        playClickSound();
         EventService.Instance.OnConfirmBuyButtonClickedEvent.InvokeEvent(_itemModel);
         itemBerries.text = playerService.GetTotalBerries().ToString();
         itemWeightText.text = playerService.GetTotalWeight() + "/" + playerService.GetMaxWeight(); ;
@@ -108,6 +114,7 @@ namespace Inventory.UI
 
     public void OnConfirmSellButtonClicked()
     {
+        playClickSound();
         EventService.Instance.OnConfirmSellButtonClickedEvent.InvokeEvent(_itemModel);
         itemBerries.text = playerService.GetTotalBerries().ToString();
         itemWeightText.text = playerService.GetTotalWeight() + "/" + playerService.GetMaxWeight(); ;
@@ -118,8 +125,9 @@ namespace Inventory.UI
     }
     public void OnBuyButtonClicked()
     {
+        playClickSound();
         int temp = shopService.GetSelectionQuantity() * _itemModel.GetItemPrice();
-        int temp2 = playerService.GetSelectionQuantity() * _itemModel.GetItemWeight();
+        int temp2 = shopService.GetSelectionQuantity() * _itemModel.GetItemWeight() + playerService.GetTotalWeight();
 
         if (playerService.GetTotalBerries() >= temp && temp2 < playerService.GetMaxWeight())
         {
@@ -130,12 +138,14 @@ namespace Inventory.UI
         }
         else
         {
+            SoundService.Instance.Play(Sounds.ERROR);
             errorPannel.SetActive(true);
         }
     }
 
     public void OnSellButtonClicked()
     {
+        playClickSound();
         int temp = playerService.GetSelectionQuantity() * _itemModel.GetItemPrice() - 100;
         
         if (playerService.GetSelectionQuantity() <= _itemModel.GetItem()._inPlayerQuantity)
@@ -147,17 +157,20 @@ namespace Inventory.UI
         }
         else
         {
+            SoundService.Instance.Play(Sounds.ERROR);
             errorPannel.SetActive(true);
         }
     }
 
     public void OnCancelButtonClicked()
     {
+        playClickSound();
         confirmationPannel.SetActive(false);
         errorPannel.SetActive(false);
     }
     public void OnCloseButtonClicked()
     {
+        playClickSound();
         itemDetailsPannel.SetActive(false);
         confirmationPannel.SetActive(false);
         errorPannel.SetActive(false);
@@ -165,56 +178,72 @@ namespace Inventory.UI
 
     public void getRandomItem()
     {
+        playClickSound();
         EventService.Instance.OnButtonRandomClickedEvent.InvokeEvent();
         itemWeightText.text = playerService.GetTotalWeight() + " / " + playerService.GetMaxWeight();
     }
    public void getAllItemsInShop()
     {
         EventService.Instance.OnButtonAllClickedEvent.InvokeEvent();
+        playClickSound();
     }
 
     public void getWeaponItems()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.WEAPON);
+        playClickSound();
     }
     public void getFoodItems()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.HEALTH);
+        playClickSound();
     }
 
     public void getDevilFruits()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.DEVILFRUIT);
+        playClickSound();
     }
 
     public void getPosters()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.POSTER);
+        playClickSound();
     }
     
     public void getProps()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.PROPS);
+        playClickSound();
     }
     
     public void getPotions()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.POTION);
+        playClickSound();
     }
     
     public void getShipItems()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.SHIPITEMS);
+        playClickSound();
     }
     
     public void getMap()
     {
         EventService.Instance.OnFilterButtonClickedEvent.InvokeEvent(ItemTypes.MAP);
+        playClickSound();
     }
     public void GiveErrorMessage()
     {
+        SoundService.Instance.Play(Sounds.ERROR);
         errorPannel.SetActive(true);
         confirmationPannel.SetActive(false);
+    }
+
+    private void playClickSound()
+    {
+        SoundService.Instance.Play(Sounds.BUTTONCLICK);
     }
     
  }

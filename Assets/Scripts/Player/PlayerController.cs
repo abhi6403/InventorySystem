@@ -2,6 +2,7 @@ using UnityEngine;
 using Inventory.Event;
 using Inventory.Item;
 using Inventory.Shop;
+using Inventory.Sound;
 using Inventory.UI;
 
 namespace Inventory.Player
@@ -41,6 +42,16 @@ namespace Inventory.Player
 
         }
 
+        ~PlayerController()
+        {
+            EventService.Instance.OnConfirmBuyButtonClickedEvent.RemoveListener(BuyItem);
+            EventService.Instance.OnConfirmBuyButtonClickedEvent.RemoveListener(ProcessConfirmBuyButton);
+            EventService.Instance.OnPlusButtonClickedEvent.RemoveListener(ProcessPlusButton);
+            EventService.Instance.OnMinusButtonClickedEvent.RemoveListener(ProcessMinusButton);
+            EventService.Instance.OnConfirmSellButtonClickedEvent.RemoveListener(ProcessConfirmSellButton);
+            EventService.Instance.OnConfirmSellButtonClickedEvent.RemoveListener(SellItem);
+            EventService.Instance.OnButtonRandomClickedEvent.RemoveListener(GetRandomItems);
+        }
         private void PopulateList()
         {
             for (int i = 0; i < GetInventoryObject().items.Count; i++)
@@ -71,10 +82,6 @@ namespace Inventory.Player
                    )
                 {
                     playerModel.PlayerItemList[i].HideItem();
-                }
-                else if (playerModel.PlayerItemList[i].GetItemName() == item.GetItemName())
-                {
-
                 }
             }
         }
@@ -123,6 +130,7 @@ namespace Inventory.Player
                          playerModel.PlayerItemList[i].GetItem()._fixedQuantity
                         )
                 {
+                    SoundService.Instance.Play(Sounds.ERROR);
                     uiService.GiveErrorMessage();
                 }
             }
@@ -144,6 +152,7 @@ namespace Inventory.Player
                          quantity > playerModel.PlayerItemList[i].GetItem()._inPlayerQuantity
                         )
                 {
+                    SoundService.Instance.Play(Sounds.ERROR);
                     uiService.GiveErrorMessage();
                 }
             }
