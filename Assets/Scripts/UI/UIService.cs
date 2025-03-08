@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,11 +47,17 @@ namespace Inventory.UI
     {
         shopService = _shopService;
         playerService = _playerService;
+        
         EventService.Instance.OnItemButtonClickedEvent.AddListener(ShowItemDetails);
+        Reset();
+    }
+
+    private void Reset()
+    {
         itemBerries.text = playerService.GetTotalBerries().ToString();
         itemWeightText.text = 0 + " / " + playerService.GetMaxWeight();
     }
-    
+
     private void ShowItemDetails(ItemModel itemData)
     {
         playClickSound();

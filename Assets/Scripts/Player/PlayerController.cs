@@ -29,9 +29,11 @@ namespace Inventory.Player
             uiService = _uiService;
             playerView.SetPlayerController(this);
             playerModel.SetController(this);
-            PopulateList();
-            quantity = 0;
-            IncreaseTotalBerries(500);
+            Reset();
+            eventServices();
+        }
+        public void eventServices()
+        {
             EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(BuyItem);
             EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
             EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
@@ -39,9 +41,14 @@ namespace Inventory.Player
             EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
             EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(SellItem);
             EventService.Instance.OnButtonRandomClickedEvent.AddListener(GetRandomItems);
-
         }
 
+        public void Reset()
+        {
+            PopulateList();
+            quantity = 0;
+            IncreaseTotalBerries(100);
+        }
         ~PlayerController()
         {
             EventService.Instance.OnConfirmBuyButtonClickedEvent.RemoveListener(BuyItem);
@@ -167,7 +174,7 @@ namespace Inventory.Player
                 int randomIndex = Random.Range(0, playerModel.PlayerItemList.Count);
                 ItemController selectedItem = playerModel.PlayerItemList[randomIndex];
 
-                selectedItem.GetItem()._inPlayerQuantity = Random.Range(1, selectedItem.GetItem()._fixedQuantity);
+                selectedItem.GetItem()._inPlayerQuantity = Random.Range(1,2);
                 selectedItem.GetItem()._quantity = 0;
                 int tempWeight = selectedItem.GetItem()._inPlayerQuantity * selectedItem.GetItem()._weight;
                 if (GetMaxWeight() >= GetTotalWeight())

@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace Inventory.Item
 {
-
-
     public class ItemService
     {
         private ItemController itemController;
@@ -15,11 +13,6 @@ namespace Inventory.Item
             this.itemsData = itemData;
             return new ItemController(itemsData, _itemView, _getParentTransform, _itemParentType);
 
-        }
-
-        public ItemController GetItemController()
-        {
-            return itemController;
         }
     }
 }

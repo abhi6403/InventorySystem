@@ -22,16 +22,21 @@ namespace Inventory.Shop
         public ShopController(ShopView _shopView, ItemView _itemView, ItemService _itemService,
             PlayerService _playerService, UIService _uiService)
         {
-            shopView = _shopView;
             shopModel = new ShopModel();
+            shopView = _shopView;
             itemView = _itemView;
             itemService = _itemService;
             playerService = _playerService;
             uiService = _uiService;
+            
             shopView.SetShopController(this);
-            PopulateList();
-            PopulateShop();
-            quantity = 0;
+            
+            Reset();
+            eventServices();
+        }
+
+        public void eventServices()
+        {
             EventService.Instance.OnFilterButtonClickedEvent.AddListener(FilterShop);
             EventService.Instance.OnConfirmBuyButtonClickedEvent.AddListener(ProcessConfirmBuyButton);
             EventService.Instance.OnPlusButtonClickedEvent.AddListener(ProcessPlusButton);
@@ -39,6 +44,12 @@ namespace Inventory.Shop
             EventService.Instance.OnConfirmSellButtonClickedEvent.AddListener(ProcessConfirmSellButton);
         }
 
+        public void Reset()
+        {
+            PopulateList();
+            PopulateShop();
+            quantity = 0;
+        }
         ~ShopController()
         {
             EventService.Instance.OnFilterButtonClickedEvent.RemoveListener(FilterShop);
@@ -82,12 +93,18 @@ namespace Inventory.Shop
 
         private void ProcessPlusButton()
         {
-            quantity++;
+            if (quantity < 10)
+            {
+                quantity++;
+            }
         }
 
         private void ProcessMinusButton()
         {
-            quantity--;
+            if (quantity > 0)
+            {
+                quantity--;
+            }
         }
 
         private void ProcessConfirmBuyButton(ItemModel _itemModel)
